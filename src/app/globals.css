@@ -1,26 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 46, 56, 43;
+  --font-primary: 'Nunito', sans-serif;
+  --font-secondary: 'Quicksand', sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-family: 'Quicksand', sans-serif;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
+  color: #FFF;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 20px;
+}
+
+p {
+  color: #FFF;
+  font-family: var(--font-primary);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 100%;
+}
+
+/* Custom utilities */
+.tracking-widest {
+  letter-spacing: 0.25em;
+}
+
+/* Footer styles */
+.footer {
+  border-top: 1px solid #99A098;
+  text-align: right;
+  padding: 10px 20px;
+  gap: 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Navigation button styles */
+.button {
+  color: #99A098;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+  font-family: var(--font-primary);
+  font-size: 24px;
+  font-weight: 300;
+  padding-bottom: 2px;
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.button:hover {
+  color: #ffffff;
+}
+
+.button:hover::after {
+  width: 100%;
+}
+
+/* Social link styles */
+.social-link {
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Navigation dots */
+.nav-dot {
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+}
+
+
+
+.social-icon {
+  @apply text-white/80 hover:text-white transition-colors duration-300;
+}
+
+
+
