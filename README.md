@@ -1,6 +1,4 @@
-# 3D Model Viewer Project
-
-A Next.js application with Three.js integration for viewing 3D models, specifically optimized for Blender models.
+# Project Portfolio
 
 ## Features
 
