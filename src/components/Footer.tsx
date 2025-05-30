@@ -28,9 +28,12 @@ export default function Footer({ colorDots, navLinks }: FooterProps) {
 
   return (
     <footer className="fixed bottom-0 left-0 w-full p-8 z-50">
-      <div className="max-w-6xl mx-auto">
+      {/* Gradient blur background */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#353A2A] via-[#353A2A]/95 to-transparent backdrop-blur-[2px]"></div>
+      
+      <div className="max-w-6xl mx-auto relative">
         <div className="flex flex-row justify-between flex-wrap">     
-          <div className="flex gap-8 text-lg">
+          <div className="flex gap-8 text-lg pt-2 pb-2 pl-8 pr-8">
               {navLinks.map((link, idx) => (
                 <Link key={idx} href={link.href} className="button">
                   {link.label}

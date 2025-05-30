@@ -17,7 +17,7 @@ export default function Home() {
   const navLinks = [
     { label: 'about me', href: '/about' },
     { label: 'projects', href: '/projects' },
-    { label: 'education', href: '/education' },
+    { label: 'design', href: '/design' },
     { label: 'experience', href: '/experience' },
   ]
 
