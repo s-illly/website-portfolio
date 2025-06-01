@@ -36,7 +36,7 @@ const designCards: DesignCard[] = [
         color: '#3357FF'
     },
     {
-        id: '4',
+        id: '5',
         image: 'img/pantone-window.png',
         description: 'Abstract composition',
         color: '#3357FF'
