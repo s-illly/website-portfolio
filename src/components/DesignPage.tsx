@@ -48,7 +48,7 @@ export default function Design() {
     const [selectedCard, setSelectedCard] = useState<string | null>(null)
 
     return (
-        <main className="min-h-screen bg-[#353A2A] relative overflow-hidden flex flex-col">
+        <main className="min-h-screen relative overflow-hidden flex flex-col">
             <div className="relative flex-grow p-8">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {designCards.map((card) => (

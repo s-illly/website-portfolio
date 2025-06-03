@@ -3,6 +3,8 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
+import { FaInstagram, FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
+import Link from 'next/link';
 
 export default function About() {
     const pathname = usePathname()
@@ -30,7 +32,7 @@ export default function About() {
         <AnimatePresence mode="wait">
             <motion.main 
                 key={pathname}
-                className="min-h-screen bg-[#353A2A] relative overflow-hidden flex flex-col"
+                className="min-h-screen relative overflow-hidden flex flex-col"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -38,8 +40,10 @@ export default function About() {
             >
                 <div className="relative flex-grow p-8 flex items-center justify-center">
                     <div className="relative w-full max-w-4xl min-h-[400px] bg-white/10 backdrop-blur-sm rounded-lg p-8 z-50 items-center">
+                        
+                        // Introduction
                         <motion.div 
-                            className="absolute w-90 h-80 -rotate-16 left-15 -top-15 cursor-pointer"
+                            className="absolute -left-50 -top-30 cursor-pointer"
                             initial={{ y: "100vh", opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             exit={{ y: "100vh", opacity: 0 }}
@@ -52,10 +56,18 @@ export default function About() {
                             whileHover={{ y: -20, scale: 1.05 }}
                             onClick={() => handlePhotoClick('painting')}
                         >
-                            <img src="img/painting.png"></img>
+                            <div className="w-105 h-65 p-10"> 
+                                <h3 className="text-blue-400!"> s.illly ❚</h3>
+                                <br></br>
+                                <p> Hi, my name is <a className="underline decoration-sky-500/30">Lily Song</a>. 
+                                    I am a student at the University of Waterloo studying Computer Science. 
+                                    Catch me on campus drawing, reading, playing the piano, or probably studying :) </p>
+                            </div>
                         </motion.div>
+
+                        // Social media links 
                         <motion.div 
-                            className="absolute w-75 h-96 rotate-10 right-1/14 -top-10 cursor-pointer"
+                            className="absolute -left-40 top-40 cursor-pointer"
                             initial={{ y: "100vh", opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             exit={{ y: "100vh", opacity: 0 }}
@@ -65,13 +77,28 @@ export default function About() {
                                 damping: 15,
                                 delay: 0.12
                             }}
-                            whileHover={{ y: -20, scale: 1.05 }}
-                            onClick={() => handlePhotoClick('fish')}
                         >
-                            <img src="img/fish.png"></img>
+                            <div className="w-36 h-6">
+                            <div className="flex flex-row gap-4">
+                                    <Link href="https://www.instagram.com/s.illly?igsh=MWplcWFrb3VmZ25tZQ%3D%3D&utm_source=qr" target = "_blank" className="social-link">    
+                                    <FaInstagram size={24} />
+                                    </Link>
+                                    <Link href="https://x.com/s_illlier?s=21&t=kVQ5ImgWwKciZgsU72FdYw" target = "_blank" className="social-link">
+                                    <FaTwitter size={24} />
+                                    </Link>
+                                    <Link href="https://www.linkedin.com/in/lily-song-b82a18284/" target = "_blank" className="social-link">
+                                    <FaLinkedin size={24} />
+                                    </Link>
+                                    <Link href="https://github.com/s-illly" target = "_blank"className="social-link">
+                                    <FaGithub size={24} />
+                                    </Link>
+                                </div>
+                            </div>
                         </motion.div>
+
+                        // Spotify
                         <motion.div 
-                            className="absolute w-45 h-72 rotate-10 left-55 top-40 z-3 cursor-pointer"
+                            className="absolute -right-40 -top-30 z-3 cursor-pointer"
                             initial={{ y: "100vh", opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             exit={{ y: "100vh", opacity: 0 }}
@@ -84,10 +111,14 @@ export default function About() {
                             whileHover={{ y: -20, scale: 1.05 }}
                             onClick={() => handlePhotoClick('stickers')}
                         >
-                            <img src="img/stickers.png"></img>
+                            <div className="h-80 w-80 bg-amber-50">
+                                <h6 className="font-32px!"> Tune In :)</h6>
+
+                            </div>
+
                         </motion.div>
                         <motion.div 
-                            className="absolute w-48 h-64 -rotate-14 right-1/100 top-40 z-60 cursor-pointer"
+                            className="absolute w-48 h-64 right-1/100 top-40 z-60 cursor-pointer"
                             initial={{ y: "100vh", opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             exit={{ y: "100vh", opacity: 0 }}
@@ -119,7 +150,7 @@ export default function About() {
                             <img src="img/me.png"></img>
                         </motion.div>
                         <motion.div 
-                            className="absolute w-40 h-40 -rotate-8 left-20 top-80 z-4 cursor-pointer"
+                            className="absolute w-40 h-40 left-20 top-80 z-4 cursor-pointer"
                             initial={{ y: "100vh", opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             exit={{ y: "100vh", opacity: 0 }}
@@ -134,8 +165,9 @@ export default function About() {
                         >
                             <img src="img/bunny.png"></img>
                         </motion.div>
+
                         <motion.div 
-                            className="absolute w-40 h-40 -rotate-8 right-50 top-70 z-4 filter saturate-0 cursor-pointer"
+                            className="absolute w-40 h-40 right-50 top-70 z-4 filter saturate-0 cursor-pointer"
                             initial={{ y: "100vh", opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             exit={{ y: "100vh", opacity: 0 }}
@@ -148,7 +180,10 @@ export default function About() {
                             whileHover={{ y: -20, scale: 1.05 }}
                             onClick={() => handlePhotoClick('bath')}
                         >
-                            <img src="img/bath.png"></img>
+                            <div className="w-40 h-40 bg-black"> 
+                                <img src="img/bath.png"></img>
+                            </div>
+
                         </motion.div>
 
                         {/* Overlay for selected photo */}

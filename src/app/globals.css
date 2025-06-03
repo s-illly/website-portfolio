@@ -10,24 +10,27 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
+  background-image: url('/img/paper.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: 'Quicksand', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-secondary);
-  color: #FFF;
+  color: #000000;
   font-size: 64px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: normal;
-  letter-spacing: 20px;
+  letter-spacing: 15px;
 }
 
 p {
-  color: #FFF;
+  color: #000000;
   font-family: var(--font-primary);
-  font-size: 24px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -51,14 +54,15 @@ p {
 
 /* Navigation button styles */
 .button {
-  color: #99A098;
+  color: #000000;
   text-decoration: none;
   position: relative;
   transition: color 0.3s ease;
   font-family: var(--font-primary);
-  font-size: 24px;
-  font-weight: 300;
+  font-size: 16px;
+  font-weight: 100;
   padding-bottom: 2px;
+  line-height: 1.2;
 }
 
 .button::after {
@@ -68,12 +72,12 @@ p {
   height: 1px;
   bottom: 0;
   left: 0;
-  background-color: #ffffff;
+  background-color: #e8cfc2;
   transition: width 0.3s ease;
 }
 
 .button:hover {
-  color: #ffffff;
+  color: #e8cfc2;
 }
 
 .button:hover::after {
@@ -82,26 +86,17 @@ p {
 
 /* Social link styles */
 .social-link {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   transition: all 0.3s ease;
 }
 
 .social-link:hover {
-  color: #ffffff;
+  color: #000000;
   transform: translateY(-2px);
 }
 
-/* Navigation dots */
-.nav-dot {
-  width: 25px;
-  height: 25px;
-  border-radius: 5px;
-}
-
-
-
 .social-icon {
-  @apply text-white/80 hover:text-white transition-colors duration-300;
+  @apply text-white/80 hover:text-black transition-colors duration-300;
 }
 
 

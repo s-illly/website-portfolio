@@ -89,7 +89,7 @@ export default function Project() {
     }, [])
 
     return (
-        <div className="fixed inset-0 overflow-hidden bg-[#005D57]">
+        <div className="fixed inset-0 overflow-hidden bg-[#2B3838]">
             <AnimatePresence>
                 {isVisible && (
                     <div className="relative w-full h-full">

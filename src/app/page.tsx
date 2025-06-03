@@ -1,9 +1,8 @@
 'use client'
 
-import ModelViewer from '@/components/ModelViewer'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-
+import AboutPage from '@/components/AboutPage'
 
 
 export default function Home() {
@@ -23,9 +22,8 @@ export default function Home() {
 
   return (
     <main className="min-h-screen relative overflow-hidden">
-      <ModelViewer modelPath="/models/movingwater.glb" />
       <div className="relative z-10">
-        <Header />
+        <AboutPage />
         <Footer colorDots={colorDots} navLinks={navLinks} />
       </div>
     </main> 
