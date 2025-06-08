@@ -22,9 +22,6 @@ export default function Footer({ colorDots, navLinks }: FooterProps) {
                 <Link href="/" className="button">
                   about me
                 </Link>
-                <Link href="/experience" className="button">
-                  experience
-                </Link>
                 <Link href="/portfolio" className="button">
                   portfolio
                 </Link>

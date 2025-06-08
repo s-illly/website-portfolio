@@ -21,7 +21,10 @@ module.exports = {
       },
       animation: {
         'float-up': 'float-up 1s ease-out forwards'
-      }
+      },
+      fontFamily: {
+        cursive: ['"Dancing Script"', 'cursive'],
+      },
     },
   },
   plugins: [],

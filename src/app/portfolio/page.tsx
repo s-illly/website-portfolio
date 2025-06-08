@@ -2,7 +2,7 @@
 
 
 import Footer from '@/components/Footer'
-import Project from '@/components/ProjectPage'
+import Portfolio from '@/components/PortfolioPage'
 
 export default function Projects() {
     const colorDots = [
@@ -19,7 +19,7 @@ export default function Projects() {
     return (
         <main className="min-h-screen relative overflow-hidden">
             <div className="relative z-10">
-                <Project />
+                <Portfolio />
                 <Footer colorDots={colorDots} navLinks={navLinks} />                
                
             </div>
