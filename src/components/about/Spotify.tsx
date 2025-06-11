@@ -34,7 +34,7 @@ export default function Spotify({ onPhotoClick }: SpotifyProps) {
                             <p className="text-sm font-bold text-gray-800">BLACK MEMORY</p>
                             <p className="!text-[12px] font-light text-gray-600">THE ORAL CIGARETTES</p>
                         </div>
-                        <span className="ml-2 text-blue-600 text-sm">★</span>
+                        <span className="ml-2 text-blue-400 text-sm">★</span>
                     </div>
 
                     <div className="flex items-center w-full">
@@ -52,7 +52,7 @@ export default function Spotify({ onPhotoClick }: SpotifyProps) {
                             <p className="text-sm font-bold text-gray-800">Fraktsiya</p>
                             <p className="!text-[12px] text-gray-600">MARK, Lee Young Ji</p>
                         </div>
-                        <span className="ml-2 text-blue-600 text-sm">★</span>
+                        <span className="ml-2 text-blue-400 text-sm">★</span>
                     </div>
 
                     <div className="flex items-center w-full">
@@ -61,7 +61,7 @@ export default function Spotify({ onPhotoClick }: SpotifyProps) {
                             <p className="text-sm font-bold text-gray-800">Summit - Reworked</p>
                             <p className="!text-[12px] text-gray-600">Seb Wery</p>
                         </div>
-                        <span className="ml-2 text-blue-600 text-sm">★</span>
+                        <span className="ml-2 text-blue-400 text-sm">★</span>
                     </div>
                 </div>
             </div>

@@ -38,9 +38,9 @@ export default function Design({ onImageSelect }: DesignProps) {
             >
                 <div className="rounded-lg flex flex-col items-center">
                     {isHovered ? (
-                        <FaFolderOpen className="text-8xl text-blue-600" />
+                        <FaFolderOpen className="text-8xl text-blue-400" />
                     ) : (
-                        <FaFolder className="text-8xl text-blue-600"/>
+                        <FaFolder className="text-8xl text-blue-400"/>
                     )}
                     <span className="text-black"> Design </span>
                 </div>

@@ -12,7 +12,7 @@ import Socials from './about/Socials'
 import Spotify from './about/Spotify'
 import Book from './about/Book'
 import Me from './about/Me'
-import Bracelet from './about/Bracelet'
+
 
 export default function About() {
     const pathname = usePathname()
@@ -55,7 +55,7 @@ export default function About() {
                 <Spotify onPhotoClick={handlePhotoClick} />
                 <Book onPhotoClick={handlePhotoClick} />
                 <Me />
-                <Bracelet onPhotoClick={handlePhotoClick} />
+              
 
                 
             </motion.main>

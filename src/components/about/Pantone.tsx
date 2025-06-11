@@ -29,7 +29,7 @@ export default function Pantone() {
             whileHover={{ y: -5, scale: 1.05 }}
         >
             <div className="rounded-lg flex flex-col justify-center items-center bg-gray-100">
-                <header className="w-full rounded-t-md h-8 p-3 bg-amber-200 flex flex-row items-center justify-between"> 
+                <header className="w-full rounded-t-md h-8 p-3 bg-white flex flex-row items-center justify-between"> 
                     <div className="flex flex-row gap-2">
                         <div className="h-2 w-2 bg-red-300" />
                         <div className="h-2 w-2 bg-amber-300" />

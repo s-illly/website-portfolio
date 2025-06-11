@@ -12,7 +12,7 @@ export default function Book({ onPhotoClick }: BookProps) {
     return (
         <>
             <motion.div 
-                className="absolute left-60 bottom-45 z-3 w-75 h-70 overflow-y-auto cursor-pointer"
+                className="absolute left-60 bottom-45 z-3 w-75 h-72 overflow-y-auto cursor-pointer"
                 initial={{ y: "100vh", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: "100vh", opacity: 0 }}
@@ -42,10 +42,10 @@ export default function Book({ onPhotoClick }: BookProps) {
                                 <p className="text-sm font-bold text-gray-800">Death's End</p>
                                 <p className="!text-[12px] text-gray-600">Cixin Liu</p>
                                 <div className="flex gap-1 mt-1">
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
                                     <span className="text-gray-400 text-sm">☆</span>
                                 </div>
                             </div>
@@ -57,10 +57,10 @@ export default function Book({ onPhotoClick }: BookProps) {
                                 <p className="text-sm font-bold text-gray-800">All the Devils Are Here</p>
                                 <p className="!text-[12px] text-gray-600">Louise Penny</p>
                                 <div className="flex gap-1 mt-1">
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">☆</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-200 text-sm">☆</span>
                                     <span className="text-gray-400 text-sm">☆</span>
                                 </div>
                             </div>
@@ -72,10 +72,10 @@ export default function Book({ onPhotoClick }: BookProps) {
                                 <p className="text-sm font-bold text-gray-800">Seven and a Half Lessons About the Brain</p>
                                 <p className="!text-[12px] text-gray-600">Lisa Feldman Barrett</p>
                                 <div className="flex gap-1 mt-1">
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">☆</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-200 text-sm">☆</span>
                                     <span className="text-gray-400 text-sm">☆</span>
                                 </div>
                             </div>   
@@ -127,10 +127,10 @@ export default function Book({ onPhotoClick }: BookProps) {
                                 <p className="text-sm font-bold text-gray-800">Death's End</p>
                                 <p className="!text-[12px] text-gray-600">Cixin Liu</p>
                                 <div className="flex gap-1 mt-1">
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
                                     <span className="text-gray-400 text-sm">☆</span>
                                 </div>
                             </div>
@@ -141,10 +141,10 @@ export default function Book({ onPhotoClick }: BookProps) {
                                 <p className="text-sm font-bold text-gray-800">All the Devils Are Here</p>
                                 <p className="!text-[12px] text-gray-600">Louise Penny</p>
                                 <div className="flex gap-1 mt-1">
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">☆</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-200 text-sm">☆</span>
                                     <span className="text-gray-400 text-sm">☆</span>
                                 </div>
                             </div>
@@ -158,11 +158,11 @@ export default function Book({ onPhotoClick }: BookProps) {
                                 <p className="text-sm font-bold text-gray-800">The Dark Forest</p>
                                 <p className="!text-[12px] text-gray-600">Cixin Liu</p>
                                 <div className="flex gap-1 mt-1">
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">☆</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-200 text-sm">☆</span>
                                 </div>
                             </div>   
                         </div>
@@ -173,10 +173,10 @@ export default function Book({ onPhotoClick }: BookProps) {
                                 <p className="text-sm font-bold text-gray-800">Call of the Wild</p>
                                 <p className="!text-[12px] text-gray-600">Jack London</p>
                                 <div className="flex gap-1 mt-1">
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">☆</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-200 text-sm">☆</span>
                                     <span className="text-gray-400 text-sm">☆</span>
                                 </div>
                             </div>   
@@ -188,11 +188,11 @@ export default function Book({ onPhotoClick }: BookProps) {
                                 <p className="text-sm font-bold text-gray-800">Murder on the Orient Express</p>
                                 <p className="!text-[12px] text-gray-600">Agatha Christie</p>
                                 <div className="flex gap-1 mt-1">
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
                                 </div>
                             </div>   
                         </div>
@@ -203,9 +203,9 @@ export default function Book({ onPhotoClick }: BookProps) {
                                 <p className="text-sm font-bold text-gray-800">The Silent Patient</p>
                                 <p className="!text-[12px] text-gray-600">Alex Michaelides</p>
                                 <div className="flex gap-1 mt-1">
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
                                     <span className="text-gray-400 text-sm">☆</span>
                                     <span className="text-gray-400 text-sm">☆</span>
                                 </div>
@@ -218,11 +218,11 @@ export default function Book({ onPhotoClick }: BookProps) {
                                 <p className="text-sm font-bold text-gray-800">The Chronicles of Narnia</p>
                                 <p className="!text-[12px] text-gray-600">C.S. Lewis</p>
                                 <div className="flex gap-1 mt-1">
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-600 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">☆</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-200 text-sm">☆</span>
                                 </div>
                             </div>   
                         </div>
