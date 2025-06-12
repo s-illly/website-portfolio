@@ -2,17 +2,60 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FaFolder, FaFolderOpen } from 'react-icons/fa'
 import { useState } from 'react'
 
-export default function Experience() {
+interface ExperienceCard{
+    id: string
+    image: string
+    title: string
+    description: string
+
+
+}
+
+interface ExperienceProps {
+    onImageSelect: (experienceCard: ExperienceCard) => void;
+}
+
+export default function Experience({ onImageSelect }: ExperienceProps) {
     const [isHovered, setIsHovered] = useState(false)
     const [isModalOpen, setIsModalOpen] = useState(false)
 
     // Example experience images - replace these with your actual experience images
-    const experienceImages = [
-        '/img/exp1.png',
-        '/img/exp2.png',
-        '/img/exp3.png',
-        '/img/exp4.png',
-        '/img/exp5.png',
+    const experienceImages: ExperienceCard[] = [
+        {
+            id: 'experience-volunteer',
+            image: '/img/exp1.png',
+            title: 'Volunteer Work',
+            description: 'Contributed to community service projects.',
+
+        },
+        {
+            id: 'experience-internship',
+            image: '/img/exp2.png',
+            title: 'Software Development Internship',
+            description: 'Gained practical experience in software engineering.',
+
+        },
+        {
+            id: 'experience-research',
+            image: '/img/exp3.png',
+            title: 'Academic Research',
+            description: 'Participated in a research project at university.',
+
+        },
+        {
+            id: 'experience-freelance',
+            image: '/img/exp4.png',
+            title: 'Freelance Web Design',
+            description: 'Designed and developed websites for clients.',
+
+        },
+        {
+            id: 'experience-leadership',
+            image: '/img/exp5.png',
+            title: 'Student Leadership',
+            description: 'Led a student organization and managed events.',
+
+        },
     ]
 
     return (
@@ -79,19 +122,19 @@ export default function Experience() {
                             
                             <div className="p-6">
                                 <div className="grid grid-cols-3 gap-6">
-                                    {experienceImages.map((image, index) => (
+                                    {experienceImages.map((experience, index) => (
                                         <motion.div
-                                            key={index}
+                                            key={experience.id}
                                             className="relative border-white border-3 cursor-pointer overflow-hidden"
                                             whileHover={{ scale: 1.02 }}
                                             onClick={() => {
-                                                // Add your experience click handler here
+                                                onImageSelect(experience);
                                                 setIsModalOpen(false);
                                             }}
                                         >
                                             <img
-                                                src={image}
-                                                alt={`Experience ${index + 1}`}
+                                                src={experience.image}
+                                                alt={`Experience ${experience.id}`}
                                                 className="w-full h-full object-cover"
                                             />
                                         </motion.div>

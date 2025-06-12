@@ -94,7 +94,7 @@ export default function Book({ onPhotoClick }: BookProps) {
                         onClick={() => setIsModalOpen(false)}
                     >
                         <motion.div
-                            className="bg-blue-50/80 rounded-lg w-100 h-80 mx-4 relative cursor-move overflow-scroll"
+                            className="bg-blue-50/80 rounded-lg w-100 h-80 mx-4 relative cursor-move overflow-scroll border-0 [&::-webkit-scrollbar]:w-0 [&::-webkit-scrollbar-track]:bg-transparent"
                             initial={{ scale: 0.8, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.8, opacity: 0 }}
@@ -109,7 +109,7 @@ export default function Book({ onPhotoClick }: BookProps) {
                             }}
                             dragElastic={0.1}
                         >
-                            <header className="w-full rounded-t-md h-8 p-3 bg-white flex flex-row items-center justify-between"> 
+                            <header className="w-full rounded-t-md h-8 p-3 bg-white flex flex-row items-center justify-between sticky top-0 z-10"> 
                                 <div className="flex flex-row gap-2">
                                     <button className="h-2 w-2 bg-red-300" onClick={() => setIsModalOpen(false)} />
                                     <div className="h-2 w-2 bg-amber-300" />
@@ -120,7 +120,7 @@ export default function Book({ onPhotoClick }: BookProps) {
                             </header>
                             
                             <div className="p-6">
-                                <div className="grid grid-cols-2 gap-6">
+                                <div className="grid grid-cols-2 gap-6 ">
                                 <div className="flex items-center w-full">
                             <img src="/img/death.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3" />
                             <div className="flex-grow">

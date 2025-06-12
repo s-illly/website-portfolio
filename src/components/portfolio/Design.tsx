@@ -2,8 +2,16 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FaFolder, FaFolderOpen } from 'react-icons/fa'
 import { useState } from 'react'
 
+interface DesignCard {
+    id: string
+    image: string
+    color1: string
+    color2: string
+    color3: string
+}
+
 interface DesignProps {
-    onImageSelect: (imageUrl: string) => void;
+    onImageSelect: (designCard: DesignCard) => void;
 }
 
 export default function Design({ onImageSelect }: DesignProps) {
@@ -11,12 +19,47 @@ export default function Design({ onImageSelect }: DesignProps) {
     const [isModalOpen, setIsModalOpen] = useState(false)
 
     // Example design images - replace these with your actual design images
-    const designImages = [
-        '/img/pantone-cat.png',
-        '/img/pantone-fish.png',
-        '/img/pantone-flower.png',
-        '/img/pantone-kite.png',
-        '/img/pantone-window.png',
+    const designImages: DesignCard[] = [
+        {
+            id: 'design-cat',
+            image: '/img/pantone-cat.png',
+            color1: '#FF5733',
+            color2: '255 87 51' ,
+            color3: '0 66 80 0'
+
+        },
+        {
+            id: 'design-fish',
+            image: '/img/pantone-fish.png',
+            color1: '#33FF57',
+            color2: '51 255 87' ,
+            color3: '80 0 66 0'
+
+        },
+        {
+            id: 'design-flower',
+            image: '/img/pantone-flower.png',
+            color1: '#3357FF',
+            color2: '51 87 255' ,
+            color3: '80 66 0 0'
+
+        },
+        {
+            id: 'design-kite',
+            image: '/img/pantone-kite.png',
+            color1: '#FFD700',
+            color2: '255 215 0' ,
+            color3: '0 16 100 0'
+
+        },
+        {
+            id: 'design-window',
+            image: '/img/pantone-window.png',
+            color1: '#8A2BE2',
+            color2: '138 43 226',
+            color3: '39 80 0 11'
+
+        },    
     ]
 
     return (
@@ -49,14 +92,14 @@ export default function Design({ onImageSelect }: DesignProps) {
             <AnimatePresence>
                 {isModalOpen && (
                     <motion.div
-                        className="fixed inset-0 z-[100] flex items-center justify-center p-8"
+                        className="fixed inset-0 z-[100] flex items-center justify-center p-8 "
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         onClick={() => setIsModalOpen(false)}
                     >
                         <motion.div
-                            className="bg-blue-50/50 rounded-lg max-w-xl w-full mx-4 relative cursor-move"
+                            className="bg-blue-50/50 rounded-lg w-100 h-100 mx-4 relative cursor-move overflow-y-auto overflow-scroll border-0 [&::-webkit-scrollbar]:w-0 [&::-webkit-scrollbar-track]:bg-transparent"
                             initial={{ scale: 0.8, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.8, opacity: 0 }}
@@ -71,7 +114,7 @@ export default function Design({ onImageSelect }: DesignProps) {
                             }}
                             dragElastic={0.1}
                         >
-                            <header className="w-full rounded-t-md h-8 p-3 bg-white flex flex-row items-center justify-between"> 
+                            <header className="w-full rounded-t-md h-8 p-3 bg-white flex flex-row items-center justify-between sticky top-0 z-30"> 
                                 <div className="flex flex-row gap-2">
                                     <button className="h-2 w-2 bg-red-300" onClick={() => setIsModalOpen(false)} />
                                     <div className="h-2 w-2 bg-amber-300" />
@@ -82,20 +125,20 @@ export default function Design({ onImageSelect }: DesignProps) {
                             </header>
                             
                             <div className="p-6">
-                                <div className="grid grid-cols-3 gap-6">
+                                <div className="grid grid-cols-3 pl-8 gap-8">
                                     {designImages.map((image, index) => (
                                         <motion.div
                                             key={index}
-                                            className="relative border-white border-3 cursor-pointer overflow-hidden "
-                                            whileHover={{ scale: 1.02 }}
+                                            className="relative border-white border-3 cursor-pointer bg-white shadow-lg -ml-8 pb-6"
+                                            whileHover={{ scale: 1.02, x: -10 }}
                                             onClick={() => {
                                                 onImageSelect(image);
                                                 setIsModalOpen(false);
                                             }}
                                         >
                                             <img
-                                                src={image}
-                                                alt={`Design ${index + 1}`}
+                                                src={image.image}
+                                                alt={`Design ${image.id}`}
                                                 className="w-full h-full object-cover"
                                             />
                                         </motion.div>

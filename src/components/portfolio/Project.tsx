@@ -2,17 +2,48 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FaFolder, FaFolderOpen } from 'react-icons/fa'
 import { useState } from 'react'
 
-export default function Project() {
+interface ProjectCard{
+    id: string
+    image: string
+    //purpose: string
+    //abstract: string
+    //awards: string
+    //duration: string
+    //video: string
+    //links: string
+
+}
+
+interface ProjectProps {
+    onImageSelect: (projectCard: ProjectCard) => void;
+}
+
+export default function Project({ onImageSelect }: ProjectProps) {
     const [isHovered, setIsHovered] = useState(false)
     const [isModalOpen, setIsModalOpen] = useState(false)
 
     // Example project images - replace these with your actual project images
-    const projectImages = [
-        '/img/project1.png',
-        '/img/project2.png',
-        '/img/project3.png',
-        '/img/project4.png',
-        '/img/project5.png',
+    const projectImages: ProjectCard[] = [
+        {
+            id: 'project-glove',
+            image: '/img/glove.png',
+
+        },
+        {
+            id: 'project-link',
+            image: '/img/linkedit.png',
+
+        },
+        {
+            id: 'project-game',
+            image: '/img/game.png',
+
+        },
+        {
+            id: 'project-tech',
+            image: '/img/technova.png',
+
+        },
     ]
 
     return (
@@ -79,19 +110,19 @@ export default function Project() {
                             
                             <div className="p-6">
                                 <div className="grid grid-cols-3 gap-6">
-                                    {projectImages.map((image, index) => (
+                                    {projectImages.map((project, index) => (
                                         <motion.div
-                                            key={index}
+                                            key={project.id}
                                             className="relative border-white border-3 cursor-pointer overflow-hidden"
                                             whileHover={{ scale: 1.02 }}
                                             onClick={() => {
-                                                // Add your project click handler here
+                                                onImageSelect(project);
                                                 setIsModalOpen(false);
                                             }}
                                         >
                                             <img
-                                                src={image}
-                                                alt={`Project ${index + 1}`}
+                                                src={project.image}
+                                                alt={`Project ${project.id}`}
                                                 className="w-full h-full object-cover"
                                             />
                                         </motion.div>
