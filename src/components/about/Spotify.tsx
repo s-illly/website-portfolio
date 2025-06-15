@@ -7,220 +7,89 @@ interface SpotifyProps {
 
 export default function Spotify({ onPhotoClick }: SpotifyProps) {
     const [isModalOpen, setIsModalOpen] = useState(false)
+    const [currentTrackIndex, setCurrentTrackIndex] = useState(0)
+
+    const tracks = [
+        { id: 'track-1', image: '/img/summit.png', title: 'Summit - Reworked', artist: 'Seb Wery' },
+        { id: 'track-2', image: '/img/id.png', title: 'I Don\'t Understand But I Luv U', artist: 'SEVENTEEN' },
+        { id: 'track-3', image: '/img/frak.png', title: 'Fraktsiya', artist: 'MARK, Lee Young Ji' },
+        { id: 'track-4', image: '/img/blackmemory.png', title: 'BLACK MEMORY', artist: 'THE ORAL CIGARETTES' },
+    ];
+
+    const currentTrack = tracks[currentTrackIndex];
+
+    const handleForward = () => {
+        setCurrentTrackIndex((prevIndex) => (prevIndex + 1) % tracks.length);
+    };
+
+    const handleBackward = () => {
+        setCurrentTrackIndex((prevIndex) => (prevIndex - 1 + tracks.length) % tracks.length);
+    };
 
     return (
         <>
-        <motion.div 
-            className="absolute right-60 top-15 z-3 w-80 h-80 overflow-y-auto"
+        <motion.div
+            className="absolute right-80 top-15 z-3 w-60 h-80 overflow-hidden"
             initial={{ y: "100vh", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "100vh", opacity: 0 }}
-            transition={{ 
+            transition={{
                 type: "spring",
                 stiffness: 100,
                 damping: 15,
                 delay: 0.13
             }}
             whileHover={{ y: -5, scale: 1.05 }}
-            onClick={() => setIsModalOpen(true)}
+            onClick={() => {
+                onPhotoClick(currentTrack.id); // Assuming onPhotoClick expects the ID of the current track
+                setIsModalOpen(true);
+            }}
         >
-            <div className="rounded-md h-full w-full bg-blue-50/50 flex flex-col items-center">
-            <header className="w-full rounded-t-md h-8 p-3 bg-white flex flex-row gap-2"> 
-                <div className="h-2 w-2 bg-red-300" />
-                <div className="h-2 w-2 bg-amber-300" />
-                <div className="h-2 w-2 bg-green-300" />
-            
-            </header>
-                <div className="w-full flex flex-col gap-2 items-start p-4">
-                    <div className="flex items-center w-full">
-                        <img src="/img/blackmemory.png" alt="Album Art" className="w-12 h-12 rounded-md mr-3" />
-                        <div className="flex-grow">
-                            <p className="text-sm font-bold text-gray-800">BLACK MEMORY</p>
-                            <p className="!text-[12px] font-light text-gray-600">THE ORAL CIGARETTES</p>
-                        </div>
-                        <span className="ml-2 text-blue-400 text-sm">★</span>
-                    </div>
-
-                    <div className="flex items-center w-full">
-                        <img src="/img/id.png" alt="Album Art" className="w-12 h-12 rounded-md mr-3" />
-                        <div className="flex-grow">
-                            <p className="text-sm font-bold text-gray-800">I Don't Understand But I Luv U</p>
-                            <p className="!text-[12px] text-gray-600">SEVENTEEN</p>
-                        </div>
-                        <span className="ml-2 text-gray-400 text-sm">☆</span>
-                    </div>
-                    
-                    <div className="flex items-center w-full">
-                        <img src="/img/frak.png" alt="Album Art" className="w-12 h-12 rounded-md mr-3" />
-                        <div className="flex-grow">
-                            <p className="text-sm font-bold text-gray-800">Fraktsiya</p>
-                            <p className="!text-[12px] text-gray-600">MARK, Lee Young Ji</p>
-                        </div>
-                        <span className="ml-2 text-blue-400 text-sm">★</span>
-                    </div>
-
-                    <div className="flex items-center w-full">
-                        <img src="/img/summit.png" alt="Album Art" className="w-12 h-12 rounded-md mr-3" />
-                        <div className="flex-grow">
-                            <p className="text-sm font-bold text-gray-800">Summit - Reworked</p>
-                            <p className="!text-[12px] text-gray-600">Seb Wery</p>
-                        </div>
-                        <span className="ml-2 text-blue-400 text-sm">★</span>
-                    </div>
+            <div className="rounded-2xl h-full w-full bg-white flex flex-col items-center p-4 relative border border-gray-200">
+                {/* Album Cover Section */}
+                <div className="w-full h-48 bg-gray-200 rounded-md flex items-center justify-center overflow-hidden relative">
+                    <img src={currentTrack.image} alt="Album Cover" className="w-full h-full object-cover rounded-md" />
                 </div>
+
+                {/* Song Info */}
+                <div className="w-full mt-2">
+                    <p className="text-gray-900 font-bold text-md mt-1">{currentTrack.title}</p>
+                    <p className="text-2xs! text-gray-700">{currentTrack.artist}</p>
+                </div>
+
+                {/* Progress Bar */}
+                <div className="w-full flex items-center mt-4">
+                    <span className="text-xs text-gray-500 mr-2">0:00</span> {/* Placeholder time */}
+                    <div className="flex-grow h-1 bg-gray-300 rounded-full">
+                        <div className="h-full w-1/4 bg-gray-800 rounded-full"></div> {/* Placeholder progress */}
+                    </div>
+                    <span className="text-xs text-gray-500 ml-2">3:30</span> {/* Placeholder total time */}
+                </div>
+
+                {/* Controls */}
+                <div className="w-full flex items-center justify-center gap-6 mt-4 text-gray-800">
+                    <button onClick={handleForward}>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                            <path fillRule="evenodd" d="M13.242 15.22a.75.75 0 000-1.06L9.53 10H22.5a.75.75 0 000-1.5H9.53l3.712-3.712a.75.75 0 00-1.06-1.06l-5.25 5.25a.75.75 0 000 1.06l5.25 5.25a.75.75 0 001.06 0z" clipRule="evenodd" />
+                        </svg>
+                    </button>
+                   
+                    <button className="text-gray-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+                        </svg>
+                    </button>
+                     <button onClick={handleBackward}>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                            <path fillRule="evenodd" d="M10.758 15.22a.75.75 0 010-1.06L14.47 10H1.5a.75.75 0 010-1.5h12.97l-3.712-3.712a.75.75 0 011.06-1.06l5.25 5.25a.75.75 0 010 1.06l-5.25 5.25a.75.75 0 01-1.06 0z" clipRule="evenodd" />
+                        </svg>
+                    </button>
+                    
+                </div>
+
+                
             </div>
         </motion.div>
-
-        <AnimatePresence>
-                {isModalOpen && (
-                    <motion.div
-                        className="fixed inset-0 z-[100] flex items-center justify-center p-8"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        onClick={() => setIsModalOpen(false)}
-                    >
-                        <motion.div
-                            className="bg-blue-50/80 rounded-lg w-100 h-80 mx-4 relative cursor-move overflow-scroll border-0 [&::-webkit-scrollbar]:w-0 [&::-webkit-scrollbar-track]:bg-transparent"
-                            initial={{ scale: 0.8, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            exit={{ scale: 0.8, opacity: 0 }}
-                            onClick={(e) => e.stopPropagation()}
-                            drag
-                            dragMomentum={false}
-                            dragConstraints={{
-                                top: -window.innerHeight / 2,
-                                bottom: window.innerHeight / 2,
-                                left: -window.innerWidth / 2,
-                                right: window.innerWidth / 2,
-                            }}
-                            dragElastic={0.1}
-                        >
-                            <header className="w-full rounded-t-md h-8 p-3 bg-white flex flex-row items-center justify-between sticky top-0 z-10"> 
-                                <div className="flex flex-row gap-2">
-                                    <button className="h-2 w-2 bg-red-300" onClick={() => setIsModalOpen(false)} />
-                                    <div className="h-2 w-2 bg-amber-300" />
-                                    <div className="h-2 w-2 bg-green-300" />
-                                </div>
-                                <span className="text-sm font-medium !text-black">Favourites</span>
-                                <div className="w-[72px]"></div>
-                            </header>
-                            
-                            <div className="p-6">
-                                <div className="grid grid-cols-2 gap-6 ">
-                                <div className="flex items-center w-full">
-                            <img src="/img/death.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3" />
-                            <div className="flex-grow">
-                                <p className="text-sm font-bold text-gray-800">Death's End</p>
-                                <p className="!text-[12px] text-gray-600">Cixin Liu</p>
-                                <div className="flex gap-1 mt-1">
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-gray-400 text-sm">☆</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="flex items-center w-full">
-                            <img src="/img/devils.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3" />
-                            <div className="flex-grow">
-                                <p className="text-sm font-bold text-gray-800">All the Devils Are Here</p>
-                                <p className="!text-[12px] text-gray-600">Louise Penny</p>
-                                <div className="flex gap-1 mt-1">
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-200 text-sm">☆</span>
-                                    <span className="text-gray-400 text-sm">☆</span>
-                                </div>
-                            </div>
-                        </div>
-
-                      
-
-                        <div className="flex items-center w-full">
-                            <img src="/img/darkforest.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3" />
-                            <div className="flex-grow">
-                                <p className="text-sm font-bold text-gray-800">The Dark Forest</p>
-                                <p className="!text-[12px] text-gray-600">Cixin Liu</p>
-                                <div className="flex gap-1 mt-1">
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-200 text-sm">☆</span>
-                                </div>
-                            </div>   
-                        </div>
-
-                        <div className="flex items-center w-full">
-                            <img src="/img/call.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3" />
-                            <div className="flex-grow">
-                                <p className="text-sm font-bold text-gray-800">Call of the Wild</p>
-                                <p className="!text-[12px] text-gray-600">Jack London</p>
-                                <div className="flex gap-1 mt-1">
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-200 text-sm">☆</span>
-                                    <span className="text-gray-400 text-sm">☆</span>
-                                </div>
-                            </div>   
-                        </div>
-
-                        <div className="flex items-center w-full">
-                            <img src="/img/murder.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3" />
-                            <div className="flex-grow">
-                                <p className="text-sm font-bold text-gray-800">Murder on the Orient Express</p>
-                                <p className="!text-[12px] text-gray-600">Agatha Christie</p>
-                                <div className="flex gap-1 mt-1">
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">★</span>
-                                </div>
-                            </div>   
-                        </div>
-
-                        <div className="flex items-center w-full">
-                            <img src="/img/silent.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3" />
-                            <div className="flex-grow">
-                                <p className="text-sm font-bold text-gray-800">The Silent Patient</p>
-                                <p className="!text-[12px] text-gray-600">Alex Michaelides</p>
-                                <div className="flex gap-1 mt-1">
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-gray-400 text-sm">☆</span>
-                                    <span className="text-gray-400 text-sm">☆</span>
-                                </div>
-                            </div>   
-                        </div>
-
-                        <div className="flex items-center w-full">
-                            <img src="/img/narnia.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3" />
-                            <div className="flex-grow">
-                                <p className="text-sm font-bold text-gray-800">The Chronicles of Narnia</p>
-                                <p className="!text-[12px] text-gray-600">C.S. Lewis</p>
-                                <div className="flex gap-1 mt-1">
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-200 text-sm">☆</span>
-                                </div>
-                            </div>   
-                        </div>
-
-                                    
-                                </div>
-                            </div>
-                        </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
         </>
     )
 } 

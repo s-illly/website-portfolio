@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 export default function Badminton() {
     return (
         <motion.div 
-            className="absolute right-62 top-85 z-4 cursor-pointer"
+            className="absolute right-85 bottom-30 z-4 cursor-pointer"
             initial={{ y: "100vh", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "100vh", opacity: 0 }}

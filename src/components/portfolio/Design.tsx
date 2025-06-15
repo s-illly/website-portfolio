@@ -2,12 +2,19 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FaFolder, FaFolderOpen } from 'react-icons/fa'
 import { useState } from 'react'
 
+interface ColorDetail {
+    hex: string;
+    rgb: string;
+    cmyk: string;
+}
+
 interface DesignCard {
     id: string
     image: string
-    color1: string
-    color2: string
-    color3: string
+    name: string
+    colorDetail1: ColorDetail
+    colorDetail2: ColorDetail
+    colorDetail3: ColorDetail
 }
 
 interface DesignProps {
@@ -23,42 +30,42 @@ export default function Design({ onImageSelect }: DesignProps) {
         {
             id: 'design-cat',
             image: '/img/pantone-cat.png',
-            color1: '#FF5733',
-            color2: '255 87 51' ,
-            color3: '0 66 80 0'
-
+            name: 'Pantone Cat',
+            colorDetail1: { hex: '#FF5733', rgb: '255 87 51', cmyk: '0 66 80 0' },
+            colorDetail2: { hex: '#C70039', rgb: '199 0 57', cmyk: '0 100 71 22' },
+            colorDetail3: { hex: '#900C3F', rgb: '144 12 63', cmyk: '0 92 56 43' },
         },
         {
             id: 'design-fish',
             image: '/img/pantone-fish.png',
-            color1: '#33FF57',
-            color2: '51 255 87' ,
-            color3: '80 0 66 0'
-
+            name: 'Pantone Fish',
+            colorDetail1: { hex: '#33FF57', rgb: '51 255 87', cmyk: '80 0 66 0' },
+            colorDetail2: { hex: '#1ABC9C', rgb: '26 188 156', cmyk: '86 0 17 26' },
+            colorDetail3: { hex: '#16A085', rgb: '22 160 133', cmyk: '86 0 17 37' },
         },
         {
             id: 'design-flower',
             image: '/img/pantone-flower.png',
-            color1: '#3357FF',
-            color2: '51 87 255' ,
-            color3: '80 66 0 0'
-
+            name: 'Pantone Flower',
+            colorDetail1: { hex: '#3357FF', rgb: '51 87 255', cmyk: '80 66 0 0' },
+            colorDetail2: { hex: '#3498DB', rgb: '52 152 219', cmyk: '76 31 0 14' },
+            colorDetail3: { hex: '#2980B9', rgb: '41 128 185', cmyk: '78 31 0 27' },
         },
         {
             id: 'design-kite',
             image: '/img/pantone-kite.png',
-            color1: '#FFD700',
-            color2: '255 215 0' ,
-            color3: '0 16 100 0'
-
+            name: 'Pantone Kite',
+            colorDetail1: { hex: '#FFD700', rgb: '255 215 0', cmyk: '0 16 100 0' },
+            colorDetail2: { hex: '#F1C40F', rgb: '241 196 15', cmyk: '0 19 94 5' },
+            colorDetail3: { hex: '#F39C12', rgb: '243 156 18', cmyk: '0 36 93 5' },
         },
         {
             id: 'design-window',
             image: '/img/pantone-window.png',
-            color1: '#8A2BE2',
-            color2: '138 43 226',
-            color3: '39 80 0 11'
-
+            name: 'Pantone Window',
+            colorDetail1: { hex: '#8A2BE2', rgb: '138 43 226', cmyk: '39 80 0 11' },
+            colorDetail2: { hex: '#9B59B6', rgb: '155 89 182', cmyk: '15 51 0 29' },
+            colorDetail3: { hex: '#8E44AD', rgb: '142 68 173', cmyk: '18 60 0 32' },
         },    
     ]
 
@@ -78,6 +85,7 @@ export default function Design({ onImageSelect }: DesignProps) {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 onClick={() => setIsModalOpen(true)}
+                
             >
                 <div className="rounded-lg flex flex-col items-center">
                     {isHovered ? (
@@ -99,7 +107,7 @@ export default function Design({ onImageSelect }: DesignProps) {
                         onClick={() => setIsModalOpen(false)}
                     >
                         <motion.div
-                            className="bg-blue-50/50 rounded-lg w-100 h-100 mx-4 relative cursor-move overflow-y-auto overflow-scroll border-0 [&::-webkit-scrollbar]:w-0 [&::-webkit-scrollbar-track]:bg-transparent"
+                            className="bg-white rounded-lg w-100 h-100 mx-4 relative cursor-move overflow-y-auto overflow-scroll border border-gray-200 shadow-lg [&::-webkit-scrollbar]:w-0 [&::-webkit-scrollbar-track]:bg-transparent"
                             initial={{ scale: 0.8, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.8, opacity: 0 }}
@@ -114,22 +122,22 @@ export default function Design({ onImageSelect }: DesignProps) {
                             }}
                             dragElastic={0.1}
                         >
-                            <header className="w-full rounded-t-md h-8 p-3 bg-white flex flex-row items-center justify-between sticky top-0 z-30"> 
+                            <header className="w-full rounded-t-lg h-8 p-3 bg-gray-50 flex flex-row items-center justify-between sticky top-0 z-30 border-b border-gray-200"> 
                                 <div className="flex flex-row gap-2">
                                     <button className="h-2 w-2 bg-red-300" onClick={() => setIsModalOpen(false)} />
                                     <div className="h-2 w-2 bg-amber-300" />
                                     <div className="h-2 w-2 bg-green-300" />
                                 </div>
-                                <span className="text-sm font-medium !text-black">Designs</span>
+                                <span className="text-sm font-medium text-gray-700">Designs</span>
                                 <div className="w-[72px]"></div>
                             </header>
                             
-                            <div className="p-6">
-                                <div className="grid grid-cols-3 pl-8 gap-8">
+                            <div className="p-6 bg-white">
+                                <div className="grid grid-cols-3 gap-8">
                                     {designImages.map((image, index) => (
                                         <motion.div
                                             key={index}
-                                            className="relative border-white border-3 cursor-pointer bg-white shadow-lg -ml-8 pb-6"
+                                            className="relative cursor-pointer bg-white shadow-sm rounded-lg overflow-hidden"
                                             whileHover={{ scale: 1.02, x: -10 }}
                                             onClick={() => {
                                                 onImageSelect(image);

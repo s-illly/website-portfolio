@@ -83,7 +83,7 @@ export default function Project({ onImageSelect }: ProjectProps) {
                         onClick={() => setIsModalOpen(false)}
                     >
                         <motion.div
-                            className="bg-blue-50/50 rounded-lg max-w-xl w-full mx-4 relative cursor-move"
+                            className="bg-white rounded-lg w-100 h-100 mx-4 relative cursor-move overflow-y-auto overflow-scroll border border-gray-200 shadow-lg [&::-webkit-scrollbar]:w-0 [&::-webkit-scrollbar-track]:bg-transparent"
                             initial={{ scale: 0.8, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.8, opacity: 0 }}
@@ -98,23 +98,23 @@ export default function Project({ onImageSelect }: ProjectProps) {
                             }}
                             dragElastic={0.1}
                         >
-                            <header className="w-full rounded-t-md h-8 p-3 bg-white flex flex-row items-center justify-between"> 
+                            <header className="w-full rounded-t-lg h-8 p-3 bg-gray-50 flex flex-row items-center justify-between sticky top-0 z-30 border-b border-gray-200"> 
                                 <div className="flex flex-row gap-2">
                                     <button className="h-2 w-2 bg-red-300" onClick={() => setIsModalOpen(false)} />
                                     <div className="h-2 w-2 bg-amber-300" />
                                     <div className="h-2 w-2 bg-green-300" />
                                 </div>
-                                <span className="text-sm font-medium !text-black">Projects</span>
+                                <span className="text-sm font-medium text-gray-700">Projects</span>
                                 <div className="w-[72px]"></div>
                             </header>
                             
-                            <div className="p-6">
-                                <div className="grid grid-cols-3 gap-6">
+                            <div className="p-6 bg-white">
+                                <div className="grid grid-cols-3 gap-8">
                                     {projectImages.map((project, index) => (
                                         <motion.div
                                             key={project.id}
-                                            className="relative border-white border-3 cursor-pointer overflow-hidden"
-                                            whileHover={{ scale: 1.02 }}
+                                            className="relative cursor-pointer bg-white shadow-sm rounded-lg overflow-hidden"
+                                            whileHover={{ scale: 1.02, x: -10 }}
                                             onClick={() => {
                                                 onImageSelect(project);
                                                 setIsModalOpen(false);

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 export default function Egg() {
     return (
         <motion.div 
-            className="absolute right-105 top-85 z-4 cursor-pointer"
+            className="absolute left-140 top-75 z-4 cursor-pointer"
             initial={{ y: "100vh", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "100vh", opacity: 0 }}

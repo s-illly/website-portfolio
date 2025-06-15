@@ -1,13 +1,21 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion'
+import { getContrastingTextColor } from '@/utils/colorUtils'
+
+interface ColorDetail {
+    hex: string;
+    rgb: string;
+    cmyk: string;
+}
 
 interface DesignCard {
     id: string;
     image: string;
-    color1: string;
-    color2: string;
-    color3: string;
+    name: string;
+    colorDetail1: ColorDetail;
+    colorDetail2: ColorDetail;
+    colorDetail3: ColorDetail;
 }
 
 interface ProjectCard {
@@ -31,35 +39,46 @@ interface Modal1Props {
 export default function Modal1({ isOpen, onClose, designData, projectData, experienceData }: Modal1Props) {
     if (!isOpen) return null;
 
+    const textColor = designData ? getContrastingTextColor(designData.colorDetail1.hex) : 'black';
+
     return (
         <AnimatePresence>
-            <motion.div className="absolute h-40 w-80 left-100 top-40 bg-amber-100"
-            initial={{ y: "100vh", opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: "100vh", opacity: 0 }}
-            transition={{ 
-                type: "spring",
-                stiffness: 100,
-                damping: 15,
-                delay: 0.13
-            }}
-            whileHover={{ y: -20, scale: 1.05 }}
+            <motion.div className="absolute left-200 top-40"
+            whileHover={{scale: 1.05 }}
             drag
             dragMomentum={false}
             dragConstraints={{
-                top: -window.innerHeight / 2,
-                bottom: window.innerHeight / 2,
-                left: -window.innerWidth / 2,
-                right: window.innerWidth / 2,
+                top: -window.innerHeight / 8,
+                bottom: window.innerHeight / 4,
+                left: -window.innerWidth / 8,
+                right: window.innerWidth / 8,
             }}
             dragElastic={0.2}
             >
                 {designData && designData.id.startsWith('design-') && (
-                    <div className="p-6">
-                        <div className="mt-4">
-                            <p className="text-sm text-gray-600">HEX: {designData.color1}</p>
-                            <p className="text-sm text-gray-600">RGB: {designData.color2}</p>
-                            <p className="text-sm text-gray-600">CMYK: {designData.color3}</p>
+                    <div className="w-60 h-30 flex flex-col items-center justify-start bg-white">
+                        <div className="flex flex-col items-start w-full rounded-lg shadow-md p-4" style={{ backgroundColor: designData.colorDetail1.hex }}>
+                            <span className="text-xs uppercase tracking-widest self-end" style={{ color: textColor }}>Primary</span>
+                            
+                            <div className="w-full mt-2">
+                                <table className="w-full text-left text-sm" style={{ color: textColor }}>
+                                    <thead>
+                                        <tr className="border-b border-gray-400">
+                                            <th className="py-2">HEX</th>
+                                            <th className="py-2">RGB</th>
+                                            <th className="py-2">CMYK</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td className="py-2">{designData.colorDetail1.hex}</td>
+                                            <td className="py-2">{designData.colorDetail1.rgb}</td>
+                                            <td className="py-2">{designData.colorDetail1.cmyk}</td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 )}

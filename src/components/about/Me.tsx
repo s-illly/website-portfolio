@@ -105,25 +105,9 @@ export default function Me() {
             </div>
         </motion.div>
 
-        <motion.div 
-            className="b-0 absolute right-50 top-135 z-3"
-            initial={{ y: "100vh", opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: "100vh", opacity: 0 }}
-            transition={{ 
-                type: "spring",
-                stiffness: 100,
-                damping: 15,
-                delay: 0.15
-            }}
-        >
-            <div className="w-35 h-auto">
-                <img className="w-full h-full object-contain" src="img/socks.png" alt="Me" />
-            </div>
-        </motion.div>
 
         <motion.div 
-            className="b-0 absolute right-40 bottom-110 z-3"
+            className="b-0 absolute right-50 bottom-110 z-3"
             initial={{ y: "100vh", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "100vh", opacity: 0 }}
@@ -157,7 +141,7 @@ export default function Me() {
         </motion.div>
 
         <motion.div 
-            className="b-0 absolute left-140 top-75 z-3"
+            className="b-0 absolute right-60 top-20 z-3"
             initial={{ y: "100vh", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "100vh", opacity: 0 }}
@@ -191,7 +175,7 @@ export default function Me() {
         </motion.div>
 
         <motion.div 
-            className="b-0 absolute right-90 top-145 z-3"
+            className="b-0 absolute right-75 top-85 z-3"
             initial={{ y: "100vh", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "100vh", opacity: 0 }}
@@ -208,7 +192,7 @@ export default function Me() {
         </motion.div>
 
         <motion.div 
-            className="b-0 absolute left-115 top-120  z-10"
+            className="b-0 absolute left-110 bottom-30  z-10"
             initial={{ y: "100vh", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "100vh", opacity: 0 }}

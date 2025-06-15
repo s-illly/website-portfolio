@@ -16,7 +16,7 @@ export default function Pantone() {
 
     return (
         <motion.div 
-            className="w-40 h-20 absolute right-100 bottom-40 z-3"
+            className="w-40 h-20 absolute right-45 bottom-50 z-6"
             initial={{ y: "100vh", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "100vh", opacity: 0 }}

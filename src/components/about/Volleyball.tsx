@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 export default function Volleyball() {
     return (
         <motion.div 
-            className="absolute right-75 top-78 z-4 cursor-pointer"
+            className="absolute right-100 bottom-30 z-4 cursor-pointer"
             initial={{ y: "100vh", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "100vh", opacity: 0 }}
