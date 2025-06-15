@@ -31,41 +31,41 @@ export default function Design({ onImageSelect }: DesignProps) {
             id: 'design-cat',
             image: '/img/pantone-cat.png',
             name: 'Pantone Cat',
-            colorDetail1: { hex: '#FF5733', rgb: '255 87 51', cmyk: '0 66 80 0' },
-            colorDetail2: { hex: '#C70039', rgb: '199 0 57', cmyk: '0 100 71 22' },
-            colorDetail3: { hex: '#900C3F', rgb: '144 12 63', cmyk: '0 92 56 43' },
+            colorDetail1: { hex: '#D3C9B8', rgb: '211 201 184', cmyk: '0 5 13 17' },
+            colorDetail2: { hex: '#B0B670', rgb: '176 182 112', cmyk: '3 0 39 29' },
+            colorDetail3: { hex: '#4A433D', rgb: '74 67 61', cmyk: '0 9 18 71' },
         },
         {
             id: 'design-fish',
             image: '/img/pantone-fish.png',
             name: 'Pantone Fish',
-            colorDetail1: { hex: '#33FF57', rgb: '51 255 87', cmyk: '80 0 66 0' },
-            colorDetail2: { hex: '#1ABC9C', rgb: '26 188 156', cmyk: '86 0 17 26' },
-            colorDetail3: { hex: '#16A085', rgb: '22 160 133', cmyk: '86 0 17 37' },
+            colorDetail1: { hex: '#AAECFD', rgb: '170 236 253', cmyk: '33 7 0 1' },
+            colorDetail2: { hex: '#FCA58D', rgb: '252 165 141', cmyk: '0 35 44 1' },
+            colorDetail3: { hex: '#F5FAFE', rgb: '245 250 254', cmyk: '4 2 0 0' },
         },
         {
             id: 'design-flower',
             image: '/img/pantone-flower.png',
             name: 'Pantone Flower',
-            colorDetail1: { hex: '#3357FF', rgb: '51 87 255', cmyk: '80 66 0 0' },
-            colorDetail2: { hex: '#3498DB', rgb: '52 152 219', cmyk: '76 31 0 14' },
-            colorDetail3: { hex: '#2980B9', rgb: '41 128 185', cmyk: '78 31 0 27' },
+            colorDetail1: { hex: '#C6EAFD', rgb: '198 234 253', cmyk: '22 8 0 1' },
+            colorDetail2: { hex: '#F6C3D8', rgb: '246 195 216', cmyk: '0 21 12 4' },
+            colorDetail3: { hex: '#CAC9ED', rgb: '202 201 237', cmyk: '15 15 0 7' },
         },
         {
             id: 'design-kite',
             image: '/img/pantone-kite.png',
             name: 'Pantone Kite',
-            colorDetail1: { hex: '#FFD700', rgb: '255 215 0', cmyk: '0 16 100 0' },
-            colorDetail2: { hex: '#F1C40F', rgb: '241 196 15', cmyk: '0 19 94 5' },
-            colorDetail3: { hex: '#F39C12', rgb: '243 156 18', cmyk: '0 36 93 5' },
+            colorDetail1: { hex: '#FDA699', rgb: '253 166 153', cmyk: '0 34 40 1' },
+            colorDetail2: { hex: '#C4ECEB', rgb: '196 236 235', cmyk: '17 0 0 8' },
+            colorDetail3: { hex: '#85C1D6', rgb: '133 193 214', cmyk: '38 10 0 16' },
         },
         {
             id: 'design-window',
             image: '/img/pantone-window.png',
             name: 'Pantone Window',
-            colorDetail1: { hex: '#8A2BE2', rgb: '138 43 226', cmyk: '39 80 0 11' },
-            colorDetail2: { hex: '#9B59B6', rgb: '155 89 182', cmyk: '15 51 0 29' },
-            colorDetail3: { hex: '#8E44AD', rgb: '142 68 173', cmyk: '18 60 0 32' },
+            colorDetail1: { hex: '#EBAFC1', rgb: '235 175 193', cmyk: '0 26 18 8' },
+            colorDetail2: { hex: '#B1CFFF', rgb: '177 207 255', cmyk: '31 19 0 0' },
+            colorDetail3: { hex: '#5C92AC', rgb: '92 146 172', cmyk: '47 15 0 33' },
         },    
     ]
 
@@ -85,6 +85,7 @@ export default function Design({ onImageSelect }: DesignProps) {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 onClick={() => setIsModalOpen(true)}
+                
                 
             >
                 <div className="rounded-lg flex flex-col items-center">

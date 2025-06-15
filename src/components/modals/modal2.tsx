@@ -21,11 +21,26 @@ interface DesignCard {
 interface ProjectCard {
     id: string;
     image: string;
+    purpose: string
+    abstract: string
+    awards: string[]
+    skills: string[],
+    video: string
+    links: string[]
+
 }
 
 interface ExperienceCard {
-    id: string;
-    image: string;
+    id: string
+    image: string
+    title: string
+    description: string
+    category: string
+    skills: string[]
+    duration: string
+    location: string
+    tasks: string[]
+    work: string[]
 }
 
 interface Modal2Props {
@@ -43,7 +58,7 @@ export default function Modal2({ isOpen, onClose, designData, projectData, exper
 
     return (
         <AnimatePresence>
-            <motion.div className="absolute left-160 top-90 "
+            <motion.div className="absolute left-160 top-90 z-10"
             whileHover={{scale: 1.05 }}
             drag
             dragMomentum={false}
@@ -83,29 +98,74 @@ export default function Modal2({ isOpen, onClose, designData, projectData, exper
                 )}
                 {projectData && (
                     <>
-                        <div className="relative mb-4">
-                            <img 
-                                src={projectData.image} 
-                                alt={`Project ${projectData.id}`}
-                                className="w-full h-full object-contain"
-                            />
-                        </div>
-                        <div className="mt-4">
-
+                        <div className="bg-white rounded-lg shadow-lg p-4 w-[400px]">
+                            <div className="space-y-3">
+                                <div>
+                                    <p className="text-xs font-medium text-gray-500 mb-0.5">Purpose</p>
+                                    <p className="!text-xs text-gray-700" style={{ fontSize: '0.625rem !important' }}>{projectData.purpose}</p>
+                                </div>
+                                <div>
+                                    <p className="text-xs font-medium text-gray-500 mb-0.5">Abstract</p>
+                                    <p className="!text-xs text-gray-700" style={{ fontSize: '0.625rem !important' }}>{projectData.abstract}</p>
+                                </div>
+                                
+                                <div className="space-y-3">
+                                    <div>
+                                        <p className="text-xs font-medium text-gray-500 mb-1">Skills</p>
+                                        <div className="flex flex-wrap gap-1">
+                                            {projectData.skills.map((skill, index) => (
+                                                <span 
+                                                    key={index}
+                                                    className="px-2 py-0.5 bg-blue-100 text-blue-400 rounded-full !text-xs"
+                                                    style={{ fontSize: '0.625rem !important' }}
+                                                >
+                                                    {skill}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                               
+                                </div>
+                            </div>
                         </div>
                     </>
                 )}
+                
                 {experienceData && (
                     <>
-                        <div className="relative mb-4">
-                            <img 
-                                src={experienceData.image} 
-                                alt={`Experience ${experienceData.id}`}
-                                className="w-full h-full object-contain"
-                            />
-                        </div>
-                        <div className="mt-4">
-
+                        <div className="bg-white rounded-lg shadow-lg p-4 w-[280px]">
+                            <div className="space-y-3">
+                                <div>
+                                    <p className="text-xs font-medium text-gray-500 mb-1">Key Tasks</p>
+                                    <div className="space-y-1">
+                                        {experienceData.tasks.map((task, index) => (
+                                            <div key={index} className="flex items-start space-x-2">
+                                                <div className="flex-shrink-0 mt-0.5">
+                                                    <svg className="w-3 h-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                                    </svg>
+                                                </div>
+                                                <p className="!text-xs text-gray-700" style={{ fontSize: '0.625rem !important' }}>{task}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                                {experienceData.work && experienceData.work.length > 0 && (
+                                    <div>
+                                        <div className="grid grid-cols-2 gap-2">
+                                            {experienceData.work.map((imagePath, index) => (
+                                                <div key={index} className="relative aspect-square rounded-lg overflow-hidden">
+                                                    <img 
+                                                        src={imagePath} 
+                                                        alt={`Work image ${index + 1}`}
+                                                        className="w-full h-full object-cover"
+                                                    />
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     </>
                 )}

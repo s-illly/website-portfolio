@@ -8,8 +8,11 @@ interface ExperienceCard{
     title: string
     description: string
     category: string
-
-
+    skills: string[]
+    duration: string
+    location: string
+    tasks: string[]
+    work: string[]
 }
 
 interface ExperienceProps {
@@ -26,49 +29,80 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
             id: 'experience-kuzu',
             image: '/img/kuzu.png',
             title: 'Frontend Engineer & Graphic Designer',
-            description: 'n',
+            description: 'KuzuDB',
             category: 'work',
-
-        },
-        {
-            id: 'experience-ignition',
-            image: '/img/ignition.png',
-            title: 'UI/UX Developer',
-            description: 'n',
-            category: 'volunteerism',
-
-        },
-        {
-            id: 'experience-shad',
-            image: '/img/shad.png',
-            title: 'SHAD Fellow & Ambassador',
-            description: 'n',
-            category: 'all',
-
-        },
-        {
-            id: 'experience-biotecture',
-            image: '/img/bio.png',
-            title: 'Illustration Intern',
-            description: 'n',
-            category: 'work',
+            skills: ['Tailwind', 'Python', 'Typescript', 'JS', 'HTML', 'Vue', 'Figma'],
+            duration: 'May - August 2025',
+            location: 'Waterloo, Hybrid',
+            tasks: ['Front-end implementation of explorer UI redesign', 'Fullstack implementation of main page contact us page'],
+            work: ['/img/kuzu1.png','/img/kuzu2.png',],
 
         },
         {
             id: 'experience-judge',
             image: '/img/basef.png',
             title: 'Special Awards Judge',
-            description: 'n',
+            description: 'BASEF',
             category: 'volunteerism',
+            skills: [],
+            duration: 'March 2025',
+            location: '',
+            tasks: ['Judging for ISEF Awards'],
+            work: [],
 
         },
         {
-            id: 'experience-awards',
-            image: '/img/exp_award.png', // You'll need to provide an image for awards
-            title: 'Awards & Recognition',
-            description: 'Received recognition for various achievements.',
-            category: 'awards',
+            id: 'experience-ignition',
+            image: '/img/ignition.png',
+            title: 'UI/UX Developer',
+            description: 'Ignition Hacks',
+            category: 'volunteerism',
+            skills: ['Figma'],
+            duration: 'January - August 2025',
+            location: 'Remote',
+            tasks: ['Gallary, FAQ, and Meet the Team website sections', 'Iggy designs', 'Stickers!'],
+            work: ['/img/sticker.png','/img/iggy.png'],
+
         },
+        
+        {
+            id: 'experience-piano',
+            image: '/img/avalon.png', 
+            title: 'Piano Teacher',
+            description: 'Avalon Music Academy',
+            category: 'work',
+            skills: [],            
+            duration: 'November 2023 - August 2024',
+            location: 'Brantford - In-person',
+            tasks: ['Managed lessons for 9 students', 'Worked on practical and theory lessons', 'Prepared for festival and concerts'],
+            work: [],
+        },
+        {
+            id: 'experience-shad',
+            image: '/img/shad.png',
+            title: 'SHAD Fellow & Ambassador',
+            description: 'SHAD Canada',
+            category: 'volunteerism',
+            skills: [],            
+            duration: 'June 2023 - June 2024',
+            location: 'SHAD AU, North Park Collegiate',
+            tasks: ['Classroom presentations, social media outreach, and sharing resources with teachers'],
+            work: [],
+
+        },
+        {
+            id: 'experience-biotecture',
+            image: '/img/bio.png',
+            title: 'Illustration Intern',
+            description: 'Biotecture Inc.',
+            category: 'work',
+            skills: [],
+            duration: 'September - December 2023',
+            location: 'Remote',
+            tasks: [''],
+            work: ['/img/light.png'],
+
+        }, 
     ]
 
     const [selectedCategory, setSelectedCategory] = useState('all')
@@ -89,6 +123,7 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 onClick={() => setIsModalOpen(true)}
+                
             >
                 <div className="rounded-lg flex flex-col items-center">
                     {isHovered ? (
@@ -137,7 +172,7 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
                             
                             <div className="flex flex-row h-[calc(100%-32px)]">
                                 {/* Sidebar */}
-                                <div className="w-54 bg-gray-50 border-r border-gray-200 p-4 flex flex-col gap-2 overflow-y-auto">
+                                <div className="max-w-45 min-w-45 bg-gray-50 border-r border-gray-200 p-4 flex flex-col gap-2 overflow-y-auto">
                                  
                                     <div 
                                         className={`flex items-center gap-2 text-sm p-1 rounded cursor-pointer ${selectedCategory === 'all' ? 'bg-blue-100 text-blue-400' : 'text-gray-700 hover:bg-gray-100'}`}
@@ -156,14 +191,7 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
                                         onClick={() => setSelectedCategory('volunteerism')}
                                     >
                                         <span>Volunteerism</span>
-                                    </div>
-                                    <div 
-                                        className={`flex items-center gap-2 text-sm p-1 rounded cursor-pointer ${selectedCategory === 'awards' ? 'bg-blue-100 text-blue-400' : 'text-gray-700 hover:bg-gray-100'}`}
-                                        onClick={() => setSelectedCategory('awards')}
-                                    >
-                                        <span>Awards</span>
-                                    </div>
-                                    
+                                    </div>                                 
                                 </div>
 
                                 {/* Main Content */}
@@ -187,7 +215,7 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
                                                     className="w-15 h-15 object-cover rounded-md mb-2"
                                                 />
                                                 <span className="text-sm font-medium text-gray-800">{experience.title}</span>
-                                                <p className="text-xs text-gray-500 mt-1">{experience.description}</p>
+                                                <p className="text-2xs text-gray-500 mt-1">{experience.description}</p>
                                             </motion.div>
                                         ))}
                                     </div>

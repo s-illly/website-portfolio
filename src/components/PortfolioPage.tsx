@@ -8,7 +8,7 @@ import Experience from './portfolio/Experience'
 import Modal1 from './modals/modal1'
 import Modal2 from './modals/modal2'
 import Modal3 from './modals/modal3'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 interface ColorDetail {
     hex: string;
@@ -28,6 +28,12 @@ interface DesignCard {
 interface ProjectCard {
     id: string;
     image: string;
+    purpose: string;
+    abstract: string;
+    awards: string[];
+    skills: string[],
+    video: string;
+    links: string[];
 }
 
 interface ExperienceCard {
@@ -35,6 +41,12 @@ interface ExperienceCard {
     image: string;
     title: string;
     description: string;
+    category: string;
+    skills: string[]
+    duration: string
+    location: string
+    tasks: string[]
+    work: string[]
 }
 
 export default function Portfolio() {
@@ -42,10 +54,25 @@ export default function Portfolio() {
     const [selectedDesignData, setSelectedDesignData] = useState<DesignCard | null>(null)
     const [selectedProjectData, setSelectedProjectData] = useState<ProjectCard | null>(null)
     const [selectedExperienceData, setSelectedExperienceData] = useState<ExperienceCard | null>(null)
+    const [dragConstraints, setDragConstraints] = useState({
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0
+    })
 
     const [isModal1Open, setIsModal1Open] = useState(false)
     const [isModal2Open, setIsModal2Open] = useState(false)
     const [isModal3Open, setIsModal3Open] = useState(false)
+
+    useEffect(() => {
+        setDragConstraints({
+            top: -window.innerHeight / 6,
+            bottom: window.innerHeight / 2,
+            left: -window.innerWidth / 6,
+            right: window.innerWidth / 2,
+        })
+    }, [])
 
     // Handler for when a design image is clicked from Design's internal modal
     const handleDesignImageClick = (designCard: DesignCard) => {
@@ -96,7 +123,7 @@ export default function Portfolio() {
             >
                 {/* Main Info */}
                 <motion.div 
-                    className="absolute left-40 top-20 z-3  overflow-y-scroll border-0 [&::-webkit-scrollbar]:w-0 [&::-webkit-scrollbar-track]:bg-transparent"
+                    className="absolute left-40 top-20 z-3 "
                     initial={{ y: "100vh", opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: "100vh", opacity: 0 }}
@@ -109,15 +136,10 @@ export default function Portfolio() {
                     onClick={(e) => e.stopPropagation()}
                     drag
                     dragMomentum={false}
-                    dragConstraints={{
-                        top: -window.innerHeight / 6,
-                        bottom: window.innerHeight / 2,
-                        left: -window.innerWidth / 6,
-                        right: window.innerWidth / 2,
-                    }}
+                    dragConstraints={dragConstraints}
                     dragElastic={0.1}
                 >
-                    <div className="rounded-2xl bg-white w-110 h-140 flex-col items-center shadow-lg border border-gray-200">
+                    <div className="rounded-2xl bg-white w-110 h-120 flex-col items-center shadow-lg border border-gray-200">
                         <header className="w-full rounded-t-2xl h-8 p-3 bg-gray-50 flex flex-row items-center justify-between sticky top-0 z-10 border-b border-gray-200"> 
                             <div className="flex flex-row gap-2">
                                 <div className="h-2 w-2 bg-red-300" />

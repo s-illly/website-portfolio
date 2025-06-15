@@ -21,11 +21,26 @@ interface DesignCard {
 interface ProjectCard {
     id: string;
     image: string;
+    purpose: string
+    abstract: string
+    awards: string[]
+    skills: string[],
+    video: string
+    links: string[]
+
 }
 
 interface ExperienceCard {
-    id: string;
-    image: string;
+    id: string
+    image: string
+    title: string
+    description: string
+    category: string
+    skills: string[]
+    duration: string
+    location: string
+    tasks: string[]
+    work: string[]
 }
 
 interface Modal1Props {
@@ -84,29 +99,59 @@ export default function Modal1({ isOpen, onClose, designData, projectData, exper
                 )}
                 {projectData && (
                     <>
-                        <div className="relative mb-4">
-                            <img 
-                                src={projectData.image} 
-                                alt={`Project ${projectData.id}`}
-                                className="w-full h-full object-contain"
-                            />
-                        </div>
-                        <div className="mt-4">
-
+                        <div className="bg-white rounded-lg shadow-lg p-4 w-[280px]">
+                            <div className="space-y-3">
+                                {projectData.video && (
+                                    <div>
+                                        <p className="text-xs font-medium text-gray-500 mb-1">Video</p>
+                                        <div className="w-[250px] aspect-video bg-gray-100 rounded-lg overflow-hidden">
+                                            <iframe 
+                                                src={projectData.video}
+                                                className="w-full h-full"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowFullScreen
+                                            />
+                                        </div>
+                                    </div>
+                                )}
+                                {projectData.links && projectData.links.length > 0 && (
+                                    <div>
+                                        <p className="text-xs font-medium text-gray-500 mb-1">Related Links</p>
+                                        <div className="space-y-1">
+                                            {projectData.links.map((link, index) => (
+                                                <a 
+                                                    key={index}
+                                                    href={link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="flex items-center space-x-1.5 text-blue-400 hover:text-blue-800 transition-colors"
+                                                >
+                                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                                    </svg>
+                                                    <span className="text-xs">{link}</span>
+                                                </a>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     </>
                 )}
+                
                 {experienceData && (
                     <>
-                        <div className="relative mb-4">
-                            <img 
-                                src={experienceData.image} 
-                                alt={`Experience ${experienceData.id}`}
-                                className="w-full h-full object-contain"
-                            />
-                        </div>
-                        <div className="mt-4">
-
+                        <div className="bg-white rounded-lg shadow-lg p-4 w-[280px]">
+                            <div className="space-y-3">
+                                <div>
+                                    <p className="text-xs font-medium text-gray-500 mb-0.5">{experienceData.description}</p>
+                                    <p className="!text-xs text-gray-700" style={{ fontSize: '0.625rem !important' }}>{experienceData.title}</p>
+                                </div>
+                                <div>
+                                    <p className="!text-xs text-gray-700" style={{ fontSize: '0.625rem !important' }}>{experienceData.duration}</p>
+                                </div>
+                            </div>
                         </div>
                     </>
                 )}

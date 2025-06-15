@@ -5,12 +5,12 @@ import { useState } from 'react'
 interface ProjectCard{
     id: string
     image: string
-    //purpose: string
-    //abstract: string
-    //awards: string
-    //duration: string
-    //video: string
-    //links: string
+    purpose: string
+    abstract: string
+    awards: string[]
+    skills: string[],
+    video: string
+    links: string[]
 
 }
 
@@ -22,34 +22,53 @@ export default function Project({ onImageSelect }: ProjectProps) {
     const [isHovered, setIsHovered] = useState(false)
     const [isModalOpen, setIsModalOpen] = useState(false)
 
-    // Example project images - replace these with your actual project images
     const projectImages: ProjectCard[] = [
         {
             id: 'project-glove',
             image: '/img/glove.png',
-
+            purpose: 'Bay Area Science and Engineering & International Science and Engineering Fair Project',
+            abstract: 'The purpose of this project is to facilitate communication between the verbally able and the deaf blind. By using a speech recognizer, this project can translate spoken words and emulate tactile sign language on a glove.',
+            awards: ['ISEF Trip Award', 'Gold Merit Award', 'McMaster University Faculty of Engineering Entrance Award', 'ArcelorMittal Dofasco Commercial Department Award'],
+            skills: ['Python', 'Arduino', 'Hardware Integration'],
+            video: 'https://www.youtube.com/watch?v=6Fy4zqPOzWw',
+            links: ['https://isef.net/project/teca008-translator-of-verbal-communication-to-tactile-sign', 'https://www.basef.ca/fair/project-view.php?PN=P16&ProjectID=14791'],
         },
         {
             id: 'project-link',
             image: '/img/linkedit.png',
-
+            purpose: '2025 Geese Hacks Project',
+            abstract: 'LinkedIt is a program that allows users to input two simple search terms, returning profiles from LinkedIn that match. This includes the profile name as well as the contact headline, and most importantly, a quick access to their email.',
+            awards: ['Best Beginner Hack'],
+            skills: ['Python', 'Web Scraping', 'API Integration', 'Data Processing'],
+            video: 'https://www.youtube.com/watch?v=2oPLkAotjng',
+            links: ['https://devpost.com/software/linkedit?ref_content=user-portfolio&ref_feature=in_progress', 'https://github.com/kevinli5371/LinkedIt'],
         },
         {
             id: 'project-game',
             image: '/img/game.png',
-
+            purpose: 'Grade 10 Final Project Coding Assignment: Godot Video Game',
+            abstract: 'Betty wants to bake a cake. Help her find the various ingrediants scattered around the house. Using WASD and E to collect, navigate your way around her place in search of collectables.',
+            awards: ['Grade 10 Computer Science Award'],
+            skills: ['Godot', 'GDScript', 'Game Development', '2D Graphics'],
+            video: 'https://www.youtube.com/watch?v=NyKVAYCJFmA',
+            links: ['https://github.com/s-illly/A-Cakey-Situation'],
         },
         {
             id: 'project-tech',
             image: '/img/technova.png',
-
+            purpose: '2024 Technova Hacker Project - Sigmas in STEM',
+            abstract: 'Based on the 20-20-20 Rule, OptimEyes allows users to set a 20-minute timer. When time is up, the website notifies the user of a break and suggests a simple wellness activity (each popup designed by budding female artists around the world).',
+            awards: ['Best Beginner Hack'],
+            skills: ['HTML/CSS', 'JavaScript', 'UI/UX Design', 'Web Development'],
+            video: 'https://www.youtube.com/watch?v=nlEk53M1n4k',
+            links: ['https://devpost.com/software/optimeyes', 'https://github.com/s-illly/Project-Technova'],
         },
     ]
 
     return (
         <>
             <motion.div 
-                className="absolute right-60 top-20 z-3 overflow-y-auto cursor-pointer"
+                className="absolute right-60 top-20 z-3 cursor-pointer"
                 initial={{ y: "100vh", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: "100vh", opacity: 0 }}
@@ -62,6 +81,7 @@ export default function Project({ onImageSelect }: ProjectProps) {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 onClick={() => setIsModalOpen(true)}
+                
             >
                 <div className="rounded-lg flex flex-col items-center">
                     {isHovered ? (
