@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { getContrastingTextColor } from '@/utils/colorUtils'
+import { useState, useEffect } from 'react'
 
 interface ColorDetail {
     hex: string;
@@ -21,21 +22,20 @@ interface DesignCard {
 interface ProjectCard {
     id: string;
     image: string;
-    purpose: string
-    abstract: string
-    awards: string[]
+    purpose: string;
+    abstract: string;
+    awards: string[];
     skills: string[],
-    video: string
-    links: string[]
-
+    video: string;
+    links: string[];
 }
 
 interface ExperienceCard {
-    id: string
-    image: string
-    title: string
-    description: string
-    category: string
+    id: string;
+    image: string;
+    title: string;
+    description: string;
+    category: string;
     skills: string[]
     duration: string
     location: string
@@ -49,26 +49,37 @@ interface Modal2Props {
     designData: DesignCard | null;
     projectData: ProjectCard | null;
     experienceData: ExperienceCard | null;
+    onWorkImageClick: (imagePath: string) => void;
 }
 
-export default function Modal2({ isOpen, onClose, designData, projectData, experienceData }: Modal2Props) {
+export default function Modal2({ isOpen, onClose, designData, projectData, experienceData, onWorkImageClick }: Modal2Props) {
+    const [isDragging, setIsDragging] = useState(false)
+
+    const handleImageClick = (imagePath: string) => {
+        if (experienceData) {
+            onWorkImageClick(imagePath);
+        }
+    }
+
     if (!isOpen) return null;
 
     const textColor = designData ? getContrastingTextColor(designData.colorDetail1.hex) : 'black';
 
     return (
         <AnimatePresence>
-            <motion.div className="absolute left-160 top-90 z-10"
-            whileHover={{scale: 1.05 }}
-            drag
-            dragMomentum={false}
-            dragConstraints={{
-                top: -window.innerHeight / 8,
-                bottom: window.innerHeight / 4,
-                left: -window.innerWidth / 8,
-                right: window.innerWidth / 8,
-            }}
-            dragElastic={0.2}
+            <motion.div 
+                className="absolute left-160 top-70"
+                drag
+                dragMomentum={false}
+                dragConstraints={{
+                    top: -window.innerHeight / 8,
+                    bottom: window.innerHeight / 4,
+                    left: -window.innerWidth / 8,
+                    right: window.innerWidth / 8,
+                }}
+                dragElastic={0.2}
+                onDragStart={() => setIsDragging(true)}
+                onDragEnd={() => setIsDragging(false)}
             >
                 {designData && designData.id.startsWith('design-') && (
                     <div className="w-60 h-30 flex flex-col items-center justify-start rounded-lg bg-white">
@@ -124,7 +135,6 @@ export default function Modal2({ isOpen, onClose, designData, projectData, exper
                                             ))}
                                         </div>
                                     </div>
-                               
                                 </div>
                             </div>
                         </div>
@@ -154,7 +164,11 @@ export default function Modal2({ isOpen, onClose, designData, projectData, exper
                                     <div>
                                         <div className="grid grid-cols-2 gap-2">
                                             {experienceData.work.map((imagePath, index) => (
-                                                <div key={index} className="relative aspect-square rounded-lg overflow-hidden">
+                                                <div 
+                                                    key={index} 
+                                                    className="relative aspect-square rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity"
+                                                    onClick={() => !isDragging && handleImageClick(imagePath)}
+                                                >
                                                     <img 
                                                         src={imagePath} 
                                                         alt={`Work image ${index + 1}`}
@@ -170,9 +184,19 @@ export default function Modal2({ isOpen, onClose, designData, projectData, exper
                     </>
                 )}
                 {!designData && !projectData && !experienceData && (
-                    <div className="p-4 text-center text-gray-500">
-                        No item selected.
-                    </div>
+                    <motion.div 
+                        className="text-center text-gray-500 w-64 h-48 bg-white rounded-lg"
+                        initial={{ y: "100vh", opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: "100vh", opacity: 0 }}
+                        transition={{ 
+                            type: "spring",
+                            stiffness: 100,
+                            damping: 15,
+                            delay: 0.12
+                        }}
+                    >
+                    </motion.div>
                 )}
             </motion.div>
         </AnimatePresence>

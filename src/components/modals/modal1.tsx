@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { getContrastingTextColor } from '@/utils/colorUtils'
+import { useState } from 'react'
 
 interface ColorDetail {
     hex: string;
@@ -21,26 +22,25 @@ interface DesignCard {
 interface ProjectCard {
     id: string;
     image: string;
-    purpose: string
-    abstract: string
-    awards: string[]
-    skills: string[],
-    video: string
-    links: string[]
-
+    purpose: string;
+    abstract: string;
+    awards: string[];
+    skills: string[];
+    video: string;
+    links: string[];
 }
 
 interface ExperienceCard {
-    id: string
-    image: string
-    title: string
-    description: string
-    category: string
-    skills: string[]
-    duration: string
-    location: string
-    tasks: string[]
-    work: string[]
+    id: string;
+    image: string;
+    title: string;
+    description: string;
+    category: string;
+    skills: string[];
+    duration: string;
+    location: string;
+    tasks: string[];
+    work: string[];
 }
 
 interface Modal1Props {
@@ -54,29 +54,27 @@ interface Modal1Props {
 export default function Modal1({ isOpen, onClose, designData, projectData, experienceData }: Modal1Props) {
     if (!isOpen) return null;
 
-    const textColor = designData ? getContrastingTextColor(designData.colorDetail1.hex) : 'black';
-
     return (
         <AnimatePresence>
-            <motion.div className="absolute left-200 top-40"
-            whileHover={{scale: 1.05 }}
-            drag
-            dragMomentum={false}
-            dragConstraints={{
-                top: -window.innerHeight / 8,
-                bottom: window.innerHeight / 4,
-                left: -window.innerWidth / 8,
-                right: window.innerWidth / 8,
-            }}
-            dragElastic={0.2}
+            <motion.div 
+                className="absolute left-200 top-40"
+                drag
+                dragMomentum={false}
+                dragConstraints={{
+                    top: -window.innerHeight / 8,
+                    bottom: window.innerHeight / 4,
+                    left: -window.innerWidth / 8,
+                    right: window.innerWidth / 8,
+                }}
+                dragElastic={0.2}
             >
-                {designData && designData.id.startsWith('design-') && (
-                    <div className="w-60 h-30 flex flex-col items-center justify-start bg-white">
-                        <div className="flex flex-col items-start w-full rounded-lg shadow-md p-4" style={{ backgroundColor: designData.colorDetail1.hex }}>
-                            <span className="text-xs uppercase tracking-widest self-end" style={{ color: textColor }}>Primary</span>
-                            
+                {designData && (
+                    <div className="w-60 h-30 flex flex-col items-center justify-start rounded-lg bg-white">
+                        <div className="flex flex-col items-start w-full p-4 rounded-lg shadow-md" style={{ backgroundColor: designData.colorDetail1.hex }}>
+                            <span className="text-xs uppercase tracking-widest self-end" style={{ color: getContrastingTextColor(designData.colorDetail1.hex) }}>Primary</span>
+
                             <div className="w-full mt-2">
-                                <table className="w-full text-left text-sm" style={{ color: textColor }}>
+                                <table className="w-full text-left text-sm" style={{ color: getContrastingTextColor(designData.colorDetail1.hex) }}>
                                     <thead>
                                         <tr className="border-b border-gray-400">
                                             <th className="py-2">HEX</th>
@@ -90,7 +88,6 @@ export default function Modal1({ isOpen, onClose, designData, projectData, exper
                                             <td className="py-2">{designData.colorDetail1.rgb}</td>
                                             <td className="py-2">{designData.colorDetail1.cmyk}</td>
                                         </tr>
-                                        
                                     </tbody>
                                 </table>
                             </div>
@@ -156,9 +153,19 @@ export default function Modal1({ isOpen, onClose, designData, projectData, exper
                     </>
                 )}
                 {!designData && !projectData && !experienceData && (
-                    <div className="p-4 text-center text-gray-500">
-                        No item selected.
-                    </div>
+                    <motion.div 
+                        className="text-center text-gray-500 w-64 h-48 bg-[#F7B7AA] rounded-lg"
+                        initial={{ y: "100vh", opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: "100vh", opacity: 0 }}
+                        transition={{ 
+                            type: "spring",
+                            stiffness: 100,
+                            damping: 15,
+                            delay: 0.10
+                        }}
+                    >
+                    </motion.div>
                 )}
             </motion.div>
         </AnimatePresence>

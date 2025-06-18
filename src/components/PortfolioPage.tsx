@@ -61,9 +61,9 @@ export default function Portfolio() {
         right: 0
     })
 
-    const [isModal1Open, setIsModal1Open] = useState(false)
-    const [isModal2Open, setIsModal2Open] = useState(false)
-    const [isModal3Open, setIsModal3Open] = useState(false)
+    const [isModal1Open, setIsModal1Open] = useState(true)
+    const [isModal2Open, setIsModal2Open] = useState(true)
+    const [isModal3Open, setIsModal3Open] = useState(true)
 
     useEffect(() => {
         setDragConstraints({
@@ -109,6 +109,16 @@ export default function Portfolio() {
     const closeModal2 = () => setIsModal2Open(false)
     const closeModal3 = () => setIsModal3Open(false)
 
+    // Handler for when a work image is clicked in Modal2
+    const handleWorkImageClick = (imagePath: string) => {
+        if (selectedExperienceData) {
+            const updatedExperience = {
+                ...selectedExperienceData,
+                image: imagePath
+            };
+            setSelectedExperienceData(updatedExperience);
+        }
+    }
 
     return (
         <AnimatePresence mode="wait">
@@ -123,7 +133,7 @@ export default function Portfolio() {
             >
                 {/* Main Info */}
                 <motion.div 
-                    className="absolute left-40 top-20 z-3 "
+                    className="absolute left-40 top-20 z-0"
                     initial={{ y: "100vh", opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: "100vh", opacity: 0 }}
@@ -139,7 +149,7 @@ export default function Portfolio() {
                     dragConstraints={dragConstraints}
                     dragElastic={0.1}
                 >
-                    <div className="rounded-2xl bg-white w-110 h-120 flex-col items-center shadow-lg border border-gray-200">
+                    <div className="rounded-t-2xl bg-white w-110 h-120 flex-col items-center shadow-lg border border-gray-200">
                         <header className="w-full rounded-t-2xl h-8 p-3 bg-gray-50 flex flex-row items-center justify-between sticky top-0 z-10 border-b border-gray-200"> 
                             <div className="flex flex-row gap-2">
                                 <div className="h-2 w-2 bg-red-300" />
@@ -159,7 +169,7 @@ export default function Portfolio() {
                             </div>
                         )}
                         {selectedProjectData && (
-                            <div className="p-4 w-full h-full flex items-center justify-center flex-col bg-white rounded-2xl ">
+                            <div className="p-4 w-full h-full flex items-center justify-center flex-col bg-white rounded-t-2xl ">
                                 <img 
                                     src={selectedProjectData.image} 
                                     alt={`Selected Project: ${selectedProjectData.id}`}
@@ -169,7 +179,7 @@ export default function Portfolio() {
                             </div>
                         )}
                         {selectedExperienceData && (
-                            <div className="p-4 w-full h-full flex items-center justify-center flex-col bg-white rounded-2xl">
+                            <div className="p-4 w-full h-full flex items-center justify-center flex-col bg-white rounded-t-2xl">
                                 <img 
                                     src={selectedExperienceData.image} 
                                     alt={`Selected Experience: ${selectedExperienceData.id}`}
@@ -179,8 +189,12 @@ export default function Portfolio() {
                             </div>
                         )}
                         {!selectedDesignData && !selectedProjectData && !selectedExperienceData && (
-                            <div className="p-4 text-center text-gray-500 bg-white h-full flex items-center justify-center rounded-2xl ">
-                                Click an item to see details here.
+                            <div className="p-4 w-full h-full flex items-center justify-center flex-col bg-white rounded-t-2xl">
+                                <img 
+                                    src='/img/portfolio.png'
+                                    alt="Portfolio"
+                                    className="max-w-full max-h-full object-contain mt-59 z-20"
+                                />
                             </div>
                         )}
 
@@ -234,6 +248,7 @@ export default function Portfolio() {
                     designData={selectedDesignData}
                     projectData={selectedProjectData}
                     experienceData={selectedExperienceData}
+                    onWorkImageClick={handleWorkImageClick}
                 />
                 <Modal3
                     isOpen={isModal3Open}

@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { FaFolder, FaFolderOpen } from 'react-icons/fa'
 import { useState } from 'react'
+import Image from 'next/image'
 
 interface ColorDetail {
     hex: string;
@@ -72,7 +72,7 @@ export default function Design({ onImageSelect }: DesignProps) {
     return (
         <>
             <motion.div 
-                className="absolute right-60 top-60 z-3 overflow-y-auto cursor-pointer"
+                className="absolute right-60 top-50 z-3 cursor-pointer"
                 initial={{ y: "100vh", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: "100vh", opacity: 0 }}
@@ -80,20 +80,23 @@ export default function Design({ onImageSelect }: DesignProps) {
                     type: "spring",
                     stiffness: 100,
                     damping: 15,
-                    delay: 0.11
+                    delay: 0.12
                 }}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 onClick={() => setIsModalOpen(true)}
-                
-                
             >
                 <div className="rounded-lg flex flex-col items-center">
-                    {isHovered ? (
-                        <FaFolderOpen className="text-8xl text-blue-400" />
-                    ) : (
-                        <FaFolder className="text-8xl text-blue-400"/>
-                    )}
+                    <div className="relative w-24 h-24">
+                        <Image
+                            src={isHovered ? '/img/close.png' : '/img/open.png'}
+                            alt={isHovered ? "Open folder" : "Closed folder"}
+                            fill
+                            sizes="96px"
+                            priority
+                            className="object-contain"
+                        />
+                    </div>
                     <span className="text-black"> Design </span>
                 </div>
             </motion.div>

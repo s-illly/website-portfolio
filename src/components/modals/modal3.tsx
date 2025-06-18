@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { getContrastingTextColor } from '@/utils/colorUtils'
+import { useState, useEffect } from 'react'
 
 interface ColorDetail {
     hex: string;
@@ -54,28 +55,27 @@ interface Modal3Props {
 export default function Modal3({ isOpen, onClose, designData, projectData, experienceData }: Modal3Props) {
     if (!isOpen) return null;
 
-    const textColor = designData ? getContrastingTextColor(designData.colorDetail1.hex) : 'black';
-
     return (
         <AnimatePresence>
-            <motion.div className="absolute  left-180 top-110 z-10"
-            whileHover={{scale: 1.05 }}
-            drag
-            dragMomentum={false}
-            dragConstraints={{
-                top: -window.innerHeight / 4,
-                bottom: window.innerHeight / 4,
-                left: -window.innerWidth / 8,
-                right: window.innerWidth / 8,
-            }}
-            dragElastic={0.2}
+            <motion.div 
+                className="absolute left-180 top-110"
+                drag
+                dragMomentum={false}
+                dragConstraints={{
+                    top: -window.innerHeight / 8,
+                    bottom: window.innerHeight / 4,
+                    left: -window.innerWidth / 8,
+                    right: window.innerWidth / 8,
+                }}
+                dragElastic={0.2}
             >
                 {designData && designData.id.startsWith('design-') && (
                     <div className="w-60 h-30 flex flex-col items-center justify-start rounded-lg bg-white">
-                        <div className="flex flex-col items-start w-full p-4 rounded-lg shadow-lg" style={{ backgroundColor: designData.colorDetail3.hex }}>
-                            <span className="text-xs uppercase tracking-widest self-end" style={{ color: textColor }}>Tertiary</span>
+                        <div className="flex flex-col items-start w-full p-4 rounded-lg shadow-md" style={{ backgroundColor: designData.colorDetail3.hex }}>
+                            <span className="text-xs uppercase tracking-widest self-end" style={{ color: getContrastingTextColor(designData.colorDetail3.hex) }}>Tertiary</span>
+
                             <div className="w-full mt-2">
-                                <table className="w-full text-left text-sm" style={{ color: textColor }}>
+                                <table className="w-full text-left text-sm" style={{ color: getContrastingTextColor(designData.colorDetail3.hex) }}>
                                     <thead>
                                         <tr className="border-b border-gray-400">
                                             <th className="py-2">HEX</th>
@@ -134,9 +134,19 @@ export default function Modal3({ isOpen, onClose, designData, projectData, exper
                     </div>
                 )}
                 {!designData && !projectData && !experienceData && (
-                    <div className="p-4 text-center text-gray-500">
-                        No item selected.
-                    </div>
+                    <motion.div 
+                        className="text-center text-gray-500 w-64 h-48 bg-[#BCD1E1] rounded-lg"
+                        initial={{ y: "100vh", opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: "100vh", opacity: 0 }}
+                        transition={{ 
+                            type: "spring",
+                            stiffness: 100,
+                            damping: 15,
+                            delay: 0.15
+                        }}
+                    >
+                    </motion.div>
                 )}
             </motion.div>
         </AnimatePresence>
