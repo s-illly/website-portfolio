@@ -28,6 +28,15 @@ export default function Design({ onImageSelect }: DesignProps) {
     // Example design images - replace these with your actual design images
     const designImages: DesignCard[] = [
         {
+            id: 'design-light',
+            image: '/img/pantone-light.png',
+            name: 'Pantone Light',
+            colorDetail1: { hex: '#FB8A16', rgb: '251 138 22', cmyk: '0 45 91 2' },
+            colorDetail2: { hex: '#524846', rgb: '82 72 70', cmyk: '0 12 15 68' },
+            colorDetail3: { hex: '#F2E1DB', rgb: '242 225 219', cmyk: '0 7 10 5' },
+        },
+
+        {
             id: 'design-cat',
             image: '/img/pantone-cat.png',
             name: 'Pantone Cat',

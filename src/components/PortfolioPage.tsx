@@ -149,7 +149,7 @@ export default function Portfolio() {
                     dragConstraints={dragConstraints}
                     dragElastic={0.1}
                 >
-                    <div className="rounded-t-2xl bg-white w-110 h-120 flex-col items-center shadow-lg border border-gray-200">
+                    <div className="rounded-t-2xl bg-white w-110 h-120 flex-col items-center shadow-lg border cursor-move border-gray-200">
                         <header className="w-full rounded-t-2xl h-8 p-3 bg-gray-50 flex flex-row items-center justify-between sticky top-0 z-10 border-b border-gray-200"> 
                             <div className="flex flex-row gap-2">
                                 <div className="h-2 w-2 bg-red-300" />

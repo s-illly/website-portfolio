@@ -29,7 +29,7 @@ export default function Egg() {
             <AnimatePresence>
                 {isHovered && (
                     <motion.div
-                        className="absolute left-1/2 -translate-x-1/2 -top-24 w-48 bg-white rounded-lg shadow-lg p-3 text-sm"
+                        className="absolute left-1/2 -translate-x-1/2 -top-14 w-48 bg-white rounded-3xl shadow-lg p-3 text-sm"
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
@@ -37,7 +37,7 @@ export default function Egg() {
                     >
                         <div className="relative">
                             <p className="text-gray-700">Waterloo CS '29</p>
-                            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white transform rotate-45"></div>
+                            <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-4 h-4 bg-white transform rotate-45"></div>
                         </div>
                     </motion.div>
                 )}

@@ -1,12 +1,9 @@
-import { motion , AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useState } from 'react'
 
-interface SpotifyProps {
-    onPhotoClick: (photoName: string) => void;
-}
 
-export default function Spotify({ onPhotoClick }: SpotifyProps) {
-    const [isModalOpen, setIsModalOpen] = useState(false)
+export default function Spotify() {
+  
     const [currentTrackIndex, setCurrentTrackIndex] = useState(0)
 
     const tracks = [
@@ -14,6 +11,7 @@ export default function Spotify({ onPhotoClick }: SpotifyProps) {
         { id: 'track-2', image: '/img/id.png', title: 'I Don\'t Understand But I Luv U', artist: 'SEVENTEEN' },
         { id: 'track-3', image: '/img/frak.png', title: 'Fraktsiya', artist: 'MARK, Lee Young Ji' },
         { id: 'track-4', image: '/img/blackmemory.png', title: 'BLACK MEMORY', artist: 'THE ORAL CIGARETTES' },
+        { id: 'track-5', image: '/img/tatsuya.png', title: 'パノプティコン', artist: 'Tatsuya Kitani' },
     ];
 
     const currentTrack = tracks[currentTrackIndex];
@@ -40,10 +38,6 @@ export default function Spotify({ onPhotoClick }: SpotifyProps) {
                 delay: 0.13
             }}
             whileHover={{ y: -5, scale: 1.05 }}
-            onClick={() => {
-                onPhotoClick(currentTrack.id); // Assuming onPhotoClick expects the ID of the current track
-                setIsModalOpen(true);
-            }}
         >
             <div className="rounded-2xl h-full w-full bg-white flex flex-col items-center p-4 relative border border-gray-200">
                 {/* Album Cover Section */}
@@ -53,8 +47,8 @@ export default function Spotify({ onPhotoClick }: SpotifyProps) {
 
                 {/* Song Info */}
                 <div className="w-full mt-2">
-                    <p className="text-gray-900 font-bold text-md mt-1">{currentTrack.title}</p>
-                    <p className="text-2xs! text-gray-700">{currentTrack.artist}</p>
+                    <p className="text-gray-900 font-bold !text-[0.9rem] mt-1">{currentTrack.title}</p>
+                    <p className="!text-[0.625rem] text-gray-700">{currentTrack.artist}</p>
                 </div>
 
                 {/* Progress Bar */}
@@ -69,7 +63,7 @@ export default function Spotify({ onPhotoClick }: SpotifyProps) {
                 {/* Controls */}
                 <div className="w-full flex items-center justify-center gap-6 mt-4 text-gray-800">
                     <button onClick={handleForward}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 cursor-pointer">
                             <path fillRule="evenodd" d="M13.242 15.22a.75.75 0 000-1.06L9.53 10H22.5a.75.75 0 000-1.5H9.53l3.712-3.712a.75.75 0 00-1.06-1.06l-5.25 5.25a.75.75 0 000 1.06l5.25 5.25a.75.75 0 001.06 0z" clipRule="evenodd" />
                         </svg>
                     </button>
@@ -80,14 +74,12 @@ export default function Spotify({ onPhotoClick }: SpotifyProps) {
                         </svg>
                     </button>
                      <button onClick={handleBackward}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 cursor-pointer">
                             <path fillRule="evenodd" d="M10.758 15.22a.75.75 0 010-1.06L14.47 10H1.5a.75.75 0 010-1.5h12.97l-3.712-3.712a.75.75 0 011.06-1.06l5.25 5.25a.75.75 0 010 1.06l-5.25 5.25a.75.75 0 01-1.06 0z" clipRule="evenodd" />
                         </svg>
                     </button>
                     
-                </div>
-
-                
+                </div> 
             </div>
         </motion.div>
         </>

@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { getContrastingTextColor } from '@/utils/colorUtils'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 interface ColorDetail {
     hex: string;
@@ -68,7 +68,7 @@ export default function Modal2({ isOpen, onClose, designData, projectData, exper
     return (
         <AnimatePresence>
             <motion.div 
-                className="absolute left-160 top-70"
+                className="absolute left-160 top-70 cursor-move"
                 drag
                 dragMomentum={false}
                 dragConstraints={{

@@ -17,23 +17,9 @@ import Me from './about/Me'
 export default function About() {
     const pathname = usePathname()
     const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null)
-    
-    const photoDescriptions = {
-        'painting': 'A beautiful painting I created during my art class.',
-        'fish': 'My favorite fish from the aquarium.',
-        'stickers': 'Collection of stickers I\'ve gathered over the years.',
-        'badminton': 'Playing badminton with friends at the park.',
-        'me': 'A recent photo of myself.',
-        'bunny': 'My pet bunny enjoying some carrots.',
-        'bath': 'Relaxing bath time with essential oils.'
-    }
 
     const handlePhotoClick = (photoName: string) => {
         setSelectedPhoto(photoName)
-    }
-
-    const handleOverlayClick = () => {
-        setSelectedPhoto(null)
     }
     
     return (
@@ -49,15 +35,12 @@ export default function About() {
                 <Badminton />
                 <Volleyball />
                 <Egg />
-                <Intro onPhotoClick={handlePhotoClick} />
+                <Intro />
                 <Pantone />
                 <Socials />
-                <Spotify onPhotoClick={handlePhotoClick} />
-                <Book onPhotoClick={handlePhotoClick} />
+                <Spotify />
+                <Book />
                 <Me />
-              
-
-                
             </motion.main>
         </AnimatePresence>
     )

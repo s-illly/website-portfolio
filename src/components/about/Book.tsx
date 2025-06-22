@@ -1,12 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 
-interface BookProps {
-    onPhotoClick: (photoName: string) => void;
-}
-
-export default function Book({ onPhotoClick }: BookProps) {
-    const [isHovered, setIsHovered] = useState(false)
+export default function Book() {
     const [isModalOpen, setIsModalOpen] = useState(false)
 
     return (
@@ -122,20 +117,6 @@ export default function Book({ onPhotoClick }: BookProps) {
                             <div className="p-6">
                                 <div className="grid grid-cols-2 gap-6">
                                     <div className="flex items-center w-full">
-                                        <img src="/img/death.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" />
-                                        <div className="flex-grow">
-                                            <p className="text-sm font-bold text-gray-800">Death's End</p>
-                                            <p className="!text-[12px] text-gray-600">Cixin Liu</p>
-                                            <div className="flex gap-1 mt-1">
-                                                <span className="text-blue-400 text-sm">★</span>
-                                                <span className="text-blue-400 text-sm">★</span>
-                                                <span className="text-blue-400 text-sm">★</span>
-                                                <span className="text-blue-400 text-sm">★</span>
-                                                <span className="text-gray-400 text-sm">☆</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center w-full">
                                         <img src="/img/devils.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" />
                                         <div className="flex-grow">
                                             <p className="text-sm font-bold text-gray-800">All the Devils Are Here</p>
@@ -200,6 +181,20 @@ export default function Book({ onPhotoClick }: BookProps) {
                                         <div className="flex-grow">
                                             <p className="text-sm font-bold text-gray-800">The Silent Patient</p>
                                             <p className="!text-[12px] text-gray-600">Alex Michaelides</p>
+                                            <div className="flex gap-1 mt-1">
+                                                <span className="text-blue-400 text-sm">★</span>
+                                                <span className="text-blue-400 text-sm">★</span>
+                                                <span className="text-blue-400 text-sm">★</span>
+                                                <span className="text-gray-400 text-sm">☆</span>
+                                                <span className="text-gray-400 text-sm">☆</span>
+                                            </div>
+                                        </div>   
+                                    </div>
+                                    <div className="flex items-center w-full">
+                                        <img src="/img/eyre.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" />
+                                        <div className="flex-grow">
+                                            <p className="text-sm font-bold text-gray-800">Jane Eyre</p>
+                                            <p className="!text-[12px] text-gray-600">C.S. Lewis</p>
                                             <div className="flex gap-1 mt-1">
                                                 <span className="text-blue-400 text-sm">★</span>
                                                 <span className="text-blue-400 text-sm">★</span>

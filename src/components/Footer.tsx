@@ -3,17 +3,8 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 
-interface NavLink {
-  label: string
-  href: string
-}
 
-interface FooterProps {
-  colorDots: string[]
-  navLinks: NavLink[]
-}
-
-export default function Footer({ colorDots, navLinks }: FooterProps) {
+export default function Footer() {
 
   return (
     <footer className="fixed bottom-0 left-0 w-full p-8 z-50">     
