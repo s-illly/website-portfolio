@@ -129,9 +129,8 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
                         <Image
                             src={isHovered ? '/img/close.png' : '/img/open.png'}
                             alt={isHovered ? "Open folder" : "Closed folder"}
-                            fill
-                            sizes="96px"
-                            priority
+                            width={96}
+                            height={96}
                             className="object-contain"
                         />
                     </div>
@@ -216,6 +215,8 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
                                                 <Image
                                                     src={experience.image}
                                                     alt={`Experience ${experience.id}`}
+                                                    width={120}
+                                                    height={120}
                                                     className="w-15 h-15 object-cover rounded-md mb-2"
                                                 />
                                                 <span className="text-sm font-medium text-gray-800">{experience.title}</span>

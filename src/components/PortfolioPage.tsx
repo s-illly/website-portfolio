@@ -163,6 +163,8 @@ export default function Portfolio() {
                                     src={selectedDesignData.image} 
                                     alt={`Selected Design: ${selectedDesignData.id}`}
                                     className="max-w-full max-h-full object-contain"
+                                    width={400}
+                                    height={400}
                                 />
                             </div>
                         )}
@@ -172,6 +174,8 @@ export default function Portfolio() {
                                     src={selectedProjectData.image} 
                                     alt={`Selected Project: ${selectedProjectData.id}`}
                                     className="max-w-full max-h-full object-contain"
+                                    width={400}
+                                    height={400}
                                 />
                                 
                             </div>
@@ -182,6 +186,8 @@ export default function Portfolio() {
                                     src={selectedExperienceData.image} 
                                     alt={`Selected Experience: ${selectedExperienceData.id}`}
                                     className="max-w-full max-h-full object-contain"
+                                    width={100}
+                                    height={100}
                                 />
                                 
                             </div>
@@ -192,6 +198,8 @@ export default function Portfolio() {
                                     src='/img/portfolio.png'
                                     alt="Portfolio"
                                     className="max-w-full max-h-full object-contain mt-59 z-20"
+                                    width={100}
+                                    height={100}
                                 />
                             </div>
                         )}

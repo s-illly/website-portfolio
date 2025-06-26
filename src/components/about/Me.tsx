@@ -17,7 +17,7 @@ export default function Me() {
             }}
         >
             <div className="w-125 h-auto">
-                <Image className="w-full h-full object-contain" src="img/me.png" alt="Me" />
+                <Image className="w-full h-full object-contain" src="/img/me.png" alt="Me" width={500} height={500} />
             </div>
         </motion.div>
 
@@ -34,7 +34,7 @@ export default function Me() {
             }}
         >
             <div className="w-35 h-auto">
-                <Image className="w-full h-full object-contain" src="img/lines1.png" alt="Me" />
+                <Image className="w-full h-full object-contain" src="/img/lines1.png" alt="Me" width={140} height={140} />
             </div>
         </motion.div>
 
@@ -51,7 +51,7 @@ export default function Me() {
             }}
         >
             <div className="w-20 h-auto">
-                <Image className="w-full h-full object-contain" src="img/rain1.png" alt="Me" />
+                <Image className="w-full h-full object-contain" src="/img/rain1.png" alt="Me" width={80} height={80} />
             </div>
         </motion.div>
 
@@ -68,7 +68,7 @@ export default function Me() {
             }}
         >
             <div className="w-20 h-auto">
-                <Image className="w-full h-full object-contain" src="img/fish1.png" alt="Me" />
+                <Image className="w-full h-full object-contain" src="/img/fish1.png" alt="Me" width={80} height={80} />
             </div>
         </motion.div>
 
@@ -85,7 +85,7 @@ export default function Me() {
             }}
         >
             <div className="w-20 h-auto">
-                <Image className="w-full h-full object-contain" src="img/fish3.png" alt="Me" />
+                <Image className="w-full h-full object-contain" src="/img/fish3.png" alt="Me" width={80} height={80} />
             </div>
         </motion.div>
 
@@ -102,7 +102,7 @@ export default function Me() {
             }}
         >
             <div className="w-25 h-auto">
-                <Image className="w-full h-full object-contain" src="img/lines2.png" alt="Me" />
+                <Image className="w-full h-full object-contain" src="/img/lines2.png" alt="Me" width={100} height={100} />
             </div>
         </motion.div>
 
@@ -120,7 +120,7 @@ export default function Me() {
             }}
         >
             <div className="w-20 h-auto">
-                <Image className="w-full h-full object-contain" src="img/fish2.png" alt="Me" />
+                <Image className="w-full h-full object-contain" src="/img/fish2.png" alt="Me" width={80} height={80} />
             </div>
         </motion.div>
 
@@ -137,7 +137,7 @@ export default function Me() {
             }}
         >
             <div className="w-20 h-auto">
-                <Image className="w-full h-full object-contain" src="img/fish4.png" alt="Me" />
+                <Image className="w-full h-full object-contain" src="/img/fish4.png" alt="Me" width={80} height={80} />
             </div>
         </motion.div>
 
@@ -154,7 +154,7 @@ export default function Me() {
             }}
         >
             <div className="w-15 h-auto">
-                <Image className="w-full h-full object-contain" src="img/S.png" alt="Me" />
+                <Image className="w-full h-full object-contain" src="/img/S.png" alt="Me" width={60} height={60} />
             </div>
         </motion.div>
 
@@ -171,7 +171,7 @@ export default function Me() {
             }}
         >
             <div className="w-15 h-auto">
-                <Image className="w-full h-full object-contain" src="img/L.png" alt="Me" />
+                <Image className="w-full h-full object-contain" src="/img/L.png" alt="Me" width={60} height={60} />
             </div>
         </motion.div>
 
@@ -188,7 +188,7 @@ export default function Me() {
             }}
         >
             <div className="w-20 h-auto">
-                <Image className="w-full h-full object-contain" src="img/sunny.png" alt="Me" />
+                <Image className="w-full h-full object-contain" src="/img/sunny.png" alt="Me" width={80} height={80} />
             </div>
         </motion.div>
 
@@ -205,7 +205,7 @@ export default function Me() {
             }}
         >
             <div className="w-40 h-auto">
-                <Image className="w-full h-full object-contain" src="img/hat.png" alt="Me" />
+                <Image className="w-full h-full object-contain" src="/img/hat.png" alt="Me" width={160} height={160} />
             </div>
         </motion.div>
         </>

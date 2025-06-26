@@ -181,6 +181,8 @@ export default function Modal2({ isOpen, designData, projectData, experienceData
                                                         src={imagePath} 
                                                         alt={`Work image ${index + 1}`}
                                                         className="w-full h-full object-cover"
+                                                        width={100}
+                                                        height={100}
                                                     />
                                                 </div>
                                             ))}

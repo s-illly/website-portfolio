@@ -45,7 +45,7 @@ export default function Book() {
                     </header>
                     <main className="w-full flex flex-col gap-2 items-start pt-2 p-4">
                         <div className="flex items-center w-full">
-                            <Image src="/img/death.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" />
+                            <Image src="/img/death.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
                             <div className="flex-grow">
                                 <p className="text-sm font-bold text-gray-800">Death&apos;s End</p>
                                 <p className="!text-[12px] text-gray-600">Cixin Liu</p>
@@ -60,7 +60,7 @@ export default function Book() {
                         </div>
                         
                         <div className="flex items-center w-full">
-                            <Image src="/img/devils.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" />
+                            <Image src="/img/devils.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
                             <div className="flex-grow">
                                 <p className="text-sm font-bold text-gray-800">All the Devils Are Here</p>
                                 <p className="!text-[12px] text-gray-600">Louise Penny</p>
@@ -75,7 +75,7 @@ export default function Book() {
                         </div>
 
                         <div className="flex items-center w-full">
-                            <Image src="/img/seven.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" />
+                            <Image src="/img/seven.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
                             <div className="flex-grow">
                                 <p className="text-sm font-bold text-gray-800">Seven and a Half Lessons About the Brain</p>
                                 <p className="!text-[12px] text-gray-600">Lisa Feldman Barrett</p>
@@ -125,7 +125,7 @@ export default function Book() {
                             <div className="p-6">
                                 <div className="grid grid-cols-2 gap-6">
                                     <div className="flex items-center w-full">
-                                        <Image src="/img/devils.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" />
+                                        <Image src="/img/devils.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
                                         <div className="flex-grow">
                                             <p className="text-sm font-bold text-gray-800">All the Devils Are Here</p>
                                             <p className="!text-[12px] text-gray-600">Louise Penny</p>
@@ -140,7 +140,7 @@ export default function Book() {
                                     </div>
 
                                     <div className="flex items-center w-full">
-                                        <Image src="/img/darkforest.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" />
+                                        <Image src="/img/darkforest.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
                                         <div className="flex-grow">
                                             <p className="text-sm font-bold text-gray-800">The Dark Forest</p>
                                             <p className="!text-[12px] text-gray-600">Cixin Liu</p>
@@ -155,7 +155,7 @@ export default function Book() {
                                     </div>
 
                                     <div className="flex items-center w-full">
-                                        <Image src="/img/call.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" />
+                                        <Image src="/img/call.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
                                         <div className="flex-grow">
                                             <p className="text-sm font-bold text-gray-800">Call of the Wild</p>
                                             <p className="!text-[12px] text-gray-600">Jack London</p>
@@ -170,7 +170,7 @@ export default function Book() {
                                     </div>
 
                                     <div className="flex items-center w-full">
-                                        <Image src="/img/murder.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" />
+                                        <Image src="/img/murder.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
                                         <div className="flex-grow">
                                             <p className="text-sm font-bold text-gray-800">Murder on the Orient Express</p>
                                             <p className="!text-[12px] text-gray-600">Agatha Christie</p>
@@ -185,7 +185,7 @@ export default function Book() {
                                     </div>
 
                                     <div className="flex items-center w-full">
-                                        <Image src="/img/silent.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" />
+                                        <Image src="/img/silent.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
                                         <div className="flex-grow">
                                             <p className="text-sm font-bold text-gray-800">The Silent Patient</p>
                                             <p className="!text-[12px] text-gray-600">Alex Michaelides</p>
@@ -199,7 +199,7 @@ export default function Book() {
                                         </div>   
                                     </div>
                                     <div className="flex items-center w-full">
-                                        <Image src="/img/eyre.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" />
+                                        <Image src="/img/eyre.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
                                         <div className="flex-grow">
                                             <p className="text-sm font-bold text-gray-800">Jane Eyre</p>
                                             <p className="!text-[12px] text-gray-600">C.S. Lewis</p>
@@ -214,7 +214,7 @@ export default function Book() {
                                     </div>
 
                                     <div className="flex items-center w-full">
-                                        <Image src="/img/narnia.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" />
+                                        <Image src="/img/narnia.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
                                         <div className="flex-grow">
                                             <p className="text-sm font-bold text-gray-800">The Chronicles of Narnia</p>
                                             <p className="!text-[12px] text-gray-600">C.S. Lewis</p>

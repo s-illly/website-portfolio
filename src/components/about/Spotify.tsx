@@ -43,7 +43,7 @@ export default function Spotify() {
             <div className="rounded-2xl h-full w-full bg-white flex flex-col items-center p-4 relative border border-gray-200">
                 {/* Album Cover Section */}
                 <div className="w-full h-48 bg-gray-200 rounded-md flex items-center justify-center overflow-hidden relative">
-                    <Image src={currentTrack.image} alt="Album Cover" className="w-full h-full object-cover rounded-md" />
+                    <Image src={currentTrack.image} alt="Album Cover" className="w-full h-full object-cover rounded-md" width={100} height={100} />
                 </div>
 
                 {/* Song Info */}

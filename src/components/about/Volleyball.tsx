@@ -24,7 +24,7 @@ export default function Volleyball() {
                 whileHover={{ y: -15, scale: 1.1, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
             >
-                <Image className="h-30" src="img/volleyball.png" alt="Volleyball" />
+                <Image className="h-30" src="/img/volleyball.png" alt="Volleyball" width={130} height={120} />
             </motion.div>
 
             <AnimatePresence>

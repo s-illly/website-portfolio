@@ -89,9 +89,8 @@ export default function Project({ onImageSelect }: ProjectProps) {
                         <Image
                             src={isHovered ? '/img/close.png' : '/img/open.png'}
                             alt={isHovered ? "Open folder" : "Closed folder"}
-                            fill
-                            sizes="96px"
-                            priority
+                            width={96}
+                            height={96}
                             className="object-contain"
                         />
                     </div>
@@ -149,6 +148,8 @@ export default function Project({ onImageSelect }: ProjectProps) {
                                             <Image
                                                 src={project.image}
                                                 alt={`Project ${project.id}`}
+                                                width={120}
+                                                height={120}
                                                 className="w-full h-full object-cover"
                                             />
                                         </motion.div>
