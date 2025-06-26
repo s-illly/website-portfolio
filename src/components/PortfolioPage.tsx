@@ -9,6 +9,7 @@ import Modal1 from './modals/modal1'
 import Modal2 from './modals/modal2'
 import Modal3 from './modals/modal3'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 interface ColorDetail {
     hex: string;
@@ -54,24 +55,21 @@ export default function Portfolio() {
     const [selectedDesignData, setSelectedDesignData] = useState<DesignCard | null>(null)
     const [selectedProjectData, setSelectedProjectData] = useState<ProjectCard | null>(null)
     const [selectedExperienceData, setSelectedExperienceData] = useState<ExperienceCard | null>(null)
-    const [dragConstraints, setDragConstraints] = useState({
-        top: 0,
-        bottom: 0,
-        left: 0,
-        right: 0
-    })
+    const [dragConstraints, setDragConstraints] = useState({ top: 0, bottom: 0, left: 0, right: 0 })
 
     const [isModal1Open, setIsModal1Open] = useState(true)
     const [isModal2Open, setIsModal2Open] = useState(true)
     const [isModal3Open, setIsModal3Open] = useState(true)
 
     useEffect(() => {
-        setDragConstraints({
-            top: -window.innerHeight / 6,
-            bottom: window.innerHeight / 2,
-            left: -window.innerWidth / 6,
-            right: window.innerWidth / 2,
-        })
+        if (typeof window !== 'undefined') {
+            setDragConstraints({
+                top: -window.innerHeight / 6,
+                bottom: window.innerHeight / 2,
+                left: -window.innerWidth / 6,
+                right: window.innerWidth / 2,
+            })
+        }
     }, [])
 
     // Handler for when a design image is clicked from Design's internal modal
@@ -161,7 +159,7 @@ export default function Portfolio() {
                         </header>
                         {selectedDesignData && (
                             <div className="p-4 w-full h-full flex items-center justify-center flex-col bg-white rounded-2xl">
-                                <img 
+                                <Image 
                                     src={selectedDesignData.image} 
                                     alt={`Selected Design: ${selectedDesignData.id}`}
                                     className="max-w-full max-h-full object-contain"
@@ -170,7 +168,7 @@ export default function Portfolio() {
                         )}
                         {selectedProjectData && (
                             <div className="p-4 w-full h-full flex items-center justify-center flex-col bg-white rounded-t-2xl ">
-                                <img 
+                                <Image 
                                     src={selectedProjectData.image} 
                                     alt={`Selected Project: ${selectedProjectData.id}`}
                                     className="max-w-full max-h-full object-contain"
@@ -180,7 +178,7 @@ export default function Portfolio() {
                         )}
                         {selectedExperienceData && (
                             <div className="p-4 w-full h-full flex items-center justify-center flex-col bg-white rounded-t-2xl">
-                                <img 
+                                <Image 
                                     src={selectedExperienceData.image} 
                                     alt={`Selected Experience: ${selectedExperienceData.id}`}
                                     className="max-w-full max-h-full object-contain"
@@ -190,7 +188,7 @@ export default function Portfolio() {
                         )}
                         {!selectedDesignData && !selectedProjectData && !selectedExperienceData && (
                             <div className="p-4 w-full h-full flex items-center justify-center flex-col bg-white rounded-t-2xl">
-                                <img 
+                                <Image 
                                     src='/img/portfolio.png'
                                     alt="Portfolio"
                                     className="max-w-full max-h-full object-contain mt-59 z-20"

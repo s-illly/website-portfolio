@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
+import Image from 'next/image'
 
 export default function Egg() {
     const [isHovered, setIsHovered] = useState(false)
@@ -23,7 +24,7 @@ export default function Egg() {
                 whileHover={{ y: -15, scale: 1.1, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
             >
-                <img className="h-25" src="img/egg.png" alt="Egg" />
+                <Image className="h-25" src="img/egg.png" alt="Egg" />
             </motion.div>
 
             <AnimatePresence>
@@ -36,7 +37,7 @@ export default function Egg() {
                         transition={{ duration: 0.2 }}
                     >
                         <div className="relative">
-                            <p className="text-gray-700">Waterloo CS '29</p>
+                            <p className="text-gray-700">Waterloo CS &apos;29</p>
                             <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-4 h-4 bg-white transform rotate-45"></div>
                         </div>
                     </motion.div>

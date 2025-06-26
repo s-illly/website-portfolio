@@ -2,7 +2,8 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { getContrastingTextColor } from '@/utils/colorUtils'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 interface ColorDetail {
     hex: string;
@@ -52,8 +53,20 @@ interface Modal2Props {
     onWorkImageClick: (imagePath: string) => void;
 }
 
-export default function Modal2({ isOpen, onClose, designData, projectData, experienceData, onWorkImageClick }: Modal2Props) {
+export default function Modal2({ isOpen, designData, projectData, experienceData, onWorkImageClick }: Modal2Props) {
     const [isDragging, setIsDragging] = useState(false)
+    const [dragConstraints, setDragConstraints] = useState({ top: 0, bottom: 0, left: 0, right: 0 })
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            setDragConstraints({
+                top: -window.innerHeight / 8,
+                bottom: window.innerHeight / 4,
+                left: -window.innerWidth / 8,
+                right: window.innerWidth / 8,
+            })
+        }
+    }, [])
 
     const handleImageClick = (imagePath: string) => {
         if (experienceData) {
@@ -71,12 +84,7 @@ export default function Modal2({ isOpen, onClose, designData, projectData, exper
                 className="absolute left-160 top-70 cursor-move"
                 drag
                 dragMomentum={false}
-                dragConstraints={{
-                    top: -window.innerHeight / 8,
-                    bottom: window.innerHeight / 4,
-                    left: -window.innerWidth / 8,
-                    right: window.innerWidth / 8,
-                }}
+                dragConstraints={dragConstraints}
                 dragElastic={0.2}
                 onDragStart={() => setIsDragging(true)}
                 onDragEnd={() => setIsDragging(false)}
@@ -169,7 +177,7 @@ export default function Modal2({ isOpen, onClose, designData, projectData, exper
                                                     className="relative aspect-square rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity"
                                                     onClick={() => !isDragging && handleImageClick(imagePath)}
                                                 >
-                                                    <img 
+                                                    <Image 
                                                         src={imagePath} 
                                                         alt={`Work image ${index + 1}`}
                                                         className="w-full h-full object-cover"

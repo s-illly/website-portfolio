@@ -2,7 +2,6 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
 import Badminton from './about/Badminton'
 import Volleyball from './about/Volleyball'
 import Egg from './about/Egg'
@@ -16,12 +15,6 @@ import Me from './about/Me'
 
 export default function About() {
     const pathname = usePathname()
-    const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null)
-
-    const handlePhotoClick = (photoName: string) => {
-        setSelectedPhoto(photoName)
-    }
-    
     return (
         <AnimatePresence mode="wait">
             <motion.main 

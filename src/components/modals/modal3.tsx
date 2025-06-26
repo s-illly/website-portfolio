@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { getContrastingTextColor } from '@/utils/colorUtils'
+import { useState, useEffect } from 'react'
 
 interface ColorDetail {
     hex: string;
@@ -51,7 +52,19 @@ interface Modal3Props {
     experienceData: ExperienceCard | null;
 }
 
-export default function Modal3({ isOpen, onClose, designData, projectData, experienceData }: Modal3Props) {
+export default function Modal3({ isOpen, designData, projectData, experienceData }: Modal3Props) {
+    const [dragConstraints, setDragConstraints] = useState({ top: 0, bottom: 0, left: 0, right: 0 })
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            setDragConstraints({
+                top: -window.innerHeight / 8,
+                bottom: window.innerHeight / 4,
+                left: -window.innerWidth / 8,
+                right: window.innerWidth / 8,
+            })
+        }
+    }, [])
+
     if (!isOpen) return null;
 
     return (
@@ -60,12 +73,7 @@ export default function Modal3({ isOpen, onClose, designData, projectData, exper
                 className="absolute left-180 top-110 cursor-move"
                 drag
                 dragMomentum={false}
-                dragConstraints={{
-                    top: -window.innerHeight / 8,
-                    bottom: window.innerHeight / 4,
-                    left: -window.innerWidth / 8,
-                    right: window.innerWidth / 8,
-                }}
+                dragConstraints={dragConstraints}
                 dragElastic={0.2}
             >
                 {designData && designData.id.startsWith('design-') && (

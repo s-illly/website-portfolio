@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
+import Image from 'next/image'
 
 export default function Volleyball() {
     const [isHovered, setIsHovered] = useState(false)
@@ -23,7 +24,7 @@ export default function Volleyball() {
                 whileHover={{ y: -15, scale: 1.1, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
             >
-                <img className="h-30" src="img/volleyball.png" alt="Volleyball" />
+                <Image className="h-30" src="img/volleyball.png" alt="Volleyball" />
             </motion.div>
 
             <AnimatePresence>

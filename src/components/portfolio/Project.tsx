@@ -136,7 +136,7 @@ export default function Project({ onImageSelect }: ProjectProps) {
                             
                             <div className="p-6 bg-white">
                                 <div className="grid grid-cols-3 gap-8">
-                                    {projectImages.map((project, index) => (
+                                    {projectImages.map((project) => (
                                         <motion.div
                                             key={project.id}
                                             className="relative cursor-pointer bg-white shadow-sm rounded-lg overflow-hidden"
@@ -146,7 +146,7 @@ export default function Project({ onImageSelect }: ProjectProps) {
                                                 setIsModalOpen(false);
                                             }}
                                         >
-                                            <img
+                                            <Image
                                                 src={project.image}
                                                 alt={`Project ${project.id}`}
                                                 className="w-full h-full object-cover"

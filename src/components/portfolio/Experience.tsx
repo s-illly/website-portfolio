@@ -203,7 +203,7 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
                                     <div className="grid grid-cols-3 gap-6">
                                         {experienceImages
                                             .filter(experience => selectedCategory === 'all' || experience.category === selectedCategory)
-                                            .map((experience, index) => (
+                                            .map((experience) => (
                                             <motion.div
                                                 key={experience.id}
                                                 className="relative border border-gray-200 bg-white rounded-lg p-2 flex flex-col items-center justify-center text-center cursor-pointer shadow-sm"
@@ -213,7 +213,7 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
                                                     setIsModalOpen(false);
                                                 }}
                                             >
-                                                <img
+                                                <Image
                                                     src={experience.image}
                                                     alt={`Experience ${experience.id}`}
                                                     className="w-15 h-15 object-cover rounded-md mb-2"

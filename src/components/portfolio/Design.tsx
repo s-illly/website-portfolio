@@ -157,7 +157,7 @@ export default function Design({ onImageSelect }: DesignProps) {
                                                 setIsModalOpen(false);
                                             }}
                                         >
-                                            <img
+                                            <Image
                                                 src={image.image}
                                                 alt={`Design ${image.id}`}
                                                 className="w-full h-full object-cover"

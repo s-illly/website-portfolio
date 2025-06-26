@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import Image from 'next/image'
 
 
 export default function Spotify() {
@@ -42,7 +43,7 @@ export default function Spotify() {
             <div className="rounded-2xl h-full w-full bg-white flex flex-col items-center p-4 relative border border-gray-200">
                 {/* Album Cover Section */}
                 <div className="w-full h-48 bg-gray-200 rounded-md flex items-center justify-center overflow-hidden relative">
-                    <img src={currentTrack.image} alt="Album Cover" className="w-full h-full object-cover rounded-md" />
+                    <Image src={currentTrack.image} alt="Album Cover" className="w-full h-full object-cover rounded-md" />
                 </div>
 
                 {/* Song Info */}

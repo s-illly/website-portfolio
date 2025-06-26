@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function Me() {
     return (
@@ -16,7 +17,7 @@ export default function Me() {
             }}
         >
             <div className="w-125 h-auto">
-                <img className="w-full h-full object-contain" src="img/me.png" alt="Me" />
+                <Image className="w-full h-full object-contain" src="img/me.png" alt="Me" />
             </div>
         </motion.div>
 
@@ -33,7 +34,7 @@ export default function Me() {
             }}
         >
             <div className="w-35 h-auto">
-                <img className="w-full h-full object-contain" src="img/lines1.png" alt="Me" />
+                <Image className="w-full h-full object-contain" src="img/lines1.png" alt="Me" />
             </div>
         </motion.div>
 
@@ -50,7 +51,7 @@ export default function Me() {
             }}
         >
             <div className="w-20 h-auto">
-                <img className="w-full h-full object-contain" src="img/rain1.png" alt="Me" />
+                <Image className="w-full h-full object-contain" src="img/rain1.png" alt="Me" />
             </div>
         </motion.div>
 
@@ -67,7 +68,7 @@ export default function Me() {
             }}
         >
             <div className="w-20 h-auto">
-                <img className="w-full h-full object-contain" src="img/fish1.png" alt="Me" />
+                <Image className="w-full h-full object-contain" src="img/fish1.png" alt="Me" />
             </div>
         </motion.div>
 
@@ -84,7 +85,7 @@ export default function Me() {
             }}
         >
             <div className="w-20 h-auto">
-                <img className="w-full h-full object-contain" src="img/fish3.png" alt="Me" />
+                <Image className="w-full h-full object-contain" src="img/fish3.png" alt="Me" />
             </div>
         </motion.div>
 
@@ -101,7 +102,7 @@ export default function Me() {
             }}
         >
             <div className="w-25 h-auto">
-                <img className="w-full h-full object-contain" src="img/lines2.png" alt="Me" />
+                <Image className="w-full h-full object-contain" src="img/lines2.png" alt="Me" />
             </div>
         </motion.div>
 
@@ -119,7 +120,7 @@ export default function Me() {
             }}
         >
             <div className="w-20 h-auto">
-                <img className="w-full h-full object-contain" src="img/fish2.png" alt="Me" />
+                <Image className="w-full h-full object-contain" src="img/fish2.png" alt="Me" />
             </div>
         </motion.div>
 
@@ -136,7 +137,7 @@ export default function Me() {
             }}
         >
             <div className="w-20 h-auto">
-                <img className="w-full h-full object-contain" src="img/fish4.png" alt="Me" />
+                <Image className="w-full h-full object-contain" src="img/fish4.png" alt="Me" />
             </div>
         </motion.div>
 
@@ -153,7 +154,7 @@ export default function Me() {
             }}
         >
             <div className="w-15 h-auto">
-                <img className="w-full h-full object-contain" src="img/S.png" alt="Me" />
+                <Image className="w-full h-full object-contain" src="img/S.png" alt="Me" />
             </div>
         </motion.div>
 
@@ -170,7 +171,7 @@ export default function Me() {
             }}
         >
             <div className="w-15 h-auto">
-                <img className="w-full h-full object-contain" src="img/L.png" alt="Me" />
+                <Image className="w-full h-full object-contain" src="img/L.png" alt="Me" />
             </div>
         </motion.div>
 
@@ -187,7 +188,7 @@ export default function Me() {
             }}
         >
             <div className="w-20 h-auto">
-                <img className="w-full h-full object-contain" src="img/sunny.png" alt="Me" />
+                <Image className="w-full h-full object-contain" src="img/sunny.png" alt="Me" />
             </div>
         </motion.div>
 
@@ -204,7 +205,7 @@ export default function Me() {
             }}
         >
             <div className="w-40 h-auto">
-                <img className="w-full h-full object-contain" src="img/hat.png" alt="Me" />
+                <Image className="w-full h-full object-contain" src="img/hat.png" alt="Me" />
             </div>
         </motion.div>
         </>
