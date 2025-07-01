@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import Image from 'next/image'
+import fish2Img from '../../imgs/fish2.webp'
+import fish4Img from '../../imgs/fish4.webp'
+import SImg from '../../imgs/S.webp'
+import sunnyImg from '../../imgs/sunny.webp'
 
 
 export default function Spotify() {
@@ -8,11 +12,11 @@ export default function Spotify() {
     const [currentTrackIndex, setCurrentTrackIndex] = useState(0)
 
     const tracks = [
-        { id: 'track-1', image: '/img/summit.png', title: 'Summit - Reworked', artist: 'Seb Wery' },
-        { id: 'track-2', image: '/img/id.png', title: 'I Don\'t Understand But I Luv U', artist: 'SEVENTEEN' },
-        { id: 'track-3', image: '/img/frak.png', title: 'Fraktsiya', artist: 'MARK, Lee Young Ji' },
-        { id: 'track-4', image: '/img/blackmemory.png', title: 'BLACK MEMORY', artist: 'THE ORAL CIGARETTES' },
-        { id: 'track-5', image: '/img/tatsuya.png', title: 'パノプティコン', artist: 'Tatsuya Kitani' },
+        { id: 'track-1', image: '/imgs/summit.jpeg', title: 'Summit - Reworked', artist: 'Seb Wery' },
+        { id: 'track-2', image: '/imgs/id.jpeg', title: 'I Don\'t Understand But I Luv U', artist: 'SEVENTEEN' },
+        { id: 'track-3', image: '/imgs/frak.jpeg', title: 'Fraktsiya', artist: 'MARK, Lee Young Ji' },
+        { id: 'track-4', image: '/imgs/blackmemory.jpeg', title: 'BLACK MEMORY', artist: 'THE ORAL CIGARETTES' },
+        { id: 'track-5', image: '/imgs/tatsuya.jpeg', title: 'パノプティコン', artist: 'Tatsuya Kitani' },
     ];
 
     const currentTrack = tracks[currentTrackIndex];
@@ -27,8 +31,9 @@ export default function Spotify() {
 
     return (
         <>
+        <div className="relative w-120 pt-12 h-auto">
         <motion.div
-            className="absolute right-80 top-15 z-3 w-60 h-80 overflow-hidden"
+            className="-translate-x-10 z-3 w-60 h-80 overflow-hidden"
             initial={{ y: "100vh", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "100vh", opacity: 0 }}
@@ -83,6 +88,74 @@ export default function Spotify() {
                 </div> 
             </div>
         </motion.div>
+
+        <motion.div 
+            className="b-0 absolute -bottom-10 left-35 z-3"
+            initial={{ y: "100vh", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: "100vh", opacity: 0 }}
+            transition={{ 
+                type: "spring",
+                stiffness: 100,
+                damping: 15,
+                delay: 0.14
+            }}
+        >
+            <div className="w-20 h-auto">
+                <Image className="w-full h-full object-contain" src={sunnyImg} alt="Me" width={80} height={80} />
+            </div>
+        </motion.div>
+        <motion.div 
+            className="b-0 absolute top-15 left-55 z-3"
+            initial={{ y: "100vh", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: "100vh", opacity: 0 }}
+            transition={{ 
+                type: "spring",
+                stiffness: 100,
+                damping: 15,
+                delay: 0.15
+            }}
+        >
+            <div className="w-15 h-auto">
+                <Image className="w-full h-full object-contain" src={SImg} alt="Me" width={60} height={60} />
+            </div>
+        </motion.div>
+
+        <motion.div 
+            className="b-0 absolute top-15 left-65 z-3"
+            initial={{ y: "100vh", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: "100vh", opacity: 0 }}
+            transition={{ 
+                type: "spring",
+                stiffness: 100,
+                damping: 15,
+                delay: 0.15
+            }}
+        >
+            <div className="w-20 h-auto">
+                <Image className="w-full h-full object-contain" src={fish2Img} alt="Me" width={80} height={80} />
+            </div>
+        </motion.div>
+
+        <motion.div 
+            className="b-0 absolute -rotate-10 top-45 left-55 z-3"
+            initial={{ y: "100vh", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: "100vh", opacity: 0 }}
+            transition={{ 
+                type: "spring",
+                stiffness: 100,
+                damping: 15,
+                delay: 0.13
+            }}
+        >
+            <div className="w-20 h-auto">
+                <Image className="w-full h-full object-contain" src={fish4Img} alt="Me" width={80} height={80} />
+            </div>
+        </motion.div>
+        </div>
         </>
     )
 } 

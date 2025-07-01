@@ -1,13 +1,14 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import Image from 'next/image'
+import volleyballImg from '../../imgs/volleyball.webp'
 
 export default function Volleyball() {
     const [isHovered, setIsHovered] = useState(false)
 
     return (
         <motion.div 
-            className="absolute right-100 bottom-30 z-4 cursor-pointer"
+            className="z-4 cursor-pointer"
             initial={{ y: "100vh", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "100vh", opacity: 0 }}
@@ -24,7 +25,7 @@ export default function Volleyball() {
                 whileHover={{ y: -15, scale: 1.1, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
             >
-                <Image className="h-30" src="/img/volleyball.png" alt="Volleyball" width={130} height={120} />
+                <Image className="h-30" src={volleyballImg} alt="Volleyball" width={140} height={120} />
             </motion.div>
 
             <AnimatePresence>

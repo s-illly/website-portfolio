@@ -1,6 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import Image from 'next/image'
+import closeImg from '../../imgs/close.webp';
+import openImg from '../../imgs/open.webp';
 
 interface ProjectCard{
     id: string
@@ -26,7 +28,7 @@ export default function Project({ onImageSelect }: ProjectProps) {
         
         {
             id: 'project-link',
-            image: '/img/linkedit.png',
+            image: '/imgs/linkedit.jpeg',
             purpose: '2025 Geese Hacks Project',
             abstract: 'LinkedIt is a program that allows users to input two simple search terms, returning profiles from LinkedIn that match. This includes the profile name as well as the contact headline, and most importantly, a quick access to their email.',
             awards: ['Best Beginner Hack'],
@@ -37,7 +39,7 @@ export default function Project({ onImageSelect }: ProjectProps) {
         
         {
             id: 'project-tech',
-            image: '/img/technova.png',
+            image: '/imgs/technova.jpeg',
             purpose: '2024 Technova Hacker Project - Sigmas in STEM',
             abstract: 'Based on the 20-20-20 Rule, OptimEyes allows users to set a 20-minute timer. When time is up, the website notifies the user of a break and suggests a simple wellness activity (each popup designed by budding female artists around the world).',
             awards: ['Best Beginner Hack'],
@@ -47,7 +49,7 @@ export default function Project({ onImageSelect }: ProjectProps) {
         },
         {
             id: 'project-glove',
-            image: '/img/glove.png',
+            image: '/imgs/glove.jpeg',
             purpose: 'Bay Area Science and Engineering & International Science and Engineering Fair Project',
             abstract: 'The purpose of this project is to facilitate communication between the verbally able and the deaf blind. By using a speech recognizer, this project can translate spoken words and emulate tactile sign language on a glove.',
             awards: ['ISEF Trip Award', 'Gold Merit Award', 'McMaster University Faculty of Engineering Entrance Award', 'ArcelorMittal Dofasco Commercial Department Award'],
@@ -57,7 +59,7 @@ export default function Project({ onImageSelect }: ProjectProps) {
         },
         {
             id: 'project-game',
-            image: '/img/game.png',
+            image: '/imgs/game.jpeg',
             purpose: 'Grade 10 Final Project Coding Assignment: Godot Video Game',
             abstract: 'Betty wants to bake a cake. Help her find the various ingrediants scattered around the house. Using WASD and E to collect, navigate your way around her place in search of collectables.',
             awards: ['Grade 10 Computer Science Award'],
@@ -87,7 +89,7 @@ export default function Project({ onImageSelect }: ProjectProps) {
                 <div className="rounded-lg flex flex-col items-center">
                     <div className="relative w-24 h-24">
                         <Image
-                            src={isHovered ? '/img/close.png' : '/img/open.png'}
+                            src={isHovered ? closeImg : openImg}
                             alt={isHovered ? "Open folder" : "Closed folder"}
                             width={96}
                             height={96}

@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import Badminton from './Badminton'
+import Volleyball from './Volleyball'
 
 export default function Pantone() {
     const [copiedColor, setCopiedColor] = useState<string | null>(null)
@@ -15,8 +17,10 @@ export default function Pantone() {
     };
 
     return (
+        <>
+        <div className="relative w-125 pl-10 h-auto">
         <motion.div 
-            className="w-40 h-20 absolute right-50 bottom-50 z-2"
+            className="w-40 h-20 translate-y-15 translate-x-30 z-2"
             initial={{ y: "100vh", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "100vh", opacity: 0 }}
@@ -67,5 +71,16 @@ export default function Pantone() {
                 </div>
             </div>
         </motion.div>
+        <div className="absolute top-35 left-20 z-10">
+            <Badminton />
+            
+        </div>
+        <div className="absolute top-30 -left-5 z-10">
+            <Volleyball />
+        </div>
+        
+        
+        </div>
+        </>
     )
 } 

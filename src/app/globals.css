@@ -11,7 +11,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-image: url('/img/paper.png');
+  background-image: url('/imgs/paper.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -100,5 +100,8 @@ p {
   @apply text-white/80 hover:text-black transition-colors duration-300;
 }
 
+img {
+  pointer-events: none;
+}
 
 

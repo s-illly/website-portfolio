@@ -1,6 +1,11 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import hatImg from '../../imgs/hat.webp'
+import rain1Img from '../../imgs/rain1.webp'
+import fish1Img from '../../imgs/fish1.webp'
+import fish3Img from '../../imgs/fish3.webp'
+import LImg from '../../imgs/L.webp'
 
 export default function Book() {
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -19,8 +24,10 @@ export default function Book() {
 
     return (
         <>
+        
+        <div className="relative w-125 pl-5 h-auto">
             <motion.div 
-                className="absolute left-60 bottom-45 z-3 w-75 h-72 overflow-y-auto cursor-pointer"
+                className="z-3 w-75 h-72 overflow-y-auto cursor-pointer"
                 initial={{ y: "100vh", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: "100vh", opacity: 0 }}
@@ -45,7 +52,7 @@ export default function Book() {
                     </header>
                     <main className="w-full flex flex-col gap-2 items-start pt-2 p-4">
                         <div className="flex items-center w-full">
-                            <Image src="/img/death.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
+                            <Image src="/imgs/death.jpeg" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
                             <div className="flex-grow">
                                 <p className="text-sm font-bold text-gray-800">Death&apos;s End</p>
                                 <p className="!text-[12px] text-gray-600">Cixin Liu</p>
@@ -60,7 +67,7 @@ export default function Book() {
                         </div>
                         
                         <div className="flex items-center w-full">
-                            <Image src="/img/devils.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
+                            <Image src="/imgs/devils.jpeg" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
                             <div className="flex-grow">
                                 <p className="text-sm font-bold text-gray-800">All the Devils Are Here</p>
                                 <p className="!text-[12px] text-gray-600">Louise Penny</p>
@@ -75,7 +82,7 @@ export default function Book() {
                         </div>
 
                         <div className="flex items-center w-full">
-                            <Image src="/img/seven.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
+                            <Image src="/imgs/seven.jpeg" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
                             <div className="flex-grow">
                                 <p className="text-sm font-bold text-gray-800">Seven and a Half Lessons About the Brain</p>
                                 <p className="!text-[12px] text-gray-600">Lisa Feldman Barrett</p>
@@ -125,7 +132,7 @@ export default function Book() {
                             <div className="p-6">
                                 <div className="grid grid-cols-2 gap-6">
                                     <div className="flex items-center w-full">
-                                        <Image src="/img/devils.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
+                                        <Image src="/imgs/devils.jpeg" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
                                         <div className="flex-grow">
                                             <p className="text-sm font-bold text-gray-800">All the Devils Are Here</p>
                                             <p className="!text-[12px] text-gray-600">Louise Penny</p>
@@ -140,7 +147,7 @@ export default function Book() {
                                     </div>
 
                                     <div className="flex items-center w-full">
-                                        <Image src="/img/darkforest.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
+                                        <Image src="/imgs/darkforest.jpeg" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
                                         <div className="flex-grow">
                                             <p className="text-sm font-bold text-gray-800">The Dark Forest</p>
                                             <p className="!text-[12px] text-gray-600">Cixin Liu</p>
@@ -155,7 +162,7 @@ export default function Book() {
                                     </div>
 
                                     <div className="flex items-center w-full">
-                                        <Image src="/img/call.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
+                                        <Image src="/imgs/call.jpeg" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
                                         <div className="flex-grow">
                                             <p className="text-sm font-bold text-gray-800">Call of the Wild</p>
                                             <p className="!text-[12px] text-gray-600">Jack London</p>
@@ -170,7 +177,7 @@ export default function Book() {
                                     </div>
 
                                     <div className="flex items-center w-full">
-                                        <Image src="/img/murder.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
+                                        <Image src="/imgs/murder.jpeg" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
                                         <div className="flex-grow">
                                             <p className="text-sm font-bold text-gray-800">Murder on the Orient Express</p>
                                             <p className="!text-[12px] text-gray-600">Agatha Christie</p>
@@ -185,7 +192,7 @@ export default function Book() {
                                     </div>
 
                                     <div className="flex items-center w-full">
-                                        <Image src="/img/silent.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
+                                        <Image src="/imgs/silent.jpeg" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
                                         <div className="flex-grow">
                                             <p className="text-sm font-bold text-gray-800">The Silent Patient</p>
                                             <p className="!text-[12px] text-gray-600">Alex Michaelides</p>
@@ -199,7 +206,7 @@ export default function Book() {
                                         </div>   
                                     </div>
                                     <div className="flex items-center w-full">
-                                        <Image src="/img/eyre.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
+                                        <Image src="/imgs/eyre.jpeg" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
                                         <div className="flex-grow">
                                             <p className="text-sm font-bold text-gray-800">Jane Eyre</p>
                                             <p className="!text-[12px] text-gray-600">C.S. Lewis</p>
@@ -214,7 +221,7 @@ export default function Book() {
                                     </div>
 
                                     <div className="flex items-center w-full">
-                                        <Image src="/img/narnia.png" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
+                                        <Image src="/imgs/narnia.jpeg" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} />
                                         <div className="flex-grow">
                                             <p className="text-sm font-bold text-gray-800">The Chronicles of Narnia</p>
                                             <p className="!text-[12px] text-gray-600">C.S. Lewis</p>
@@ -233,6 +240,77 @@ export default function Book() {
                     </motion.div>
                 )}
             </AnimatePresence>
+
+            <motion.div 
+                className="-bottom-15 left-50 absolute  z-10"
+                initial={{ y: "100vh", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: "100vh", opacity: 0 }}
+                transition={{ 
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 15,
+                    delay: 0.13
+                }}
+            >
+                <div className="w-40 h-auto">
+                    <Image className="w-full h-full object-contain" src={hatImg} alt="Me" width={160} height={160} />
+                </div>
+            </motion.div>
+
+            <motion.div 
+                className="absolute -bottom-20 translate-x-1/2   z-3"
+                initial={{ y: "100vh", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: "100vh", opacity: 0 }}
+                transition={{ 
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 15,
+                    delay: 0.15
+                }}
+            >
+                <div className="w-15 h-auto">
+                    <Image className="w-full h-full object-contain" src={LImg} alt="Me" width={60} height={60} />
+                </div>
+            </motion.div>
+            
+            <motion.div 
+                className="absolute -top-5 -left-15 z-3"
+                initial={{ y: "100vh", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: "100vh", opacity: 0 }}
+                transition={{ 
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 15,
+                    delay: 0.16
+                }}
+            >
+                <div className="w-20 h-auto">
+                    <Image className="w-full h-full object-contain" src={fish1Img} alt="Me" width={80} height={80} />
+                </div>
+            </motion.div>
+
+            <motion.div 
+                className="absolute bottom-10 -left-15 z-3"
+                initial={{ y: "100vh", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: "100vh", opacity: 0 }}
+                transition={{ 
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 15,
+                    delay: 0.15
+                }}
+            >
+                <div className="w-20 h-auto">
+                    <Image className="w-full h-full object-contain" src={fish3Img} alt="Me" width={80} height={80} />
+                </div>
+            </motion.div>
+
+
+            </div>
         </>
     )
 } 

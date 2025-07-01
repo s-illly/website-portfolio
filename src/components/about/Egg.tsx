@@ -1,13 +1,14 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import Image from 'next/image'
+import eggImg from '../../imgs/egg.webp'
 
 export default function Egg() {
     const [isHovered, setIsHovered] = useState(false)
 
     return (
         <motion.div 
-            className="absolute left-140 top-75 z-4 cursor-pointer"
+            className="z-4 top-40 cursor-pointer"
             initial={{ y: "100vh", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "100vh", opacity: 0 }}
@@ -24,7 +25,7 @@ export default function Egg() {
                 whileHover={{ y: -15, scale: 1.1, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
             >
-                <Image className="h-25" src="/img/egg.png" alt="Egg" width={100} height={100} />
+                <Image className="h-25" src={eggImg} alt="Egg" width={100} height={100} />
             </motion.div>
 
             <AnimatePresence>

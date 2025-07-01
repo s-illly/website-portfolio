@@ -1,6 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import Image from 'next/image'
+import closeImg from '../../imgs/close.webp';
+import openImg from '../../imgs/open.webp';
 
 interface ExperienceCard{
     id: string
@@ -27,7 +29,7 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
     const experienceImages: ExperienceCard[] = [
         {
             id: 'experience-kuzu',
-            image: '/img/kuzu.png',
+            image: '/imgs/kuzu.jpeg',
             title: 'Frontend Engineer & Graphic Designer',
             description: 'KuzuDB',
             category: 'work',
@@ -35,12 +37,12 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
             duration: 'May - August 2025',
             location: 'Waterloo, Hybrid',
             tasks: ['Front-end implementation of explorer UI redesign', 'Fullstack implementation of main page contact us page'],
-            work: ['/img/kuzu1.png','/img/kuzu2.png',],
+            work: ['/imgs/kuzu1.jpeg','/imgs/kuzu2.jpeg',],
 
         },
         {
             id: 'experience-judge',
-            image: '/img/basef.png',
+            image: '/imgs/basef.jpeg',
             title: 'Special Awards Judge',
             description: 'BASEF',
             category: 'volunteerism',
@@ -53,7 +55,7 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
         },
         {
             id: 'experience-ignition',
-            image: '/img/ignition.png',
+            image: '/imgs/ignition.jpeg',
             title: 'UI/UX Developer',
             description: 'Ignition Hacks',
             category: 'volunteerism',
@@ -61,13 +63,13 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
             duration: 'January - August 2025',
             location: 'Remote',
             tasks: ['Gallary, FAQ, and Meet the Team website sections', 'Iggy designs', 'Stickers!'],
-            work: ['/img/sticker.png','/img/iggy.png'],
+            work: ['/imgs/sticker.jpeg','/imgs/iggy.jpeg'],
 
         },
         
         {
             id: 'experience-piano',
-            image: '/img/avalon.png', 
+            image: '/imgs/avalon.jpeg', 
             title: 'Piano Teacher',
             description: 'Avalon Music Academy',
             category: 'work',
@@ -79,7 +81,7 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
         },
         {
             id: 'experience-shad',
-            image: '/img/shad.png',
+            image: '/imgs/shad.jpeg',
             title: 'SHAD Fellow & Ambassador',
             description: 'SHAD Canada',
             category: 'volunteerism',
@@ -92,7 +94,7 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
         },
         {
             id: 'experience-biotecture',
-            image: '/img/bio.png',
+            image: '/imgs/bio.jpeg',
             title: 'Illustration Intern',
             description: 'Biotecture Inc.',
             category: 'work',
@@ -100,7 +102,7 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
             duration: 'September - December 2023',
             location: 'Remote',
             tasks: ['UI/UX decisions with company branding and image', 'Proposed the company sprite for usage of future elearning courses'],
-            work: ['/img/light.png', '/img/biotech.png'],
+            work: ['/imgs/light.jpeg', '/imgs/biotech.jpeg'],
 
         }, 
     ]
@@ -127,7 +129,7 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
                 <div className="rounded-lg flex flex-col items-center">
                     <div className="relative w-24 h-24">
                         <Image
-                            src={isHovered ? '/img/close.png' : '/img/open.png'}
+                            src={isHovered ? closeImg : openImg}
                             alt={isHovered ? "Open folder" : "Closed folder"}
                             width={96}
                             height={96}

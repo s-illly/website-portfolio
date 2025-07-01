@@ -1,6 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import Image from 'next/image'
+import closeImg from '../../imgs/close.webp';
+import openImg from '../../imgs/open.webp';
 
 interface ColorDetail {
     hex: string;
@@ -29,7 +31,7 @@ export default function Design({ onImageSelect }: DesignProps) {
     const designImages: DesignCard[] = [
         {
             id: 'design-light',
-            image: '/img/pantone-light.png',
+            image: '/imgs/pantone-light.jpeg',
             name: 'Pantone Light',
             colorDetail1: { hex: '#FB8A16', rgb: '251 138 22', cmyk: '0 45 91 2' },
             colorDetail2: { hex: '#524846', rgb: '82 72 70', cmyk: '0 12 15 68' },
@@ -38,7 +40,7 @@ export default function Design({ onImageSelect }: DesignProps) {
 
         {
             id: 'design-cat',
-            image: '/img/pantone-cat.png',
+            image: '/imgs/pantone-cat.jpeg',
             name: 'Pantone Cat',
             colorDetail1: { hex: '#D3C9B8', rgb: '211 201 184', cmyk: '0 5 13 17' },
             colorDetail2: { hex: '#B0B670', rgb: '176 182 112', cmyk: '3 0 39 29' },
@@ -46,7 +48,7 @@ export default function Design({ onImageSelect }: DesignProps) {
         },
         {
             id: 'design-fish',
-            image: '/img/pantone-fish.png',
+            image: '/imgs/pantone-fish.jpeg',
             name: 'Pantone Fish',
             colorDetail1: { hex: '#AAECFD', rgb: '170 236 253', cmyk: '33 7 0 1' },
             colorDetail2: { hex: '#FCA58D', rgb: '252 165 141', cmyk: '0 35 44 1' },
@@ -54,7 +56,7 @@ export default function Design({ onImageSelect }: DesignProps) {
         },
         {
             id: 'design-flower',
-            image: '/img/pantone-flower.png',
+            image: '/imgs/pantone-flower.jpeg',
             name: 'Pantone Flower',
             colorDetail1: { hex: '#C6EAFD', rgb: '198 234 253', cmyk: '22 8 0 1' },
             colorDetail2: { hex: '#F6C3D8', rgb: '246 195 216', cmyk: '0 21 12 4' },
@@ -62,7 +64,7 @@ export default function Design({ onImageSelect }: DesignProps) {
         },
         {
             id: 'design-kite',
-            image: '/img/pantone-kite.png',
+            image: '/imgs/pantone-kite.jpeg',
             name: 'Pantone Kite',
             colorDetail1: { hex: '#FDA699', rgb: '253 166 153', cmyk: '0 34 40 1' },
             colorDetail2: { hex: '#C4ECEB', rgb: '196 236 235', cmyk: '17 0 0 8' },
@@ -70,7 +72,7 @@ export default function Design({ onImageSelect }: DesignProps) {
         },
         {
             id: 'design-window',
-            image: '/img/pantone-window.png',
+            image: '/imgs/pantone-window.jpeg',
             name: 'Pantone Window',
             colorDetail1: { hex: '#EBAFC1', rgb: '235 175 193', cmyk: '0 26 18 8' },
             colorDetail2: { hex: '#B1CFFF', rgb: '177 207 255', cmyk: '31 19 0 0' },
@@ -98,7 +100,7 @@ export default function Design({ onImageSelect }: DesignProps) {
                 <div className="rounded-lg flex flex-col items-center">
                     <div className="relative w-24 h-24">
                         <Image
-                            src={isHovered ? '/img/close.png' : '/img/open.png'}
+                            src={isHovered ? closeImg : openImg}
                             alt={isHovered ? "Open folder" : "Closed folder"}
                             width={96}
                             height={96}

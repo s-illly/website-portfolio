@@ -10,6 +10,7 @@ import Modal2 from './modals/modal2'
 import Modal3 from './modals/modal3'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import portfolioImg from '../imgs/portfolio.webp'
 
 interface ColorDetail {
     hex: string;
@@ -186,8 +187,8 @@ export default function Portfolio() {
                                     src={selectedExperienceData.image} 
                                     alt={`Selected Experience: ${selectedExperienceData.id}`}
                                     className="max-w-full max-h-full object-contain"
-                                    width={100}
-                                    height={100}
+                                    width={400}
+                                    height={400}
                                 />
                                 
                             </div>
@@ -195,11 +196,11 @@ export default function Portfolio() {
                         {!selectedDesignData && !selectedProjectData && !selectedExperienceData && (
                             <div className="p-4 w-full h-full flex items-center justify-center flex-col bg-white rounded-t-2xl">
                                 <Image 
-                                    src='/img/portfolio.png'
+                                    src={portfolioImg}
                                     alt="Portfolio"
                                     className="max-w-full max-h-full object-contain mt-59 z-20"
-                                    width={100}
-                                    height={100}
+                                    width={400}
+                                    height={400}
                                 />
                             </div>
                         )}

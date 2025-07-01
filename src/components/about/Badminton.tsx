@@ -1,13 +1,14 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import Image from 'next/image'
+import badmintonImg from '../../imgs/badminton.webp'
 
 export default function Badminton() {
     const [isHovered, setIsHovered] = useState(false)
 
     return (
         <motion.div 
-            className="absolute right-85 bottom-30 z-4 cursor-pointer"
+            className="z-4 cursor-pointer"
             initial={{ y: "100vh", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "100vh", opacity: 0 }}
@@ -24,7 +25,7 @@ export default function Badminton() {
                 whileHover={{ y: -10, scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
             >
-                <Image className="h-25" src="/img/badminton.png" alt="Badminton" width={100} height={100} />
+                <Image className="h-25" src={badmintonImg} alt="Badminton" width={100} height={100} />
             </motion.div>
 
             <AnimatePresence>
