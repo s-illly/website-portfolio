@@ -5,7 +5,7 @@ import Link from 'next/link'
 export default function Socials() {
     return (
         <motion.div 
-            className="w-36 h-6 absolute"
+            className="w-24 h-6 absolute"
             initial={{ y: "100vh", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "100vh", opacity: 0 }}

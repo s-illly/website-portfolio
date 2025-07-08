@@ -22,7 +22,7 @@ export default function About() {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
             >
-                <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-rows-3  
+                <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 grid-cols-1  
                                     xl:pl-16  md:pl-8  sm:pl-8
                                     xl:overflow-hidden lg:overflow-hidden ">
                     <div className="lg:pl-36 md:pl-24 sm:pl-18">
@@ -39,32 +39,6 @@ export default function About() {
                         <Pantone />
                     </div>
                 </div>
-                
-                
-                
-                
-                
-                
-                
-                
-
-
-
-                
-
-                
-
-                
-
-
-                
-                
-
-                
-
-                
-
-                
             </motion.main>
         </AnimatePresence>
         </>

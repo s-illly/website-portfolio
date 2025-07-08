@@ -130,7 +130,11 @@ export default function Portfolio() {
                 transition={{ duration: 0.3 }}
 
             >
+                <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 
+                                    xl:pl-16  md:pl-8  sm:pl-8
+                                    xl:overflow-hidden lg:overflow-hidden ">
                 {/* Main Info */}
+                <div>
                 <motion.div 
                     className="absolute left-40 top-20 z-0"
                     initial={{ y: "100vh", opacity: 0 }}
@@ -237,34 +241,39 @@ export default function Portfolio() {
                     </div>
                     
                 </motion.div>
+                </div>
 
-                <Project onImageSelect={handleProjectImageClick} />
-                <Design onImageSelect={handleDesignImageClick} />
-                <Experience onImageSelect={handleExperienceImageClick} />
-
-                <Modal1
-                    isOpen={isModal1Open}
-                    onClose={closeModal1}
-                    designData={selectedDesignData}
-                    projectData={selectedProjectData}
-                    experienceData={selectedExperienceData}
-                />
-                <Modal2
-                    isOpen={isModal2Open}
-                    onClose={closeModal2}
-                    designData={selectedDesignData}
-                    projectData={selectedProjectData}
-                    experienceData={selectedExperienceData}
-                    onWorkImageClick={handleWorkImageClick}
-                />
-                <Modal3
-                    isOpen={isModal3Open}
-                    onClose={closeModal3}
-                    designData={selectedDesignData}
-                    projectData={selectedProjectData}
-                    experienceData={selectedExperienceData}
-                />
-
+                <div>
+                    <Modal1
+                        isOpen={isModal1Open}
+                        onClose={closeModal1}
+                        designData={selectedDesignData}
+                        projectData={selectedProjectData}
+                        experienceData={selectedExperienceData}
+                    />
+                    <Modal2
+                        isOpen={isModal2Open}
+                        onClose={closeModal2}
+                        designData={selectedDesignData}
+                        projectData={selectedProjectData}
+                        experienceData={selectedExperienceData}
+                        onWorkImageClick={handleWorkImageClick}
+                    />
+                    
+                    <Modal3
+                        isOpen={isModal3Open}
+                        onClose={closeModal3}
+                        designData={selectedDesignData}
+                        projectData={selectedProjectData}
+                        experienceData={selectedExperienceData}
+                    />
+                </div>
+                <div>
+                    <Project onImageSelect={handleProjectImageClick} />
+                    <Design onImageSelect={handleDesignImageClick} />
+                    <Experience onImageSelect={handleExperienceImageClick} />
+                </div>   
+             </div>
             </motion.main>
         </AnimatePresence>
     )
