@@ -64,12 +64,18 @@ export default function Modal1({ isOpen, designData, projectData, experienceData
         }
     }, [])
 
+    // Helper to convert YouTube URL to embed format
+    function getYouTubeEmbedUrl(url: string) {
+        const match = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]+)/);
+        return match ? `https://www.youtube.com/embed/${match[1]}` : url;
+    }
+
     if (!isOpen) return null;
 
     return (
         <AnimatePresence>
             <motion.div 
-                className="absolute left-200 top-40 cursor-move"
+                className="cursor-move"
                 drag
                 dragMomentum={false}
                 dragConstraints={dragConstraints}
@@ -110,7 +116,7 @@ export default function Modal1({ isOpen, designData, projectData, experienceData
                                         <p className="text-xs font-medium text-gray-500 mb-1">Video</p>
                                         <div className="w-[250px] aspect-video bg-gray-100 rounded-lg overflow-hidden">
                                             <iframe 
-                                                src={projectData.video}
+                                                src={getYouTubeEmbedUrl(projectData.video)}
                                                 className="w-full h-full"
                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                                 allowFullScreen

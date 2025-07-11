@@ -18,7 +18,7 @@ export default function Pantone() {
 
     return (
         <>
-        <div className="relative w-125 pl-10 h-auto">
+        <div className="relative w-125 pl-10 h-auto pb-60">
         <motion.div 
             className="w-40 h-20 translate-y-15 translate-x-30 z-2"
             initial={{ y: "100vh", opacity: 0 }}

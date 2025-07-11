@@ -83,7 +83,7 @@ export default function Design({ onImageSelect }: DesignProps) {
     return (
         <>
             <motion.div 
-                className="absolute right-60 top-50 z-3 cursor-pointer"
+                className="z-3 cursor-pointer"
                 initial={{ y: "100vh", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: "100vh", opacity: 0 }}

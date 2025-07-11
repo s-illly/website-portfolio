@@ -57,9 +57,9 @@ export default function Book() {
                                 <p className="!text-[12px] text-gray-600">Cixin Liu</p>
                                 <div className="flex gap-1 mt-1">
                                     <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">★</span>
-                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">☆</span>
+                                    <span className="text-gray-400 text-sm">☆</span>
+                                    <span className="text-gray-400 text-sm">☆</span>
                                     <span className="text-gray-400 text-sm">☆</span>
                                 </div>
                             </div>

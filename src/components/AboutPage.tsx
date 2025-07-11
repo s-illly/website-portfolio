@@ -16,7 +16,7 @@ export default function About() {
         <AnimatePresence mode="wait">
             <motion.main 
                 key={pathname}
-                className="min-h-screen relative flex flex-col"
+                className="min-h-screen relative flex flex-col items-center justify-center"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}

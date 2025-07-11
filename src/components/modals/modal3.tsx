@@ -70,7 +70,7 @@ export default function Modal3({ isOpen, designData, projectData, experienceData
     return (
         <AnimatePresence>
             <motion.div 
-                className="absolute left-180 top-110 cursor-move"
+                className="cursor-move"
                 drag
                 dragMomentum={false}
                 dragConstraints={dragConstraints}
