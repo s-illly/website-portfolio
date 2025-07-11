@@ -1,12 +1,15 @@
 # Project Portfolio
 
-## Features
+## Purpose
+
+This project is a personal portfolio and interactive showcase. It highlights design, development, and creative work through a playful, modern web experience. The site is built to be both a resume and a living playground for UI/UX, featuring draggable modals, responsive layouts, and fun surprises for visitors.
+
+## Key Features
 
 - Modern Next.js 14 with App Router
 - Tailwind CSS for styling
-- Three.js integration with React Three Fiber
-- Support for 3D model viewing
-- Responsive design
+- Responsive About and Portfolio pages
+- Draggable modals for project details
 - TypeScript support
 
 ## Prerequisites
@@ -46,20 +49,25 @@ npm run dev
 
 ```
 src/
-├── app/              # Next.js app router pages
-├── components/       # React components
-│   └── ModelViewer.tsx  # 3D viewer component
+├── app/                  # Next.js app router pages
+│   ├── page.tsx          # Home page
+│   ├── portfolio/        # Portfolio page
+│   └── ...
+├── components/           # React components
+│   ├── about/            # About page components (Intro, Me, Book, Spotify, Pantone, etc.)
+│   ├── modals/           # Draggable modals (modal1, modal2, modal3)
+│   ├── portfolio/        # Portfolio folders (Design, Experience, Project)
+│   └── ...
 └── ...
 ```
 
-## Future Enhancements
+## Easter Eggs
 
-- File upload for Blender models
-- Model manipulation controls
-- Material and lighting adjustments
-- Animation support
-- Export capabilities
+- **Draggable Modals:** You can drag the project/experience modals around the screen for a playful, interactive experience.
+- **Animated Icons & Characters:** Some icons and images have subtle animations or interactive effects.
+- **Hidden UI Details:** Try hovering or clicking on various elements—some have fun surprises!
 
 ## License
 
 MIT
+
