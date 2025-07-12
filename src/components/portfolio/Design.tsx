@@ -164,6 +164,7 @@ export default function Design({ onImageSelect }: DesignProps) {
                                                 width={120}
                                                 height={120}
                                                 className="w-full h-full object-cover"
+                                                loading="lazy"
                                             />
                                         </motion.div>
                                     ))}

@@ -25,6 +25,28 @@ export default function Project({ onImageSelect }: ProjectProps) {
     const [isModalOpen, setIsModalOpen] = useState(false)
 
     const projectImages: ProjectCard[] = [
+
+        {
+            id: 'project-hand',
+            image: '/imgs/fillerimg.jpeg',
+            purpose: 'AI Hand Tracking Game',
+            abstract: '!!!',
+            awards: [],
+            skills: ['GDScript', '3D Graphics', 'Python', 'Mediapipe'],
+            video: 'https://youtu.be/xcclxN2ob54',
+            links: ['https://github.com/s-illly/Hand-Tracking-Game'],
+        },
+
+        {
+            id: 'project-404',
+            image: '/imgs/fillerimg.jpeg',
+            purpose: '2025 Hack404 Project',
+            abstract: 'YangNews is a positive news aggregator that filters and displays uplifting news articles from various unbias, credible sources.',
+            awards: [],
+            skills: ['TailwindCSS', 'Project Management', 'React', 'NewsAPI'],
+            video: 'https://youtu.be/MrTxrh4xTpY',
+            links: ['https://devpost.com/software/yang-news', 'https://github.com/dundeezhang/hack404'],
+        },
         
         {
             id: 'project-link',
@@ -153,6 +175,7 @@ export default function Project({ onImageSelect }: ProjectProps) {
                                                 width={120}
                                                 height={120}
                                                 className="w-full h-full object-cover"
+                                                loading="lazy"
                                             />
                                         </motion.div>
                                     ))}

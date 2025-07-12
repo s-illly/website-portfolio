@@ -75,7 +75,7 @@ export default function Pantone() {
             <Badminton />
             
         </div>
-        <div className="absolute top-30 -left-5 z-10">
+        <div className="absolute top-30 left-0 z-10">
             <Volleyball />
         </div>
         

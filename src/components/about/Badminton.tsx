@@ -25,7 +25,7 @@ export default function Badminton() {
                 whileHover={{ y: -10, scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
             >
-                <Image className="h-25" src={badmintonImg} alt="Badminton" width={100} height={100} />
+                <Image className="h-25 w-auto" src={badmintonImg} alt="Badminton" width={100} />
             </motion.div>
 
             <AnimatePresence>

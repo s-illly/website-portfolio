@@ -5,9 +5,10 @@ import { usePathname } from 'next/navigation'
 import Project from './portfolio/Project'
 import Design from './portfolio/Design'
 import Experience from './portfolio/Experience'
-import Modal1 from './modals/modal1'
-import Modal2 from './modals/modal2'
-import Modal3 from './modals/modal3'
+import React, { Suspense } from 'react';
+const Modal1 = React.lazy(() => import('./modals/modal1'));
+const Modal2 = React.lazy(() => import('./modals/modal2'));
+const Modal3 = React.lazy(() => import('./modals/modal3'));
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import portfolioImg from '../imgs/portfolio.webp'
@@ -129,8 +130,8 @@ export default function Portfolio() {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
             >
-                <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24">
-                    <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-8 items-start">
+                <div className="w-full max-w-screen-xl mx-auto pl-6 sm:pl-6 md:pl-8 lg:pl-12 xl:pl-16 2xl:pl-24">
+                    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-8 items-start">
                         {/* Main Info */}
                         <div className="flex justify-center items-start pt-8 pb-8 cursor-move">
                             <motion.div 
@@ -169,6 +170,7 @@ export default function Portfolio() {
                                                 className="object-contain"
                                                 sizes="(max-width: 768px) 100vw, 400px"
                                                 style={{ objectPosition: 'center' }}
+                                                loading="lazy"
                                             />
                                         </div>
                                     )}
@@ -181,6 +183,7 @@ export default function Portfolio() {
                                                 className="object-contain"
                                                 sizes="(max-width: 768px) 100vw, 400px"
                                                 style={{ objectPosition: 'center' }}
+                                                loading="lazy"
                                             />
                                         </div>
                                     )}
@@ -193,6 +196,7 @@ export default function Portfolio() {
                                                 className="object-contain"
                                                 sizes="(max-width: 768px) 100vw, 400px"
                                                 style={{ objectPosition: 'center' }}
+                                                loading="lazy"
                                             />
                                         </div>
                                     )}
@@ -206,6 +210,7 @@ export default function Portfolio() {
                                                     className="object-contain mt-18"
                                                     sizes="(max-width: 768px) 100vw, 400px"
                                                     style={{ objectPosition: 'bottom' }}
+                                                    loading="lazy"
                                                 />
                                             </div>
                                         </div>
@@ -220,8 +225,6 @@ export default function Portfolio() {
                                             </button>
                                             <button className="p-2 rounded bg-gray-600 text-white flex items-center justify-center">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175m0 0a2.25 2.25 0 0 1-2.244 2.244W9.75v.69C3.003 12.217 5.114 13.5 7.72 13.5h.721m-6.083 0h2.253M13.5 10.5h.008v.008H13.5V10.5ZM12 18.75a.75.75 0 0 0 .75-.75v-1.5a.75.75 0 0 0-1.5 0v1.5a.75.75 0 0 0 .75.75Z" />
-                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M11.353 16.119A2.716 2.716 0 0 1 16.5 11.25c0-1.776-.703-3.45-1.988-4.653M9.75 14.25a3 3 0 0 0 3-3V9.563m-1.5 3.75a3 3 0 0 1-3-3V6A3 3 0 0 1 6 3h.282c.28-.711.9-1.292 1.637-1.468A2.998 2.998 0 0 1 12 2.25c.915 0 1.794.344 2.478.961C15.07 3.842 15.5 4.755 15.5 5.772v.631o-.005.003A3.004 3.004 0 0 1 18 9.75v.75a6.75 6.75 0 0 1-6.75 6.75h-1.5a2.25 2.25 0 00-2.25 2.25v.375c0 .621.504 1.125 1.125 1.125h.375M12 10.5a.75.75 0 00.75-.75V7.5a.75.75 0 00-1.5 0v2.25c0 .414.336.75.75.75Z" />
                                                 </svg>
                                             </button>
                                             <button className="p-2 rounded bg-gray-600 text-white flex items-center justify-center">
@@ -246,37 +249,48 @@ export default function Portfolio() {
                         <div className="flex flex-col items-center justify-center relative min-h-[32rem] md:min-h-[32rem]">
                             <div className="w-full flex flex-col items-center">
                                 <div className="w-full flex flex-col items-center pt-4 pl-2">
-                                    <Modal1
-                                        isOpen={isModal1Open}
-                                        onClose={closeModal1}
-                                        designData={selectedDesignData}
-                                        projectData={selectedProjectData}
-                                        experienceData={selectedExperienceData}
-                                    />
+                                    <Suspense fallback={null}>
+                                        <Modal1
+                                            isOpen={isModal1Open}
+                                            onClose={closeModal1}
+                                            designData={selectedDesignData}
+                                            projectData={selectedProjectData}
+                                            experienceData={selectedExperienceData}
+                                        />
+                                    </Suspense>
                                 </div>
-                                <div className="w-full flex flex-col items-center pt-3 pl-70">
-                                    <Modal2
-                                        isOpen={isModal2Open}
-                                        onClose={closeModal2}
-                                        designData={selectedDesignData}
-                                        projectData={selectedProjectData}
-                                        experienceData={selectedExperienceData}
-                                        onWorkImageClick={handleWorkImageClick}
-                                    />
+                                <div className="w-full flex flex-col items-center 
+                                                pt-3 pl-10 sm:pl-70 md:pl-70 lg:pl-70 xl:pl-70">
+                                    <Suspense fallback={null}>
+                                        <Modal2
+                                            isOpen={isModal2Open}
+                                            onClose={closeModal2}
+                                            designData={selectedDesignData}
+                                            projectData={selectedProjectData}
+                                            experienceData={selectedExperienceData}
+                                            onWorkImageClick={handleWorkImageClick}
+                                        />
+                                    </Suspense>
                                 </div>
-                                <div className="w-full flex flex-col items-center -mt-20 pl-35">
-                                    <Modal3
-                                        isOpen={isModal3Open}
-                                        onClose={closeModal3}
-                                        designData={selectedDesignData}
-                                        projectData={selectedProjectData}
-                                        experienceData={selectedExperienceData}
-                                    />
+                                <div className="w-full flex flex-col items-center 
+                                                -mt-20 -ml-15 sm:pl-35 md:pl-35 lg:pl-35 xl:pl-35">
+                                    <Suspense fallback={null}>
+                                        <Modal3
+                                            isOpen={isModal3Open}
+                                            onClose={closeModal3}
+                                            designData={selectedDesignData}
+                                            projectData={selectedProjectData}
+                                            experienceData={selectedExperienceData}
+                                        />
+                                    </Suspense>
                                 </div>
                             </div>
                         </div>
                         {/* Folders in a row on small screens, column on md+ */}
-                        <div className="pt-8 flex sm:flex-row md:flex-row lg:flex-col xl:flex-col gap-4 md:gap-8 w-full max-w-xs mx-auto justify-center items-center pb-40">
+                        <div className="pt-8 flex sm:flex-row md:flex-row lg:flex-col xl:flex-col 
+                                        pl-0 sm:pl-6 md:pl-8 lg:pl-12 xl:pl-16
+                                        gap-4 md:gap-8 w-full max-w-xs mx-auto 
+                                        justify-center items-center pb-40">
                             <Design onImageSelect={handleDesignImageClick} />
                             <Experience onImageSelect={handleExperienceImageClick} />
                             <Project onImageSelect={handleProjectImageClick} />

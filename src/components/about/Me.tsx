@@ -27,7 +27,7 @@ export default function Me() {
                     delay: 0.12
                 }}
             >
-                <Image className="w-full h-full object-contain" src={meImg} alt="Me" width={450} height={450} />
+                <Image className="w-full h-full object-contain" src={meImg} alt="Me" width={450} height={450} priority />
             </motion.div>
 
             <div className="absolute top-1/2 left-0 translate-x-2/3 -translate-y-1/3 z-10">
@@ -47,7 +47,7 @@ export default function Me() {
                 }}
             >
                 <div className="w-35 h-auto">
-                    <Image className="w-full h-full object-contain" src={lines1Img} alt="Me" width={140} height={140} />
+                    <Image className="w-full h-auto object-contain" src={lines1Img} alt="Me" width={140} />
                 </div>
             </motion.div>
 
@@ -64,7 +64,7 @@ export default function Me() {
                 }}
             >
                 <div className="w-25 h-auto">
-                    <Image className="w-full h-full object-contain" src={lines2Img} alt="Me" width={100} height={100} />
+                    <Image className="w-full h-auto object-contain" src={lines2Img} alt="Me" width={100} loading="lazy"/>
                 </div>
             </motion.div>
         </div>

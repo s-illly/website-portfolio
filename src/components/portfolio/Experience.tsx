@@ -134,6 +134,7 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
                             width={96}
                             height={96}
                             className="object-contain"
+                            loading="lazy"
                         />
                     </div>
                     <span className="text-black"> Experience </span>
@@ -150,7 +151,7 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
                         onClick={() => setIsModalOpen(false)}
                     >
                         <motion.div
-                            className="bg-gray-50 rounded-2xl w-180 h-100 mx-4 relative cursor-move shadow-xl border border-gray-200"
+                            className="bg-gray-50 rounded-2xl w-[80vw] sm:w-[20rem] md:w-[26rem] lg:w-[30rem] xl:w-[34rem] h-100 mx-2 sm:mx-4 relative cursor-move shadow-xl border border-gray-200"
                             initial={{ scale: 0.8, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.8, opacity: 0 }}
@@ -172,27 +173,27 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
                                     <div className="h-2 w-2 bg-green-300" />
                                 </div>
                                 <span className="text-sm font-medium !text-gray-700">Experience</span>
-                                <div className="w-[72px]"></div> {/* Placeholder to balance title */} 
+                                <div className="w-8 sm:w-12 md:w-16 lg:w-[72px]"></div> {/* Placeholder to balance title */} 
                             </header>
                             
                             <div className="flex flex-row h-[calc(100%-32px)]">
                                 {/* Sidebar */}
-                                <div className="max-w-45 min-w-45 bg-gray-50 border-r border-gray-200 p-4 flex flex-col gap-2 overflow-y-auto">
+                                <div className="min-w-[5rem] max-w-[5.5rem]  bg-gray-50 border-r border-gray-200 p-1 sm:p-2 flex flex-col gap-0.5 sm:gap-1 overflow-y-auto">
                                  
                                     <div 
-                                        className={`flex items-center gap-2 text-sm p-1 rounded cursor-pointer ${selectedCategory === 'all' ? 'bg-blue-100 text-blue-400' : 'text-gray-700 hover:bg-gray-100'}`}
+                                        className={`flex items-center gap-0.5 sm:gap-1 text-[10px] p-0.5 sm:p-1 rounded cursor-pointer ${selectedCategory === 'all' ? 'bg-blue-100 text-blue-400' : 'text-gray-700 hover:bg-gray-100'}`}
                                         onClick={() => setSelectedCategory('all')}
                                     >
                                         <span>All</span>
                                     </div>
                                     <div 
-                                        className={`flex items-center gap-2 text-sm p-1 rounded cursor-pointer ${selectedCategory === 'professional-projects' ? 'bg-blue-100 text-blue-400' : 'text-gray-700 hover:bg-gray-100'}`}
+                                        className={`flex items-center gap-0.5 sm:gap-1 text-[10px] p-0.5 sm:p-1 rounded cursor-pointer ${selectedCategory === 'work' ? 'bg-blue-100 text-blue-400' : 'text-gray-700 hover:bg-gray-100'}`}
                                         onClick={() => setSelectedCategory('work')}
                                     >
                                         <span>Experience</span>
                                     </div>
                                     <div 
-                                        className={`flex items-center gap-2 text-sm p-1 rounded cursor-pointer ${selectedCategory === 'volunteerism' ? 'bg-blue-100 text-blue-400' : 'text-gray-700 hover:bg-gray-100'}`}
+                                        className={`flex items-center gap-0.5 sm:gap-1 text-[10px] p-0.5 sm:p-1 rounded cursor-pointer ${selectedCategory === 'volunteerism' ? 'bg-blue-100 text-blue-400' : 'text-gray-700 hover:bg-gray-100'}`}
                                         onClick={() => setSelectedCategory('volunteerism')}
                                     >
                                         <span>Volunteerism</span>
@@ -200,15 +201,15 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
                                 </div>
 
                                 {/* Main Content */}
-                                <div className="flex-grow p-6 overflow-y-auto">
-                                    <div className="grid grid-cols-3 gap-6">
+                                <div className="flex-grow p-2 sm:p-4 md:p-6 overflow-y-auto">
+                                    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4 md:gap-6">
                                         {experienceImages
                                             .filter(experience => selectedCategory === 'all' || experience.category === selectedCategory)
                                             .map((experience) => (
                                             <motion.div
                                                 key={experience.id}
-                                                className="relative border border-gray-200 bg-white rounded-lg p-2 flex flex-col items-center justify-center text-center cursor-pointer shadow-sm"
-                                                whileHover={{ scale: 1.02, boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.1)" }}
+                                                className="relative border border-gray-200 bg-white rounded-lg p-1 sm:p-2 flex flex-col items-center justify-center text-center cursor-pointer shadow-sm"
+                                                whileHover={{ scale: 1.02, boxShadow: '0px 5px 10px rgba(0, 0, 0, 0.1)' }}
                                                 onClick={() => {
                                                     onImageSelect(experience);
                                                     setIsModalOpen(false);
@@ -217,12 +218,13 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
                                                 <Image
                                                     src={experience.image}
                                                     alt={`Experience ${experience.id}`}
-                                                    width={120}
-                                                    height={120}
-                                                    className="w-15 h-15 object-cover rounded-md mb-2"
+                                                    width={80}
+                                                    height={80}
+                                                    className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 object-cover rounded-md mb-1 sm:mb-2"
+                                                    loading="lazy"
                                                 />
-                                                <span className="text-sm font-medium text-gray-800">{experience.title}</span>
-                                                <p className="text-2xs text-gray-500 mt-1">{experience.description}</p>
+                                                <span className="text-[10px] font-medium text-gray-800">{experience.title}</span>
+                                                <p className="text-[9px] sm:text-[11px] md:text-xs lg:text-sm text-gray-500 mt-0.5 sm:mt-1">{experience.description}</p>
                                             </motion.div>
                                         ))}
                                     </div>

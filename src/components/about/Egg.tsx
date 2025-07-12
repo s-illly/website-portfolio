@@ -25,7 +25,7 @@ export default function Egg() {
                 whileHover={{ y: -15, scale: 1.1, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
             >
-                <Image className="h-25" src={eggImg} alt="Egg" width={100} height={100} />
+                <Image className="h-25 w-auto" src={eggImg} alt="Egg" width={100} />
             </motion.div>
 
             <AnimatePresence>

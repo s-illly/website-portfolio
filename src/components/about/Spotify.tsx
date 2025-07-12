@@ -48,7 +48,7 @@ export default function Spotify() {
             <div className="rounded-2xl h-full w-full bg-white flex flex-col items-center p-4 relative border border-gray-200">
                 {/* Album Cover Section */}
                 <div className="w-full h-48 bg-gray-200 rounded-md flex items-center justify-center overflow-hidden relative">
-                    <Image src={currentTrack.image} alt="Album Cover" className="w-full h-full object-cover rounded-md" width={100} height={100} />
+                    <Image src={currentTrack.image} alt="Album Cover" className="w-full h-full object-cover rounded-md" width={100} height={100} loading="lazy" />
                 </div>
 
                 {/* Song Info */}
@@ -101,12 +101,12 @@ export default function Spotify() {
                 delay: 0.14
             }}
         >
-            <div className="w-20 h-auto">
-                <Image className="w-full h-full object-contain" src={sunnyImg} alt="Me" width={80} height={80} />
+            <div className="w-30 h-auto">
+                <Image className="w-full h-auto object-contain" src={sunnyImg} alt="Me" width={100} />
             </div>
         </motion.div>
         <motion.div 
-            className="b-0 absolute top-15 left-55 z-3"
+            className="b-0 absolute top-18 left-50 z-3"
             initial={{ y: "100vh", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "100vh", opacity: 0 }}
@@ -118,7 +118,7 @@ export default function Spotify() {
             }}
         >
             <div className="w-15 h-auto">
-                <Image className="w-full h-full object-contain" src={SImg} alt="Me" width={60} height={60} />
+                <Image className="w-full h-auto object-contain" src={SImg} alt="Me" width={60} />
             </div>
         </motion.div>
 
@@ -135,7 +135,7 @@ export default function Spotify() {
             }}
         >
             <div className="w-20 h-auto">
-                <Image className="w-full h-full object-contain" src={fish2Img} alt="Me" width={80} height={80} />
+                <Image className="w-full h-auto object-contain" src={fish2Img} alt="Me" width={80} />
             </div>
         </motion.div>
 
@@ -152,7 +152,7 @@ export default function Spotify() {
             }}
         >
             <div className="w-20 h-auto">
-                <Image className="w-full h-full object-contain" src={fish4Img} alt="Me" width={80} height={80} />
+                <Image className="w-full h-auto object-contain" src={fish4Img} alt="Me" width={80} />
             </div>
         </motion.div>
         </div>

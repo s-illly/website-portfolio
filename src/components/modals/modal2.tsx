@@ -183,6 +183,7 @@ export default function Modal2({ isOpen, designData, projectData, experienceData
                                                         className="w-full h-full object-cover"
                                                         width={100}
                                                         height={100}
+                                                        loading="lazy"
                                                     />
                                                 </div>
                                             ))}

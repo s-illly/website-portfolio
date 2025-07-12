@@ -102,7 +102,7 @@ export default function Modal3({ isOpen, designData, projectData, experienceData
                         </div>
                     </div>
                 )}
-                {projectData && (
+                {projectData && projectData.awards.length > 0 && (
                     <>
                         <div className="bg-white rounded-lg shadow-lg p-4 w-[250px]">
                             <div className="space-y-2">
