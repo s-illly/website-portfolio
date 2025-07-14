@@ -104,7 +104,7 @@ export default function Book() {
                         onClick={() => setIsModalOpen(false)}
                     >
                         <motion.div
-                            className="bg-white rounded-lg w-100 h-80 mx-4 relative cursor-move overflow-scroll border border-gray-200 shadow-lg [&::-webkit-scrollbar]:w-0 [&::-webkit-scrollbar-track]:bg-transparent"
+                            className="bg-white rounded-lg w-100 h-80 mx-4 relative cursor-move overflow-y-auto overflow-scroll border border-gray-200 shadow-lg [&::-webkit-scrollbar]:w-0 [&::-webkit-scrollbar-track]:bg-transparent"
                             initial={{ scale: 0.8, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.8, opacity: 0 }}

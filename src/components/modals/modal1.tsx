@@ -166,7 +166,7 @@ export default function Modal1({ isOpen, designData, projectData, experienceData
                 )}
                 {!designData && !projectData && !experienceData && (
                     <motion.div 
-                        className="text-center text-gray-500 w-64 h-48 bg-[#F7B7AA] rounded-lg"
+                        className="text-center text-black w-64 h-48 bg-[#F7B7AA] rounded-lg p-4"
                         initial={{ y: "100vh", opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: "100vh", opacity: 0 }}
@@ -177,6 +177,7 @@ export default function Modal1({ isOpen, designData, projectData, experienceData
                             delay: 0.10
                         }}
                     >
+                        <span>Click on the folders to check out designs, projects, and experience</span>
                     </motion.div>
                 )}
             </motion.div>

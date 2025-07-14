@@ -33,11 +33,11 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
             title: 'Frontend Engineer & Graphic Designer',
             description: 'KuzuDB',
             category: 'work',
-            skills: ['Tailwind', 'Python', 'Typescript', 'JS', 'HTML', 'Vue', 'Figma'],
+            skills: ['Tailwind', 'Python', 'Typescript', 'JS', 'HTML', 'Vue', 'Figma', 'Docker'],
             duration: 'May - August 2025',
             location: 'Waterloo, Hybrid',
-            tasks: ['Front-end implementation of explorer UI redesign', 'Fullstack implementation of main page contact us page'],
-            work: ['/imgs/kuzu1.jpeg','/imgs/kuzu2.jpeg',],
+            tasks: ['Shipped full explorer UI improvements for V.10 release', 'Ownership over internal downloads dashboard on remote docker containers'],
+            work: ['/imgs/kuzu3.jpeg','/imgs/kuzu2.jpeg',],
 
         },
         {
@@ -76,7 +76,7 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
             skills: [],            
             duration: 'November 2023 - August 2024',
             location: 'Brantford - In-person',
-            tasks: ['Managed lessons for 9 students', 'Worked on practical and theory lessons', 'Prepared for festival and concerts'],
+            tasks: ['Personal student enrollement increase of 80% through outreach', 'Worked on practical and theory lessons in preparation for festival and concerts'],
             work: [],
         },
         {
@@ -88,7 +88,7 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
             skills: [],            
             duration: 'June 2023 - June 2024',
             location: 'SHAD AU, North Park Collegiate',
-            tasks: ['Classroom presentations, social media outreach, and sharing resources with teachers'],
+            tasks: ['Classroom presentations, social media outreach, and sharing resources with teachers', 'Lead to 500% increase of SHAD participants from NPC'],
             work: [],
 
         },

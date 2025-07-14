@@ -142,7 +142,7 @@ export default function Modal3({ isOpen, designData, projectData, experienceData
                 )}
                 {!designData && !projectData && !experienceData && (
                     <motion.div 
-                        className="text-center text-gray-500 w-64 h-48 bg-[#BCD1E1] rounded-lg"
+                        className="text-center text-black w-64 h-48 bg-[#BCD1E1] rounded-l p-4"
                         initial={{ y: "100vh", opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: "100vh", opacity: 0 }}
@@ -153,6 +153,7 @@ export default function Modal3({ isOpen, designData, projectData, experienceData
                             delay: 0.15
                         }}
                     >
+                        <span>Enjoy :)</span>
                     </motion.div>
                 )}
             </motion.div>

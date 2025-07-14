@@ -130,7 +130,7 @@ export default function Portfolio() {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
             >
-                <div className="w-full max-w-screen-xl mx-auto pl-6 sm:pl-6 md:pl-8 lg:pl-12 xl:pl-16 2xl:pl-24">
+                <div className="w-full max-w-screen-xl mx-auto pl-4 sm:pl-6 md:pl-8 lg:pl-12 xl:pl-16 2xl:pl-24">
                     <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-8 items-start">
                         {/* Main Info */}
                         <div className="flex justify-center items-start pt-8 pb-8 cursor-move">
@@ -190,7 +190,7 @@ export default function Portfolio() {
                                     {selectedExperienceData && (
                                         <div className="flex-1 relative w-full h-full overflow-hidden flex items-center justify-center">
                                             <Image 
-                                                src={selectedExperienceData.image} 
+                                                src={selectedExperienceData.image}
                                                 alt={`Selected Experience: ${selectedExperienceData.id}`}
                                                 fill
                                                 className="object-contain"

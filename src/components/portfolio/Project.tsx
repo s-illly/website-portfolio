@@ -28,9 +28,9 @@ export default function Project({ onImageSelect }: ProjectProps) {
 
         {
             id: 'project-hand',
-            image: '/imgs/fillerimg.jpeg',
+            image: '/imgs/handtrack.jpeg',
             purpose: 'AI Hand Tracking Game',
-            abstract: '!!!',
+            abstract: 'An unconventional way to play video games: using hand gestures. This project tracks your hands to control your player. WIP',
             awards: [],
             skills: ['GDScript', '3D Graphics', 'Python', 'Mediapipe'],
             video: 'https://youtu.be/xcclxN2ob54',
@@ -40,7 +40,7 @@ export default function Project({ onImageSelect }: ProjectProps) {
         {
             id: 'project-404',
             image: '/imgs/fillerimg.jpeg',
-            purpose: '2025 Hack404 Project',
+            purpose: 'Hack404 Project 2025',
             abstract: 'YangNews is a positive news aggregator that filters and displays uplifting news articles from various unbias, credible sources.',
             awards: [],
             skills: ['TailwindCSS', 'Project Management', 'React', 'NewsAPI'],
@@ -51,7 +51,7 @@ export default function Project({ onImageSelect }: ProjectProps) {
         {
             id: 'project-link',
             image: '/imgs/linkedit.jpeg',
-            purpose: '2025 Geese Hacks Project',
+            purpose: 'Geese Hacks Project 2025',
             abstract: 'LinkedIt is a program that allows users to input two simple search terms, returning profiles from LinkedIn that match. This includes the profile name as well as the contact headline, and most importantly, a quick access to their email.',
             awards: ['Best Beginner Hack'],
             skills: ['TailwindCSS', 'Project Management'],
@@ -62,7 +62,7 @@ export default function Project({ onImageSelect }: ProjectProps) {
         {
             id: 'project-tech',
             image: '/imgs/technova.jpeg',
-            purpose: '2024 Technova Hacker Project - Sigmas in STEM',
+            purpose: 'Technova Project 2025',
             abstract: 'Based on the 20-20-20 Rule, OptimEyes allows users to set a 20-minute timer. When time is up, the website notifies the user of a break and suggests a simple wellness activity (each popup designed by budding female artists around the world).',
             awards: ['Best Beginner Hack'],
             skills: ['HTML/CSS', 'JavaScript', 'UI/UX Design', 'Web Development'],
@@ -162,21 +162,26 @@ export default function Project({ onImageSelect }: ProjectProps) {
                                     {projectImages.map((project) => (
                                         <motion.div
                                             key={project.id}
-                                            className="relative cursor-pointer bg-white shadow-sm rounded-lg overflow-hidden"
+                                            className="relative cursor-pointer bg-white shadow-sm rounded-lg overflow-hidden flex flex-col"
                                             whileHover={{ scale: 1.02, x: -10 }}
                                             onClick={() => {
                                                 onImageSelect(project);
                                                 setIsModalOpen(false);
                                             }}
                                         >
-                                            <Image
-                                                src={project.image}
-                                                alt={`Project ${project.id}`}
-                                                width={120}
-                                                height={120}
-                                                className="w-full h-full object-cover"
-                                                loading="lazy"
-                                            />
+                                            <div className="relative">
+                                                <Image
+                                                    src={project.image}
+                                                    alt={`Project ${project.id}`}
+                                                    width={120}
+                                                    height={120}
+                                                    className="w-full h-32 object-cover"
+                                                    loading="lazy"
+                                                />
+                                            </div>
+                                            <div className="p-3">
+                                                <span className="text-xs font-light text-gray-800 truncate block"> {project.purpose} </span>
+                                            </div>
                                         </motion.div>
                                     ))}
                                 </div>
