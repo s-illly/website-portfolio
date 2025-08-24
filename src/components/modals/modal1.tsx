@@ -135,7 +135,7 @@ export default function Modal1({ isOpen, designData, projectData, experienceData
                                                     href={link}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="flex items-center space-x-1.5 text-blue-400 hover:text-blue-800 transition-colors"
+                                                    className="flex items-center space-x-1.5 text-blue-400 hover:text-blue-800 transition-colors break-all"
                                                 >
                                                     
                                                     <span className="text-xs">{link}</span>

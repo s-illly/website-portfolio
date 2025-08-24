@@ -26,6 +26,30 @@ export default function Project({ onImageSelect }: ProjectProps) {
 
     const projectImages: ProjectCard[] = [
 
+        
+
+        {
+            id: 'project-terra',
+            image: '/imgs/terra.jpg',
+            purpose: 'Terrahacks 2025',
+            abstract: 'AgeWell helps caregivers remotely monitor and support seniors, especially those with Alzheimers or Dementia, ensuring their safety and well-being at all times',
+            awards: [],
+            skills:['Python', 'Mediapipe', 'JS'],
+            video: 'https://www.youtube.com/watch?v=ogrwIZQ40bQ',
+            links: ['https://github.com/MatthewMo520/Terrahacks2025', 'https://devpost.com/software/elderlyassist?ref_content=user-portfolio&ref_feature=in_progress'],
+        },
+
+        {
+            id: 'project-flow',
+            image: '/imgs/sent.jpeg',
+            purpose: 'FLOW 2025',
+            abstract: 'Sentasaurs is a physical card game designed to help elementary school students build language skills in a fun, collaborative, and entirely screen-free way',
+            awards: ['2nd Place Design'],
+            skills: ['Figma'],
+            video: '',
+            links: ['/pdfs/FLOW.pdf'],
+        },
+
         {
             id: 'project-hand',
             image: '/imgs/handtrack.jpeg',

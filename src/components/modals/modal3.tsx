@@ -150,7 +150,7 @@ export default function Modal3({ isOpen, designData, projectData, experienceData
                             type: "spring",
                             stiffness: 100,
                             damping: 15,
-                            delay: 0.15
+                            delay: 0.11
                         }}
                     >
                         <span>Enjoy :)</span>
