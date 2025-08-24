@@ -204,7 +204,7 @@ export default function Book() {
                                         <Image src="/imgs/eyre.jpeg" alt="Cover Art" className="w-12 h-16 rounded-md mr-3 shadow-sm" width={48} height={64} loading="lazy"/>
                                         <div className="flex-grow">
                                             <p className="text-sm font-bold text-gray-800">Jane Eyre</p>
-                                            <p className="!text-[12px] text-gray-600">C.S. Lewis</p>
+                                            <p className="!text-[12px] text-gray-600">Charlotte Bronte</p>
                                             <div className="flex gap-1 mt-1">
                                                 <span className="text-blue-400 text-sm">★</span>
                                                 <span className="text-blue-400 text-sm">★</span>
