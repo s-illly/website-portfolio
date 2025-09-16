@@ -26,7 +26,16 @@ export default function Project({ onImageSelect }: ProjectProps) {
 
     const projectImages: ProjectCard[] = [
 
-        
+        {
+            id: 'project-mit',
+            image: '/imgs/mit.jpeg',
+            purpose: 'HackMIT 2025',
+            abstract: 'Stud.ly is a study tool that allows students to learn actively with agentic models. Choose from pyschology based learning methods like Feynman Technique, mnemonic devices, and more.',
+            awards: [],
+            skills:['Next.js', 'TailwindCSS', 'OpenAI', 'Figma'],
+            video: 'https://www.youtube.com/watch?v=9UTBieYaG3I',
+            links: ['https://github.com/eamongordon/studly', 'https://plume.hackmit.org/project/fvlsg-kbcup-vuuok-ihsxp'],
+        },
 
         {
             id: 'project-terra',
