@@ -57,7 +57,11 @@ export default function Book() {
                                 <p className="text-sm font-bold text-gray-800">Gone Girl</p>
                                 <p className="!text-[12px] text-gray-600">Gillian Flynn</p>
                                 <div className="flex gap-1 mt-1">
-                                <p className="!text-[12px] !text-gray-400">~reading~</p>
+                                <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-400 text-sm">★</span>
+                                    <span className="text-blue-200 text-sm">☆</span>
+                                    <span className="text-gray-400 text-sm">☆</span>
+                                    <span className="text-gray-400 text-sm">☆</span>
                                 </div>
                             </div>
                         </div>
