@@ -1,5 +1,6 @@
 import "./globals.css"
 import type { Metadata } from 'next'
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: 'Lily Song',
@@ -18,7 +19,10 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/imgs/icon.webp" />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 } 
