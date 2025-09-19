@@ -30,6 +30,15 @@ export default function Design({ onImageSelect }: DesignProps) {
     // Example design images - replace these with your actual design images
     const designImages: DesignCard[] = [
         {
+            id: 'design-sunflower',
+            image: '/imgs/pantone-sunflower.jpeg',
+            name: 'Pantone Sunflower',
+            colorDetail1: { hex: '#F6BE35', rgb: '246, 190, 53', cmyk: '0 23 78 4' },
+            colorDetail2: { hex: '#284E39', rgb: '40, 78, 57', cmyk: '49 0 27 69' },
+            colorDetail3: { hex: '#3690FF', rgb: '54, 144, 255', cmyk: '79 44 0 0' },
+        },
+        
+        {
             id: 'design-light',
             image: '/imgs/pantone-light.jpeg',
             name: 'Pantone Light',
