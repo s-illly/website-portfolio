@@ -4,11 +4,6 @@
 
 This project is a personal portfolio and interactive showcase. It highlights design, development, and creative work through a playful, modern web experience. The site is built to be both a resume and a living playground for UI/UX, featuring draggable modals, responsive layouts, and fun surprises for visitors.
 
-## Prerequisites
-
-- Node.js 18.17 or later
-- npm (comes with Node.js)
-
 ## Getting Started
 
 1. Clone the repository:
