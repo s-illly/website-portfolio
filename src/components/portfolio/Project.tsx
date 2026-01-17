@@ -25,6 +25,26 @@ export default function Project({ onImageSelect }: ProjectProps) {
     const [isModalOpen, setIsModalOpen] = useState(false)
 
     const projectImages: ProjectCard[] = [
+        {
+            id: 'project-blueprint',
+            image: '/imgs/canvas.jpeg',
+            purpose: 'Blueprint Canvas Designathon',
+            abstract: 'How could we make it possible for University students to connect and collaborate, to minimize this competitiveness, and empower themselves and their classmates',
+            awards: ['First Place Design'],
+            skills:['Figma'],
+            video: '',
+            links: ['/pdfs/Canvas Designathon Slides.pdf'],
+        },
+        {
+            id: 'project-gamejam',
+            image: '/imgs/burning.jpeg',
+            purpose: 'Game Jam 2025',
+            abstract: 'Controls your flashlight with your hand (hold your hand in front of your camera as if you were really holding a flashlight). To close your flashlight, drop your hand out of the camera view. To exit, press escape. ',
+            awards: [],
+            skills:['Python', 'MediaPipe', 'OpenCV', 'Godot', 'GDScript'],
+            video: 'https://youtu.be/cg_-S23l8bU',
+            links: ['https://github.com/s-illly/Game-Jam-2025', 'https://s-illly.itch.io/its-just-a-burning-memory'],
+        },
 
         {
             id: 'project-mit',

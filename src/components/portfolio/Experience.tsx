@@ -28,6 +28,32 @@ export default function Experience({ onImageSelect }: ExperienceProps) {
     // Example experience images - replace these with your actual experience images
     const experienceImages: ExperienceCard[] = [
         {
+            id: 'experience-dsc',
+            image: '/imgs/dsc.jpeg',
+            title: 'Design Exec',
+            description: 'UW Data Science Club',
+            category: 'volunteerism',
+            skills: ['Figma'],
+            duration: 'September 2025 - April 2026',
+            location: 'Remote',
+            tasks: ['CxC Landing Page', 'CxC Merchandise', 'DSC Social Media'],
+            work: [],
+
+        },
+        {
+            id: 'experience-ignition-director',
+            image: '/imgs/ignition.jpeg',
+            title: 'Design Director',
+            description: 'Ignition Hacks',
+            category: 'volunteerism',
+            skills: ['Figma'],
+            duration: 'November 2025 - August 2026',
+            location: 'Remote',
+            tasks: ['Desktop Landing Page', 'Social Media', 'Sponsorship & Venue Packages'],
+            work: [],
+
+        },
+        {
             id: 'experience-kuzu',
             image: '/imgs/kuzu.jpeg',
             title: 'Frontend Engineer & Graphic Designer',
